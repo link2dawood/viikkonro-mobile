@@ -1,0 +1,223 @@
+{
+  "@@locale": "en",
+  "appName": "Viikkonro",
+  "wordmark": "Viikko nyt",
+  "home": "Home",
+  "weeks": "Weeks",
+  "calendar": "Calendar",
+  "tools": "Calculators",
+  "more": "More",
+  "settings": "Settings",
+  "eyebrow": "WEEK NUMBER TOOL",
+  "homeTitle": "What week is it?",
+  "homeLead": "Week numbers, dates and important calendar days in one place.",
+  "rightNow": "RIGHT NOW",
+  "week": "Week",
+  "weekLabel": "Week {number}",
+  "@weekLabel": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "weekShort": "Wk {number}",
+  "@weekShort": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "yearLabel": "Year {number}",
+  "@yearLabel": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "weekOf": "Week {current} / {total}",
+  "@weekOf": {
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "yearProgress": "{percent}% through the year",
+  "@yearProgress": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "weeksTotal": "52/53 weeks",
+  "previous": "Previous",
+  "next": "Next",
+  "today": "Today",
+  "thisWeek": "This week",
+  "thisMonth": "This month",
+  "thisYear": "This year",
+  "lookupTitle": "Find the week number of any date",
+  "chooseDate": "Choose a date",
+  "dateToWeek": "Date to week",
+  "weekToDate": "Week to dates",
+  "weekdayCalculator": "Day of the week",
+  "openWeek": "Open week details",
+  "year": "Year",
+  "month": "Month",
+  "weekNumber": "Week number",
+  "dayOfYear": "Day of year",
+  "daysRemaining": "Days remaining",
+  "quarter": "Quarter",
+  "quarterLabel": "Quarter {number}",
+  "@quarterLabel": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "weekRange": "Monday to Sunday",
+  "dayCount": "{count} days",
+  "@dayCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "weekDaysResult": "{weeks} weeks and {days} days",
+  "@weekDaysResult": {
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      },
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "holidays": "Public holidays",
+  "flagDays": "Flag days",
+  "schoolHolidays": "School holidays",
+  "nextHoliday": "Next public holiday",
+  "noEvents": "No observances",
+  "official": "Official public holiday",
+  "observance": "Observance",
+  "all": "All",
+  "confirmed": "Confirmed",
+  "estimated": "estimated",
+  "unknown": "Not yet published",
+  "noSchoolData": "No published school holiday data for this year.",
+  "schoolCoverage": "Your school dates may differ from the municipal calendar.",
+  "winterBreak": "Winter break",
+  "autumnBreak": "Autumn break",
+  "city": "City",
+  "source": "Source",
+  "verifiedAt": "Verified {date}",
+  "@verifiedAt": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "daysBetween": "Days between dates",
+  "workingDaysBetween": "Working day calculator",
+  "workingDays": "Working days",
+  "weekends": "Weekends",
+  "weekdayHolidays": "Weekday public holidays",
+  "totalDays": "Total days",
+  "firstDate": "Start date",
+  "lastDate": "End date",
+  "invalidRange": "End date must be on or after the start date.",
+  "distanceNote": "The result is the distance between dates. Either order is accepted.",
+  "workingNote": "Both dates are included. Working days are Monday–Friday excluding official public holidays. Christmas Eve and Midsummer Eve count as working days.",
+  "yearWeeks": "All weeks of the year",
+  "yearCalendar": "Year calendar",
+  "firstHalf": "First half",
+  "secondHalf": "Second half",
+  "wholeYear": "Whole year",
+  "yearWorkingDays": "Working days by year",
+  "monthWorkingDays": "Monthly working days",
+  "share": "Share",
+  "openWebsite": "Open website",
+  "copy": "Copy",
+  "copied": "Copied",
+  "printPdf": "Print / save PDF",
+  "exportCsv": "Export CSV",
+  "exportCalendar": "Export calendar (.ics)",
+  "exportFailed": "Export failed. Please try again.",
+  "openFailed": "Could not open the link.",
+  "language": "Language",
+  "finnish": "Finnish",
+  "english": "English",
+  "theme": "Appearance",
+  "system": "System",
+  "light": "Light",
+  "dark": "Dark",
+  "firstScreen": "First screen",
+  "privacyNote": "Works offline. No account, analytics or advertising.",
+  "dataCoverage": "Calendar data: 2020–2035. School holidays are available for published years only.",
+  "about": "About the app",
+  "licenses": "Open source licenses",
+  "info": "About week numbers",
+  "faq": "Frequently asked questions",
+  "methodology": "Methodology",
+  "sources": "Data sources",
+  "editorial": "Editorial policy",
+  "usComparison": "Finland and USA",
+  "isoWeek": "ISO week",
+  "usWeek": "US week",
+  "isoExplanation": "Weeks start on Monday. The first ISO week contains 4 January. The ISO week year may differ from the calendar year.",
+  "openData": "Open data",
+  "dataExplorer": "Explore calendar data",
+  "bundledData": "Bundled data snapshot",
+  "dataCopyNote": "Copy the selected year as JSON.",
+  "websiteResources": "More on the website",
+  "websiteResourcesNote": "Additional website services open in your browser and need an internet connection.",
+  "contact": "Contact",
+  "privacy": "Privacy",
+  "terms": "Terms",
+  "timeManagement": "Time management",
+  "sun": "Sun in Helsinki",
+  "sunrise": "Sunrise",
+  "sunset": "Sunset",
+  "daylight": "Daylight",
+  "polarDay": "Midnight sun",
+  "polarNight": "Polar night",
+  "hoursMinutes": "{hours} h {minutes} min",
+  "@hoursMinutes": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "weekNotes": "Week note",
+  "noteHint": "Write a note for this week…",
+  "saved": "Saved on this device",
+  "save": "Save",
+  "cancel": "Cancel",
+  "notFound": "Page not found",
+  "outOfRange": "Choose a year between 2020 and 2035.",
+  "backHome": "Back to home",
+  "loadingError": "Calendar data could not be loaded.",
+  "retry": "Retry",
+  "menu": "Open menu",
+  "dayDetails": "Day details",
+  "close": "Close",
+  "holidayRule": "Date rule",
+  "fiContent": "The website source material is in Finnish.",
+  "nameDaysUnavailable": "Name days will be added after licensing is verified.",
+  "weekList": "Week list"
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_week">Săptămâna</string>
+    <string name="widget_week_of">Săptămâna %1$d / %2$d</string>
+    <string name="widget_today">astăzi</string>
+    <string name="widget_day_one">1 zi</string>
+    <string name="widget_day_many">%1$d zile</string>
+    <string name="widget_estimated">estimat</string>
+    <string name="widget_unknown">nepublicat</string>
+    <string name="widget_next_holiday">Următoarea sărbătoare</string>
+    <string name="widget_next_flag_day">Următoarea zi de arborare</string>
+    <string name="widget_school_break">Vacanță școlară</string>
+    <string name="widget_winter_break">Vacanța de iarnă</string>
+    <string name="widget_autumn_break">Vacanța de toamnă</string>
+    <string name="widget_no_data">Fără date</string>
+    <string name="widget_mini_label">Viikkonro: săptămâna</string>
+    <string name="widget_mini_desc">Numărul curent al săptămânii ISO.</string>
+    <string name="widget_card_label">Viikkonro: fișa săptămânii</string>
+    <string name="widget_card_desc">Numărul săptămânii, data, intervalul și următoarea sărbătoare.</string>
+    <string name="widget_strip_label">Viikkonro: banda săptămânii</string>
+    <string name="widget_strip_desc">Cele șapte zile ale săptămânii curente.</string>
+    <string name="widget_month_label">Viikkonro: luna</string>
+    <string name="widget_month_desc">Grilă lunară cu coloana săptămânilor ISO.</string>
+    <string name="widget_countdown_label">Viikkonro: numărătoare inversă</string>
+    <string name="widget_countdown_desc">Zile până la următoarea sărbătoare.</string>
+    <string name="widget_holidays_label">Viikkonro: sărbători și zile de arborare</string>
+    <string name="widget_holidays_desc">Următoarea sărbătoare și următoarea zi de arborare.</string>
+    <string name="widget_school_label">Viikkonro: vacanțe școlare</string>
+    <string name="widget_school_desc">Următoarea vacanță școlară a orașului ales.</string>
+</resources>

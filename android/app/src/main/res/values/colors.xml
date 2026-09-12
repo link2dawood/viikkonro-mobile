@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand tokens, matching lib/core/theme/brand_theme.dart. The widgets
+         reference these by resource id so the platform picks the night variant
+         without the widget having to know which mode it is drawing in. -->
+    <color name="brand_card">#FFF5F8F7</color>
+    <color name="brand_ink">#FF15211F</color>
+    <color name="brand_soft">#FF56655F</color>
+    <color name="brand_accent">#FF1F7A5C</color>
+    <color name="brand_amber">#FFE0A23B</color>
+    <color name="brand_divider">#FFCCD5D1</color>
+    <color name="brand_selected">#FFD7E7DF</color>
+</resources>

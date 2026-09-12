@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_week">Тиждень</string>
+    <string name="widget_week_of">Тиждень %1$d / %2$d</string>
+    <string name="widget_today">сьогодні</string>
+    <string name="widget_day_one">1 день</string>
+    <string name="widget_day_many">%1$d днів</string>
+    <string name="widget_estimated">орієнтовно</string>
+    <string name="widget_unknown">не оприлюднено</string>
+    <string name="widget_next_holiday">Найближче свято</string>
+    <string name="widget_next_flag_day">Найближчий день прапора</string>
+    <string name="widget_school_break">Шкільні канікули</string>
+    <string name="widget_winter_break">Зимові канікули</string>
+    <string name="widget_autumn_break">Осінні канікули</string>
+    <string name="widget_no_data">Немає даних</string>
+    <string name="widget_mini_label">Viikkonro: тиждень</string>
+    <string name="widget_mini_desc">Поточний номер тижня за ISO.</string>
+    <string name="widget_card_label">Viikkonro: картка тижня</string>
+    <string name="widget_card_desc">Номер тижня, дата, діапазон і найближче свято.</string>
+    <string name="widget_strip_label">Viikkonro: смуга тижня</string>
+    <string name="widget_strip_desc">Сім днів поточного тижня.</string>
+    <string name="widget_month_label">Viikkonro: місяць</string>
+    <string name="widget_month_desc">Сітка місяця зі стовпцем тижнів ISO.</string>
+    <string name="widget_countdown_label">Viikkonro: відлік</string>
+    <string name="widget_countdown_desc">Днів до найближчого свята.</string>
+    <string name="widget_holidays_label">Viikkonro: свята і дні прапора</string>
+    <string name="widget_holidays_desc">Найближче свято та найближчий день прапора.</string>
+    <string name="widget_school_label">Viikkonro: шкільні канікули</string>
+    <string name="widget_school_desc">Найближчі шкільні канікули обраного міста.</string>
+</resources>

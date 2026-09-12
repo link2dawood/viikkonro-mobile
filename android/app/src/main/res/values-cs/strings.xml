@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_week">Týden</string>
+    <string name="widget_week_of">Týden %1$d / %2$d</string>
+    <string name="widget_today">dnes</string>
+    <string name="widget_day_one">1 den</string>
+    <string name="widget_day_many">%1$d dní</string>
+    <string name="widget_estimated">odhad</string>
+    <string name="widget_unknown">nezveřejněno</string>
+    <string name="widget_next_holiday">Nejbližší svátek</string>
+    <string name="widget_next_flag_day">Nejbližší vlajkový den</string>
+    <string name="widget_school_break">Školní prázdniny</string>
+    <string name="widget_winter_break">Jarní prázdniny</string>
+    <string name="widget_autumn_break">Podzimní prázdniny</string>
+    <string name="widget_no_data">Žádná data</string>
+    <string name="widget_mini_label">Viikkonro: týden</string>
+    <string name="widget_mini_desc">Aktuální číslo týdne podle ISO.</string>
+    <string name="widget_card_label">Viikkonro: karta týdne</string>
+    <string name="widget_card_desc">Číslo týdne, datum, rozsah a nejbližší svátek.</string>
+    <string name="widget_strip_label">Viikkonro: pruh týdne</string>
+    <string name="widget_strip_desc">Sedm dní aktuálního týdne.</string>
+    <string name="widget_month_label">Viikkonro: měsíc</string>
+    <string name="widget_month_desc">Měsíční mřížka se sloupcem týdnů ISO.</string>
+    <string name="widget_countdown_label">Viikkonro: odpočet</string>
+    <string name="widget_countdown_desc">Dny do nejbližšího svátku.</string>
+    <string name="widget_holidays_label">Viikkonro: svátky a vlajkové dny</string>
+    <string name="widget_holidays_desc">Nejbližší svátek a nejbližší vlajkový den.</string>
+    <string name="widget_school_label">Viikkonro: školní prázdniny</string>
+    <string name="widget_school_desc">Nejbližší školní prázdniny vybraného města.</string>
+</resources>

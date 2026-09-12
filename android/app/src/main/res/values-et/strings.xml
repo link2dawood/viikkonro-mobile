@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_week">Nädal</string>
+    <string name="widget_week_of">Nädal %1$d / %2$d</string>
+    <string name="widget_today">täna</string>
+    <string name="widget_day_one">1 päev</string>
+    <string name="widget_day_many">%1$d päeva</string>
+    <string name="widget_estimated">hinnanguline</string>
+    <string name="widget_unknown">avaldamata</string>
+    <string name="widget_next_holiday">Järgmine riigipüha</string>
+    <string name="widget_next_flag_day">Järgmine lipupäev</string>
+    <string name="widget_school_break">Koolivaheaeg</string>
+    <string name="widget_winter_break">Talvevaheaeg</string>
+    <string name="widget_autumn_break">Sügisvaheaeg</string>
+    <string name="widget_no_data">Andmed puuduvad</string>
+    <string name="widget_mini_label">Viikkonro: nädal</string>
+    <string name="widget_mini_desc">Praegune ISO nädalanumber.</string>
+    <string name="widget_card_label">Viikkonro: nädalakaart</string>
+    <string name="widget_card_desc">Nädalanumber, kuupäev, vahemik ja järgmine riigipüha.</string>
+    <string name="widget_strip_label">Viikkonro: nädalariba</string>
+    <string name="widget_strip_desc">Käesoleva nädala seitse päeva.</string>
+    <string name="widget_month_label">Viikkonro: kuu</string>
+    <string name="widget_month_desc">Kuuvõrgustik ISO nädalaveeruga.</string>
+    <string name="widget_countdown_label">Viikkonro: loendur</string>
+    <string name="widget_countdown_desc">Päevi järgmise riigipühani.</string>
+    <string name="widget_holidays_label">Viikkonro: riigipühad ja lipupäevad</string>
+    <string name="widget_holidays_desc">Järgmine riigipüha ja järgmine lipupäev.</string>
+    <string name="widget_school_label">Viikkonro: koolivaheajad</string>
+    <string name="widget_school_desc">Valitud linna järgmine koolivaheaeg.</string>
+</resources>

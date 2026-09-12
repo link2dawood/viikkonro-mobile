@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_week">Savaitė</string>
+    <string name="widget_week_of">Savaitė %1$d / %2$d</string>
+    <string name="widget_today">šiandien</string>
+    <string name="widget_day_one">1 diena</string>
+    <string name="widget_day_many">%1$d d.</string>
+    <string name="widget_estimated">apytikslė</string>
+    <string name="widget_unknown">nepaskelbta</string>
+    <string name="widget_next_holiday">Artimiausia šventė</string>
+    <string name="widget_next_flag_day">Artimiausia vėliavos diena</string>
+    <string name="widget_school_break">Mokinių atostogos</string>
+    <string name="widget_winter_break">Žiemos atostogos</string>
+    <string name="widget_autumn_break">Rudens atostogos</string>
+    <string name="widget_no_data">Duomenų nėra</string>
+    <string name="widget_mini_label">Viikkonro: savaitė</string>
+    <string name="widget_mini_desc">Dabartinis ISO savaitės numeris.</string>
+    <string name="widget_card_label">Viikkonro: savaitės kortelė</string>
+    <string name="widget_card_desc">Savaitės numeris, data, intervalas ir artimiausia šventė.</string>
+    <string name="widget_strip_label">Viikkonro: savaitės juosta</string>
+    <string name="widget_strip_desc">Septynios einamosios savaitės dienos.</string>
+    <string name="widget_month_label">Viikkonro: mėnuo</string>
+    <string name="widget_month_desc">Mėnesio tinklelis su ISO savaičių stulpeliu.</string>
+    <string name="widget_countdown_label">Viikkonro: atgalinis skaičiavimas</string>
+    <string name="widget_countdown_desc">Dienos iki artimiausios šventės.</string>
+    <string name="widget_holidays_label">Viikkonro: šventės ir vėliavos dienos</string>
+    <string name="widget_holidays_desc">Artimiausia šventė ir artimiausia vėliavos diena.</string>
+    <string name="widget_school_label">Viikkonro: mokinių atostogos</string>
+    <string name="widget_school_desc">Artimiausios pasirinkto miesto mokinių atostogos.</string>
+</resources>

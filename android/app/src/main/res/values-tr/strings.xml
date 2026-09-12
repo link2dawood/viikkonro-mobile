@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_week">Hafta</string>
+    <string name="widget_week_of">Hafta %1$d / %2$d</string>
+    <string name="widget_today">bugün</string>
+    <string name="widget_day_one">1 gün</string>
+    <string name="widget_day_many">%1$d gün</string>
+    <string name="widget_estimated">tahmini</string>
+    <string name="widget_unknown">yayımlanmadı</string>
+    <string name="widget_next_holiday">Sonraki resmî tatil</string>
+    <string name="widget_next_flag_day">Sonraki bayrak günü</string>
+    <string name="widget_school_break">Okul tatili</string>
+    <string name="widget_winter_break">Yarıyıl tatili</string>
+    <string name="widget_autumn_break">Sonbahar tatili</string>
+    <string name="widget_no_data">Veri yok</string>
+    <string name="widget_mini_label">Viikkonro: hafta</string>
+    <string name="widget_mini_desc">Geçerli ISO hafta numarası.</string>
+    <string name="widget_card_label">Viikkonro: hafta kartı</string>
+    <string name="widget_card_desc">Hafta numarası, tarih, aralık ve sonraki resmî tatil.</string>
+    <string name="widget_strip_label">Viikkonro: hafta şeridi</string>
+    <string name="widget_strip_desc">Geçerli haftanın yedi günü.</string>
+    <string name="widget_month_label">Viikkonro: ay</string>
+    <string name="widget_month_desc">ISO hafta sütunlu ay ızgarası.</string>
+    <string name="widget_countdown_label">Viikkonro: geri sayım</string>
+    <string name="widget_countdown_desc">Sonraki resmî tatile kalan gün.</string>
+    <string name="widget_holidays_label">Viikkonro: tatiller ve bayrak günleri</string>
+    <string name="widget_holidays_desc">Sonraki resmî tatil ve sonraki bayrak günü.</string>
+    <string name="widget_school_label">Viikkonro: okul tatilleri</string>
+    <string name="widget_school_desc">Seçili şehrin sonraki okul tatili.</string>
+</resources>

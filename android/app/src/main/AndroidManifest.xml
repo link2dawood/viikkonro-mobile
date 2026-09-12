@@ -1,6 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Needed to re-arm the midnight widget job after a reboot (FP-W10). -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
     <application
-        android:label="viikkonro"
+        android:label="Viikkonro"
+        android:enableOnBackInvokedCallback="true"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -24,7 +28,109 @@
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+            <!-- Widget taps (FP-W12). Site association for https:// links is a
+                 separate piece of work and is not declared here yet. -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="viikkonro" android:host="widget"/>
+            </intent-filter>
         </activity>
+
+        <!-- FP-W01: seven separate providers, so the picker lists seven entries. -->
+        <receiver
+            android:name=".widget.WeekMiniReceiver"
+            android:exported="true"
+            android:label="@string/widget_mini_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_week_mini"/>
+        </receiver>
+        <receiver
+            android:name=".widget.WeekCardReceiver"
+            android:exported="true"
+            android:label="@string/widget_card_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_week_card"/>
+        </receiver>
+        <receiver
+            android:name=".widget.WeekStripReceiver"
+            android:exported="true"
+            android:label="@string/widget_strip_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_week_strip"/>
+        </receiver>
+        <receiver
+            android:name=".widget.MonthReceiver"
+            android:exported="true"
+            android:label="@string/widget_month_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_month"/>
+        </receiver>
+        <receiver
+            android:name=".widget.CountdownReceiver"
+            android:exported="true"
+            android:label="@string/widget_countdown_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_countdown"/>
+        </receiver>
+        <receiver
+            android:name=".widget.HolidaysReceiver"
+            android:exported="true"
+            android:label="@string/widget_holidays_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_holidays"/>
+        </receiver>
+        <receiver
+            android:name=".widget.SchoolHolidayReceiver"
+            android:exported="true"
+            android:label="@string/widget_school_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_school"/>
+        </receiver>
+
+        <!-- FP-W11: the widgets follow a clock, time-zone or locale change, and
+             re-book the midnight job after a reboot or an app update. -->
+        <receiver
+            android:name=".widget.DateChangeReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.DATE_CHANGED"/>
+                <action android:name="android.intent.action.TIMEZONE_CHANGED"/>
+                <action android:name="android.intent.action.TIME_SET"/>
+                <action android:name="android.intent.action.LOCALE_CHANGED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
+
         <!-- Don't delete the meta-data below.
              This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
         <meta-data

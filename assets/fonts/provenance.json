@@ -1,0 +1,86 @@
+[
+  {
+    "asset": "assets/fonts/Inter-400.ttf",
+    "source": "inter-variable-latin.3100e775.woff2",
+    "sourceSha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+    "weight": 400
+  },
+  {
+    "asset": "assets/fonts/Inter-500.ttf",
+    "source": "inter-variable-latin.3100e775.woff2",
+    "sourceSha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+    "weight": 500
+  },
+  {
+    "asset": "assets/fonts/Inter-600.ttf",
+    "source": "inter-variable-latin.3100e775.woff2",
+    "sourceSha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+    "weight": 600
+  },
+  {
+    "asset": "assets/fonts/Inter-700.ttf",
+    "source": "inter-variable-latin.3100e775.woff2",
+    "sourceSha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+    "weight": 700
+  },
+  {
+    "asset": "assets/fonts/Inter-800.ttf",
+    "source": "inter-variable-latin.3100e775.woff2",
+    "sourceSha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+    "weight": 800
+  },
+  {
+    "asset": "assets/fonts/Bricolage-400.ttf",
+    "source": "bricolage-grotesque-variable-latin.a79fdb52.woff2",
+    "sourceSha256": "a79fdb52d4a5c76552452f69202add96e287401fff03d3e8c0e38b4dcb5a99cd",
+    "weight": 400
+  },
+  {
+    "asset": "assets/fonts/Bricolage-500.ttf",
+    "source": "bricolage-grotesque-variable-latin.a79fdb52.woff2",
+    "sourceSha256": "a79fdb52d4a5c76552452f69202add96e287401fff03d3e8c0e38b4dcb5a99cd",
+    "weight": 500
+  },
+  {
+    "asset": "assets/fonts/Bricolage-600.ttf",
+    "source": "bricolage-grotesque-variable-latin.a79fdb52.woff2",
+    "sourceSha256": "a79fdb52d4a5c76552452f69202add96e287401fff03d3e8c0e38b4dcb5a99cd",
+    "weight": 600
+  },
+  {
+    "asset": "assets/fonts/Bricolage-700.ttf",
+    "source": "bricolage-grotesque-variable-latin.a79fdb52.woff2",
+    "sourceSha256": "a79fdb52d4a5c76552452f69202add96e287401fff03d3e8c0e38b4dcb5a99cd",
+    "weight": 700
+  },
+  {
+    "asset": "assets/fonts/Bricolage-800.ttf",
+    "source": "bricolage-grotesque-variable-latin.a79fdb52.woff2",
+    "sourceSha256": "a79fdb52d4a5c76552452f69202add96e287401fff03d3e8c0e38b4dcb5a99cd",
+    "weight": 800
+  },
+  {
+    "asset": "assets/fonts/PlexMono-400.ttf",
+    "source": "ibm-plex-mono-400-latin.08949f72.woff2",
+    "sourceSha256": "08949f728dc52d528e69b1667d15c89a5686a4ee9a296ff90983985f99c380f7",
+    "weight": 400
+  },
+  {
+    "asset": "assets/fonts/PlexMono-500.ttf",
+    "source": "ibm-plex-mono-500-latin.01d28544.woff2",
+    "sourceSha256": "01d285447409c8a588692162439a038b8cbd7871309ee20267b0d2d91c6e8e22",
+    "weight": 500
+  },
+  {
+    "asset": "assets/fonts/PlexMono-600.ttf",
+    "source": "ibm-plex-mono-600-latin.0d1f0b8d.woff2",
+    "sourceSha256": "0d1f0b8d0722224e32e9f28261bdc86c79115be73444ae5eceb73976a1bcdf83",
+    "weight": 600
+  },
+  {
+    "asset": "assets/fonts/PlexMono-700.ttf",
+    "source": "ibm-plex-mono-700-latin.4f84d86c.woff2",
+    "sourceSha256": "4f84d86cfd060f4ded334358ff8a4c81d4db2ed5addd568359d693f44a87765a",
+    "weight": 700
+  }
+]

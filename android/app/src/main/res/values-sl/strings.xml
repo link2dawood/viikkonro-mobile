@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_week">Teden</string>
+    <string name="widget_week_of">Teden %1$d / %2$d</string>
+    <string name="widget_today">danes</string>
+    <string name="widget_day_one">1 dan</string>
+    <string name="widget_day_many">%1$d dni</string>
+    <string name="widget_estimated">ocena</string>
+    <string name="widget_unknown">ni objavljeno</string>
+    <string name="widget_next_holiday">Naslednji praznik</string>
+    <string name="widget_next_flag_day">Naslednji dan zastav</string>
+    <string name="widget_school_break">Šolske počitnice</string>
+    <string name="widget_winter_break">Zimske počitnice</string>
+    <string name="widget_autumn_break">Jesenske počitnice</string>
+    <string name="widget_no_data">Ni podatkov</string>
+    <string name="widget_mini_label">Viikkonro: teden</string>
+    <string name="widget_mini_desc">Trenutna številka tedna ISO.</string>
+    <string name="widget_card_label">Viikkonro: kartica tedna</string>
+    <string name="widget_card_desc">Številka tedna, datum, razpon in naslednji praznik.</string>
+    <string name="widget_strip_label">Viikkonro: trak tedna</string>
+    <string name="widget_strip_desc">Sedem dni tekočega tedna.</string>
+    <string name="widget_month_label">Viikkonro: mesec</string>
+    <string name="widget_month_desc">Mesečna mreža s stolpcem tednov ISO.</string>
+    <string name="widget_countdown_label">Viikkonro: odštevanje</string>
+    <string name="widget_countdown_desc">Dnevi do naslednjega praznika.</string>
+    <string name="widget_holidays_label">Viikkonro: prazniki in dnevi zastav</string>
+    <string name="widget_holidays_desc">Naslednji praznik in naslednji dan zastav.</string>
+    <string name="widget_school_label">Viikkonro: šolske počitnice</string>
+    <string name="widget_school_desc">Naslednje šolske počitnice izbranega mesta.</string>
+</resources>

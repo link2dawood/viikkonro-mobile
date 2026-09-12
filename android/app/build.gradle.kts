@@ -1,16 +1,19 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
+    // Glance widgets are Compose; the widgets are the only Compose in the app.
+    id("org.jetbrains.kotlin.plugin.compose")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
 
 android {
-    namespace = "fi.viikkonro.viikkonro"
-    compileSdk = flutter.compileSdkVersion
+    namespace = "fi.viikkonro.app"
+    compileSdk = 36
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
@@ -19,24 +22,43 @@ android {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
 
+    buildFeatures {
+        compose = true
+    }
+
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "fi.viikkonro.viikkonro"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
+        applicationId = "fi.viikkonro.app"
+        minSdk = 24
+        targetSdk = 36
         versionCode = flutter.versionCode
         versionName = flutter.versionName
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix = ".debug"
+            versionNameSuffix = "-debug"
+        }
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            // Configure production signing before distributing a release.
         }
     }
+
+    sourceSets.getByName("test").resources.srcDir("../../test/fixtures")
+    // The widget parser test reads the same bundled snapshot the widgets do.
+    sourceSets.getByName("test").resources.srcDir("../../assets/data")
+}
+
+dependencies {
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
+    // Home screen widgets. These run with the Flutter engine dead, so nothing
+    // here may reach into the Dart side or a Flutter-managed cache.
+    implementation(platform("androidx.compose:compose-bom:2025.08.00"))
+    implementation("androidx.glance:glance-appwidget:1.1.1")
+    implementation("androidx.glance:glance-material3:1.1.1")
+    implementation("androidx.work:work-runtime-ktx:2.10.2")
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.json:json:20240303")
 }
 
 flutter {

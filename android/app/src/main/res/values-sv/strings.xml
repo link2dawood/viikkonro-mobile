@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_week">Vecka</string>
+    <string name="widget_week_of">Vecka %1$d / %2$d</string>
+    <string name="widget_today">i dag</string>
+    <string name="widget_day_one">1 dag</string>
+    <string name="widget_day_many">%1$d dagar</string>
+    <string name="widget_estimated">uppskattad</string>
+    <string name="widget_unknown">ej publicerad</string>
+    <string name="widget_next_holiday">Nästa helgdag</string>
+    <string name="widget_next_flag_day">Nästa flaggdag</string>
+    <string name="widget_school_break">Skollov</string>
+    <string name="widget_winter_break">Sportlov</string>
+    <string name="widget_autumn_break">Höstlov</string>
+    <string name="widget_no_data">Inga uppgifter</string>
+    <string name="widget_mini_label">Viikkonro: vecka</string>
+    <string name="widget_mini_desc">Aktuellt ISO-veckonummer.</string>
+    <string name="widget_card_label">Viikkonro: veckokort</string>
+    <string name="widget_card_desc">Veckonummer, datum, veckans intervall och nästa helgdag.</string>
+    <string name="widget_strip_label">Viikkonro: veckoband</string>
+    <string name="widget_strip_desc">Den aktuella veckans sju dagar.</string>
+    <string name="widget_month_label">Viikkonro: månad</string>
+    <string name="widget_month_desc">Månadsrutnät med ISO-veckokolumn.</string>
+    <string name="widget_countdown_label">Viikkonro: nedräkning</string>
+    <string name="widget_countdown_desc">Dagar till nästa helgdag.</string>
+    <string name="widget_holidays_label">Viikkonro: helgdagar och flaggdagar</string>
+    <string name="widget_holidays_desc">Nästa helgdag och nästa flaggdag.</string>
+    <string name="widget_school_label">Viikkonro: skollov</string>
+    <string name="widget_school_desc">Nästa skollov för vald stad.</string>
+</resources>

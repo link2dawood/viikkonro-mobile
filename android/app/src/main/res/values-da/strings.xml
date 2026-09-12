@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_week">Uge</string>
+    <string name="widget_week_of">Uge %1$d / %2$d</string>
+    <string name="widget_today">i dag</string>
+    <string name="widget_day_one">1 dag</string>
+    <string name="widget_day_many">%1$d dage</string>
+    <string name="widget_estimated">anslået</string>
+    <string name="widget_unknown">ikke offentliggjort</string>
+    <string name="widget_next_holiday">Næste helligdag</string>
+    <string name="widget_next_flag_day">Næste flagdag</string>
+    <string name="widget_school_break">Skoleferie</string>
+    <string name="widget_winter_break">Vinterferie</string>
+    <string name="widget_autumn_break">Efterårsferie</string>
+    <string name="widget_no_data">Ingen data</string>
+    <string name="widget_mini_label">Viikkonro: uge</string>
+    <string name="widget_mini_desc">Det aktuelle ISO-ugenummer.</string>
+    <string name="widget_card_label">Viikkonro: ugekort</string>
+    <string name="widget_card_desc">Ugenummer, dato, ugens interval og næste helligdag.</string>
+    <string name="widget_strip_label">Viikkonro: ugebånd</string>
+    <string name="widget_strip_desc">Den aktuelle uges syv dage.</string>
+    <string name="widget_month_label">Viikkonro: måned</string>
+    <string name="widget_month_desc">Månedsgitter med ISO-ugekolonne.</string>
+    <string name="widget_countdown_label">Viikkonro: nedtælling</string>
+    <string name="widget_countdown_desc">Dage til næste helligdag.</string>
+    <string name="widget_holidays_label">Viikkonro: helligdage og flagdage</string>
+    <string name="widget_holidays_desc">Næste helligdag og næste flagdag.</string>
+    <string name="widget_school_label">Viikkonro: skoleferier</string>
+    <string name="widget_school_desc">Næste skoleferie for den valgte by.</string>
+</resources>

@@ -1,30 +1,95 @@
-// This is a basic Flutter widget test.
-//
-// To perform an interaction with a widget in your test, use the WidgetTester
-// utility in the flutter_test package. For example, you can send tap and scroll
-// gestures. You can also use WidgetTester to find child widgets in the widget
-// tree, read text, and verify that the values of widget properties are correct.
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:viikkonro/main.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:viikkonro/app.dart';
+import 'package:viikkonro/core/data/calendar_repository.dart';
+import 'package:viikkonro/core/date/iso_week.dart';
+import 'package:viikkonro/core/settings/app_settings.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  // 2026-09-11 is a Friday in ISO week 37 of a 53-week year, which makes it a
+  // useful fixed "today" for rollover, week-count and boundary assertions.
+  final fixedToday = DateTime(2026, 9, 11, 10, 30);
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  late CalendarRepository repository;
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+  setUpAll(() async {
+    TestWidgetsFlutterBinding.ensureInitialized();
+    repository = await CalendarRepository.load();
+  });
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+  Future<AppSettings> newSettings() async {
+    SharedPreferences.setMockInitialValues({'language': 'fi'});
+    return AppSettings(await SharedPreferences.getInstance());
+  }
+
+  /// Pumps the app, runs [body], then unmounts so the midnight timer is
+  /// cancelled before the test framework checks for pending timers.
+  Future<void> runApp(WidgetTester tester, Future<void> Function() body, {DateTime? now}) async {
+    var clock = now ?? fixedToday;
+    await tester.pumpWidget(ViikkonroApp(settings: await newSettings(), repository: repository, clock: () => clock));
+    await tester.pumpAndSettle();
+    await body();
+    await tester.pumpWidget(const SizedBox.shrink());
+  }
+
+  testWidgets('the app opens on the home screen showing the current week', (tester) async {
+    await runApp(tester, () async {
+      expect(find.text('${isoWeek(fixedToday)}'), findsWidgets);
+      expect(find.text('Etusivu'), findsWidgets);
+    });
+  });
+
+  testWidgets('a week route lists all seven days of that week', (tester) async {
+    await runApp(tester, () async {
+      final navigator = tester.state<NavigatorState>(find.byType(Navigator));
+      navigator.pushNamed('/viikko-37-2026');
+      await tester.pumpAndSettle();
+      expect(find.text('Viikko 37/2026'), findsWidgets);
+      for (final day in ['ma', 'ti', 'ke', 'to', 'pe', 'la', 'su']) {
+        expect(find.text(day), findsWidgets, reason: day);
+      }
+      // 2026-09-11 is inside week 37, so it renders with its Finnish long form.
+      expect(find.text('11. syyskuuta 2026'), findsOneWidget);
+    });
+  });
+
+  testWidgets('an unrecognised path opens the home screen, not a 404', (tester) async {
+    await runApp(tester, () async {
+      final navigator = tester.state<NavigatorState>(find.byType(Navigator));
+      navigator.pushNamed('/ei-tallaista-sivua');
+      await tester.pumpAndSettle();
+      expect(find.byType(AppShell), findsWidgets);
+      expect(find.text('Sivua ei löytynyt'), findsNothing);
+    });
+  });
+
+  testWidgets('the year grid renders every week of a 53-week year', (tester) async {
+    await runApp(tester, () async {
+      final navigator = tester.state<NavigatorState>(find.byType(Navigator));
+      navigator.pushNamed('/vuosi-2026');
+      await tester.pumpAndSettle();
+      expect(weeksInIsoYear(2026), 53);
+      final list = tester.widget<ListView>(find.byType(ListView).first);
+      expect((list.childrenDelegate as SliverChildBuilderDelegate).childCount, 53);
+    });
+  });
+
+  testWidgets('midnight rollover moves the app to the new day unprompted', (tester) async {
+    var clock = DateTime(2026, 12, 31, 23, 59, 30);
+    final settings = await newSettings();
+    await tester.pumpWidget(ViikkonroApp(settings: settings, repository: repository, clock: () => clock));
+    await tester.pumpAndSettle();
+    expect(find.text('31. joulukuuta 2026'), findsWidgets);
+
+    clock = DateTime(2027, 1, 1, 0, 0, 5);
+    await tester.pump(const Duration(seconds: 31));
+    await tester.pumpAndSettle();
+    // Crossing into an ISO year whose week 53 ran to 3 January 2027.
+    expect(find.text('1. tammikuuta 2027'), findsWidgets);
+    expect(isoWeek(clock), 53);
+    expect(isoYear(clock), 2026);
+
+    await tester.pumpWidget(const SizedBox.shrink());
   });
 }

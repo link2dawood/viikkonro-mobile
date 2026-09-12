@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_week">Vika</string>
+    <string name="widget_week_of">Vika %1$d / %2$d</string>
+    <string name="widget_today">í dag</string>
+    <string name="widget_day_one">1 dagur</string>
+    <string name="widget_day_many">%1$d dagar</string>
+    <string name="widget_estimated">áætlað</string>
+    <string name="widget_unknown">ekki birt</string>
+    <string name="widget_next_holiday">Næsti frídagur</string>
+    <string name="widget_next_flag_day">Næsti fánadagur</string>
+    <string name="widget_school_break">Skólafrí</string>
+    <string name="widget_winter_break">Vetrarfrí</string>
+    <string name="widget_autumn_break">Haustfrí</string>
+    <string name="widget_no_data">Engin gögn</string>
+    <string name="widget_mini_label">Viikkonro: vika</string>
+    <string name="widget_mini_desc">Núverandi ISO-vikunúmer.</string>
+    <string name="widget_card_label">Viikkonro: vikuspjald</string>
+    <string name="widget_card_desc">Vikunúmer, dagsetning, vikubil og næsti frídagur.</string>
+    <string name="widget_strip_label">Viikkonro: vikuborði</string>
+    <string name="widget_strip_desc">Sjö dagar yfirstandandi viku.</string>
+    <string name="widget_month_label">Viikkonro: mánuður</string>
+    <string name="widget_month_desc">Mánaðarrit með ISO-vikudálki.</string>
+    <string name="widget_countdown_label">Viikkonro: niðurtalning</string>
+    <string name="widget_countdown_desc">Dagar í næsta frídag.</string>
+    <string name="widget_holidays_label">Viikkonro: frídagar og fánadagar</string>
+    <string name="widget_holidays_desc">Næsti frídagur og næsti fánadagur.</string>
+    <string name="widget_school_label">Viikkonro: skólafrí</string>
+    <string name="widget_school_desc">Næsta skólafrí fyrir valda borg.</string>
+</resources>

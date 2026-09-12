@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_week">Semana</string>
+    <string name="widget_week_of">Semana %1$d / %2$d</string>
+    <string name="widget_today">hoy</string>
+    <string name="widget_day_one">1 día</string>
+    <string name="widget_day_many">%1$d días</string>
+    <string name="widget_estimated">estimado</string>
+    <string name="widget_unknown">sin publicar</string>
+    <string name="widget_next_holiday">Próximo día festivo</string>
+    <string name="widget_next_flag_day">Próximo día de bandera</string>
+    <string name="widget_school_break">Vacaciones escolares</string>
+    <string name="widget_winter_break">Vacaciones de invierno</string>
+    <string name="widget_autumn_break">Vacaciones de otoño</string>
+    <string name="widget_no_data">Sin datos</string>
+    <string name="widget_mini_label">Viikkonro: semana</string>
+    <string name="widget_mini_desc">El número de semana ISO actual.</string>
+    <string name="widget_card_label">Viikkonro: tarjeta de la semana</string>
+    <string name="widget_card_desc">Número de semana, fecha, intervalo y próximo día festivo.</string>
+    <string name="widget_strip_label">Viikkonro: franja semanal</string>
+    <string name="widget_strip_desc">Los siete días de la semana actual.</string>
+    <string name="widget_month_label">Viikkonro: mes</string>
+    <string name="widget_month_desc">Cuadrícula mensual con la columna de semanas ISO.</string>
+    <string name="widget_countdown_label">Viikkonro: cuenta atrás</string>
+    <string name="widget_countdown_desc">Días hasta el próximo día festivo.</string>
+    <string name="widget_holidays_label">Viikkonro: festivos y días de bandera</string>
+    <string name="widget_holidays_desc">El próximo día festivo y el próximo día de bandera.</string>
+    <string name="widget_school_label">Viikkonro: vacaciones escolares</string>
+    <string name="widget_school_desc">Las próximas vacaciones escolares de la ciudad elegida.</string>
+</resources>

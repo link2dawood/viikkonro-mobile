@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_week">Tydzień</string>
+    <string name="widget_week_of">Tydzień %1$d / %2$d</string>
+    <string name="widget_today">dzisiaj</string>
+    <string name="widget_day_one">1 dzień</string>
+    <string name="widget_day_many">%1$d dni</string>
+    <string name="widget_estimated">szacunkowe</string>
+    <string name="widget_unknown">nieopublikowane</string>
+    <string name="widget_next_holiday">Następne święto</string>
+    <string name="widget_next_flag_day">Następny dzień flagowy</string>
+    <string name="widget_school_break">Ferie szkolne</string>
+    <string name="widget_winter_break">Ferie zimowe</string>
+    <string name="widget_autumn_break">Ferie jesienne</string>
+    <string name="widget_no_data">Brak danych</string>
+    <string name="widget_mini_label">Viikkonro: tydzień</string>
+    <string name="widget_mini_desc">Bieżący numer tygodnia ISO.</string>
+    <string name="widget_card_label">Viikkonro: karta tygodnia</string>
+    <string name="widget_card_desc">Numer tygodnia, data, zakres i najbliższe święto.</string>
+    <string name="widget_strip_label">Viikkonro: pasek tygodnia</string>
+    <string name="widget_strip_desc">Siedem dni bieżącego tygodnia.</string>
+    <string name="widget_month_label">Viikkonro: miesiąc</string>
+    <string name="widget_month_desc">Siatka miesiąca z kolumną tygodni ISO.</string>
+    <string name="widget_countdown_label">Viikkonro: odliczanie</string>
+    <string name="widget_countdown_desc">Dni do najbliższego święta.</string>
+    <string name="widget_holidays_label">Viikkonro: święta i dni flagowe</string>
+    <string name="widget_holidays_desc">Najbliższe święto i najbliższy dzień flagowy.</string>
+    <string name="widget_school_label">Viikkonro: ferie szkolne</string>
+    <string name="widget_school_desc">Najbliższe ferie szkolne wybranego miasta.</string>
+</resources>

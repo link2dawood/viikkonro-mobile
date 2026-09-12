@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_week">Settimana</string>
+    <string name="widget_week_of">Settimana %1$d / %2$d</string>
+    <string name="widget_today">oggi</string>
+    <string name="widget_day_one">1 giorno</string>
+    <string name="widget_day_many">%1$d giorni</string>
+    <string name="widget_estimated">stimato</string>
+    <string name="widget_unknown">non pubblicato</string>
+    <string name="widget_next_holiday">Prossimo giorno festivo</string>
+    <string name="widget_next_flag_day">Prossimo giorno di bandiera</string>
+    <string name="widget_school_break">Vacanze scolastiche</string>
+    <string name="widget_winter_break">Vacanze invernali</string>
+    <string name="widget_autumn_break">Vacanze autunnali</string>
+    <string name="widget_no_data">Nessun dato</string>
+    <string name="widget_mini_label">Viikkonro: settimana</string>
+    <string name="widget_mini_desc">Il numero della settimana ISO attuale.</string>
+    <string name="widget_card_label">Viikkonro: scheda della settimana</string>
+    <string name="widget_card_desc">Numero della settimana, data, intervallo e prossimo giorno festivo.</string>
+    <string name="widget_strip_label">Viikkonro: barra della settimana</string>
+    <string name="widget_strip_desc">I sette giorni della settimana in corso.</string>
+    <string name="widget_month_label">Viikkonro: mese</string>
+    <string name="widget_month_desc">Griglia mensile con la colonna delle settimane ISO.</string>
+    <string name="widget_countdown_label">Viikkonro: conto alla rovescia</string>
+    <string name="widget_countdown_desc">Giorni al prossimo giorno festivo.</string>
+    <string name="widget_holidays_label">Viikkonro: festività e giorni di bandiera</string>
+    <string name="widget_holidays_desc">Il prossimo giorno festivo e il prossimo giorno di bandiera.</string>
+    <string name="widget_school_label">Viikkonro: vacanze scolastiche</string>
+    <string name="widget_school_desc">Le prossime vacanze scolastiche della città scelta.</string>
+</resources>

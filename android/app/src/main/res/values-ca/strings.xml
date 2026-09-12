@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_week">Setmana</string>
+    <string name="widget_week_of">Setmana %1$d / %2$d</string>
+    <string name="widget_today">avui</string>
+    <string name="widget_day_one">1 dia</string>
+    <string name="widget_day_many">%1$d dies</string>
+    <string name="widget_estimated">estimat</string>
+    <string name="widget_unknown">no publicat</string>
+    <string name="widget_next_holiday">Proper dia festiu</string>
+    <string name="widget_next_flag_day">Proper dia de bandera</string>
+    <string name="widget_school_break">Vacances escolars</string>
+    <string name="widget_winter_break">Vacances d’hivern</string>
+    <string name="widget_autumn_break">Vacances de tardor</string>
+    <string name="widget_no_data">Sense dades</string>
+    <string name="widget_mini_label">Viikkonro: setmana</string>
+    <string name="widget_mini_desc">El número de setmana ISO actual.</string>
+    <string name="widget_card_label">Viikkonro: fitxa de la setmana</string>
+    <string name="widget_card_desc">Número de setmana, data, interval i proper dia festiu.</string>
+    <string name="widget_strip_label">Viikkonro: franja setmanal</string>
+    <string name="widget_strip_desc">Els set dies de la setmana actual.</string>
+    <string name="widget_month_label">Viikkonro: mes</string>
+    <string name="widget_month_desc">Graella mensual amb la columna de setmanes ISO.</string>
+    <string name="widget_countdown_label">Viikkonro: compte enrere</string>
+    <string name="widget_countdown_desc">Dies fins al proper dia festiu.</string>
+    <string name="widget_holidays_label">Viikkonro: festius i dies de bandera</string>
+    <string name="widget_holidays_desc">El proper dia festiu i el proper dia de bandera.</string>
+    <string name="widget_school_label">Viikkonro: vacances escolars</string>
+    <string name="widget_school_desc">Les properes vacances escolars de la ciutat triada.</string>
+</resources>

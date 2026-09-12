@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand_card">#FF14251F</color>
+    <color name="brand_ink">#FFE7ECEB</color>
+    <color name="brand_soft">#FFB1C3BB</color>
+    <color name="brand_accent">#FF91D4B7</color>
+    <color name="brand_divider">#FF34483E</color>
+    <color name="brand_selected">#FF24453A</color>
+</resources>

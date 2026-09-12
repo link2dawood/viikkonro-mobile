@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_week">Viikko</string>
+    <string name="widget_week_of">Viikko %1$d / %2$d</string>
+    <string name="widget_today">tänään</string>
+    <string name="widget_day_one">1 päivä</string>
+    <string name="widget_day_many">%1$d päivää</string>
+    <string name="widget_estimated">arvio</string>
+    <string name="widget_unknown">ei julkaistu</string>
+    <string name="widget_next_holiday">Seuraava pyhäpäivä</string>
+    <string name="widget_next_flag_day">Seuraava liputuspäivä</string>
+    <string name="widget_school_break">Koululoma</string>
+    <string name="widget_winter_break">Talviloma</string>
+    <string name="widget_autumn_break">Syysloma</string>
+    <string name="widget_no_data">Ei tietoa</string>
+
+    <string name="widget_mini_label">Viikkonro: viikko</string>
+    <string name="widget_mini_desc">Kuluva ISO-viikkonumero.</string>
+    <string name="widget_card_label">Viikkonro: viikkokortti</string>
+    <string name="widget_card_desc">Viikkonumero, päivämäärä, viikon väli ja seuraava pyhäpäivä.</string>
+    <string name="widget_strip_label">Viikkonro: viikkonauha</string>
+    <string name="widget_strip_desc">Kuluvan viikon seitsemän päivää.</string>
+    <string name="widget_month_label">Viikkonro: kuukausi</string>
+    <string name="widget_month_desc">Kuukausiruudukko ja viikkonumerot.</string>
+    <string name="widget_countdown_label">Viikkonro: laskuri</string>
+    <string name="widget_countdown_desc">Päiviä seuraavaan pyhäpäivään.</string>
+    <string name="widget_holidays_label">Viikkonro: pyhät ja liputus</string>
+    <string name="widget_holidays_desc">Seuraava pyhäpäivä ja seuraava liputuspäivä.</string>
+    <string name="widget_school_label">Viikkonro: koululomat</string>
+    <string name="widget_school_desc">Valitun kaupungin seuraava koululoma.</string>
+
+</resources>

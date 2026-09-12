@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_week">Week</string>
+    <string name="widget_week_of">Week %1$d / %2$d</string>
+    <string name="widget_today">vandaag</string>
+    <string name="widget_day_one">1 dag</string>
+    <string name="widget_day_many">%1$d dagen</string>
+    <string name="widget_estimated">geschat</string>
+    <string name="widget_unknown">niet gepubliceerd</string>
+    <string name="widget_next_holiday">Volgende feestdag</string>
+    <string name="widget_next_flag_day">Volgende vlaggendag</string>
+    <string name="widget_school_break">Schoolvakantie</string>
+    <string name="widget_winter_break">Voorjaarsvakantie</string>
+    <string name="widget_autumn_break">Herfstvakantie</string>
+    <string name="widget_no_data">Geen gegevens</string>
+    <string name="widget_mini_label">Viikkonro: week</string>
+    <string name="widget_mini_desc">Het huidige ISO-weeknummer.</string>
+    <string name="widget_card_label">Viikkonro: weekkaart</string>
+    <string name="widget_card_desc">Weeknummer, datum, weekbereik en volgende feestdag.</string>
+    <string name="widget_strip_label">Viikkonro: weekbalk</string>
+    <string name="widget_strip_desc">De zeven dagen van de huidige week.</string>
+    <string name="widget_month_label">Viikkonro: maand</string>
+    <string name="widget_month_desc">Maandrooster met de ISO-weekkolom.</string>
+    <string name="widget_countdown_label">Viikkonro: aftelling</string>
+    <string name="widget_countdown_desc">Dagen tot de volgende feestdag.</string>
+    <string name="widget_holidays_label">Viikkonro: feestdagen en vlaggendagen</string>
+    <string name="widget_holidays_desc">De volgende feestdag en de volgende vlaggendag.</string>
+    <string name="widget_school_label">Viikkonro: schoolvakanties</string>
+    <string name="widget_school_desc">De volgende schoolvakantie van de gekozen stad.</string>
+</resources>

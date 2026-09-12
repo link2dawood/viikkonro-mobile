@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_week">Semaine</string>
+    <string name="widget_week_of">Semaine %1$d / %2$d</string>
+    <string name="widget_today">aujourd’hui</string>
+    <string name="widget_day_one">1 jour</string>
+    <string name="widget_day_many">%1$d jours</string>
+    <string name="widget_estimated">estimé</string>
+    <string name="widget_unknown">non publié</string>
+    <string name="widget_next_holiday">Prochain jour férié</string>
+    <string name="widget_next_flag_day">Prochain jour de pavoisement</string>
+    <string name="widget_school_break">Vacances scolaires</string>
+    <string name="widget_winter_break">Vacances d’hiver</string>
+    <string name="widget_autumn_break">Vacances d’automne</string>
+    <string name="widget_no_data">Aucune donnée</string>
+    <string name="widget_mini_label">Viikkonro : semaine</string>
+    <string name="widget_mini_desc">Le numéro de semaine ISO actuel.</string>
+    <string name="widget_card_label">Viikkonro : carte de la semaine</string>
+    <string name="widget_card_desc">Numéro de semaine, date, période et prochain jour férié.</string>
+    <string name="widget_strip_label">Viikkonro : bandeau de la semaine</string>
+    <string name="widget_strip_desc">Les sept jours de la semaine en cours.</string>
+    <string name="widget_month_label">Viikkonro : mois</string>
+    <string name="widget_month_desc">Grille mensuelle avec la colonne des semaines ISO.</string>
+    <string name="widget_countdown_label">Viikkonro : compte à rebours</string>
+    <string name="widget_countdown_desc">Jours restants avant le prochain jour férié.</string>
+    <string name="widget_holidays_label">Viikkonro : jours fériés et pavoisement</string>
+    <string name="widget_holidays_desc">Le prochain jour férié et le prochain jour de pavoisement.</string>
+    <string name="widget_school_label">Viikkonro : vacances scolaires</string>
+    <string name="widget_school_desc">Les prochaines vacances scolaires de la ville choisie.</string>
+</resources>

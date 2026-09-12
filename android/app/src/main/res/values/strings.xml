@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Widget strings live here, not in the Dart ARB files: the widgets render
+         with the Flutter engine dead and cannot reach Dart resources (FP-G07). -->
+    <string name="widget_week">Week</string>
+    <string name="widget_week_of">Week %1$d / %2$d</string>
+    <string name="widget_today">today</string>
+    <string name="widget_day_one">1 day</string>
+    <string name="widget_day_many">%1$d days</string>
+    <string name="widget_estimated">estimated</string>
+    <string name="widget_unknown">not published</string>
+    <string name="widget_next_holiday">Next public holiday</string>
+    <string name="widget_next_flag_day">Next flag day</string>
+    <string name="widget_school_break">School break</string>
+    <string name="widget_winter_break">Winter break</string>
+    <string name="widget_autumn_break">Autumn break</string>
+    <string name="widget_no_data">No data</string>
+
+    <string name="widget_mini_label">Viikkonro: week</string>
+    <string name="widget_mini_desc">The current ISO week number.</string>
+    <string name="widget_card_label">Viikkonro: week card</string>
+    <string name="widget_card_desc">Week number, date, span and the next public holiday.</string>
+    <string name="widget_strip_label">Viikkonro: week strip</string>
+    <string name="widget_strip_desc">The seven days of the current week.</string>
+    <string name="widget_month_label">Viikkonro: month</string>
+    <string name="widget_month_desc">A month grid with the ISO week gutter.</string>
+    <string name="widget_countdown_label">Viikkonro: countdown</string>
+    <string name="widget_countdown_desc">Days until the next public holiday.</string>
+    <string name="widget_holidays_label">Viikkonro: holidays and flag days</string>
+    <string name="widget_holidays_desc">The next public holiday and the next flag day.</string>
+    <string name="widget_school_label">Viikkonro: school holidays</string>
+    <string name="widget_school_desc">The next school break for the selected city.</string>
+
+</resources>

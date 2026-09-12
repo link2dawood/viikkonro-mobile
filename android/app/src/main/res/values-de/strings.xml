@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_week">Woche</string>
+    <string name="widget_week_of">Woche %1$d / %2$d</string>
+    <string name="widget_today">heute</string>
+    <string name="widget_day_one">1 Tag</string>
+    <string name="widget_day_many">%1$d Tage</string>
+    <string name="widget_estimated">geschätzt</string>
+    <string name="widget_unknown">nicht veröffentlicht</string>
+    <string name="widget_next_holiday">Nächster Feiertag</string>
+    <string name="widget_next_flag_day">Nächster Beflaggungstag</string>
+    <string name="widget_school_break">Schulferien</string>
+    <string name="widget_winter_break">Winterferien</string>
+    <string name="widget_autumn_break">Herbstferien</string>
+    <string name="widget_no_data">Keine Daten</string>
+    <string name="widget_mini_label">Viikkonro: Woche</string>
+    <string name="widget_mini_desc">Die aktuelle Kalenderwoche.</string>
+    <string name="widget_card_label">Viikkonro: Wochenkarte</string>
+    <string name="widget_card_desc">Kalenderwoche, Datum, Wochenzeitraum und nächster Feiertag.</string>
+    <string name="widget_strip_label">Viikkonro: Wochenleiste</string>
+    <string name="widget_strip_desc">Die sieben Tage der aktuellen Woche.</string>
+    <string name="widget_month_label">Viikkonro: Monat</string>
+    <string name="widget_month_desc">Monatsraster mit ISO-Wochenspalte.</string>
+    <string name="widget_countdown_label">Viikkonro: Countdown</string>
+    <string name="widget_countdown_desc">Tage bis zum nächsten Feiertag.</string>
+    <string name="widget_holidays_label">Viikkonro: Feiertage und Beflaggung</string>
+    <string name="widget_holidays_desc">Nächster Feiertag und nächster Beflaggungstag.</string>
+    <string name="widget_school_label">Viikkonro: Schulferien</string>
+    <string name="widget_school_desc">Die nächsten Schulferien der gewählten Stadt.</string>
+</resources>
