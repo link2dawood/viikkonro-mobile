@@ -39,7 +39,8 @@ class AppLocalizationsLv extends AppLocalizations {
   String get homeTitle => 'Kura nedēļa ir tagad?';
 
   @override
-  String get homeLead => 'Nedēļu numuri, datumi un svarīgas kalendāra dienas vienuviet.';
+  String get homeLead =>
+      'Nedēļu numuri, datumi un svarīgas kalendāra dienas vienuviet.';
 
   @override
   String get rightNow => 'TIEŠI TAGAD';
@@ -181,10 +182,12 @@ class AppLocalizationsLv extends AppLocalizations {
   String get unknown => 'Vēl nav publicēts';
 
   @override
-  String get noSchoolData => 'Par šo gadu nav publicētu datu par skolēnu brīvdienām.';
+  String get noSchoolData =>
+      'Par šo gadu nav publicētu datu par skolēnu brīvdienām.';
 
   @override
-  String get schoolCoverage => 'Tavas skolas datumi var atšķirties no pašvaldības kalendāra.';
+  String get schoolCoverage =>
+      'Tavas skolas datumi var atšķirties no pašvaldības kalendāra.';
 
   @override
   String get winterBreak => 'Ziemas brīvlaiks';
@@ -228,13 +231,16 @@ class AppLocalizationsLv extends AppLocalizations {
   String get lastDate => 'Beigu datums';
 
   @override
-  String get invalidRange => 'Beigu datumam jābūt tādam pašam vai vēlākam par sākuma datumu.';
+  String get invalidRange =>
+      'Beigu datumam jābūt tādam pašam vai vēlākam par sākuma datumu.';
 
   @override
-  String get distanceNote => 'Rezultāts ir attālums starp datumiem. Secībai nav nozīmes.';
+  String get distanceNote =>
+      'Rezultāts ir attālums starp datumiem. Secībai nav nozīmes.';
 
   @override
-  String get workingNote => 'Abi datumi tiek ieskaitīti. Darbdienas ir no pirmdienas līdz piektdienai, izņemot oficiālās svētku dienas. Ziemassvētku vakars un Jāņu vakars skaitās darbdienas.';
+  String get workingNote =>
+      'Abi datumi tiek ieskaitīti. Darbdienas ir no pirmdienas līdz piektdienai, izņemot oficiālās svētku dienas. Ziemassvētku vakars un Jāņu vakars skaitās darbdienas.';
 
   @override
   String get yearWeeks => 'Visas gada nedēļas';
@@ -309,10 +315,12 @@ class AppLocalizationsLv extends AppLocalizations {
   String get firstScreen => 'Sākuma skats';
 
   @override
-  String get privacyNote => 'Darbojas bezsaistē. Bez konta, bez analītikas, bez reklāmām.';
+  String get privacyNote =>
+      'Darbojas bezsaistē. Konts nav vajadzīgs. Lietotne izmanto avāriju pārskatus, analītiku un reklāmas ar privātuma vadību.';
 
   @override
-  String get dataCoverage => 'Kalendāra dati: 2020–2035. Skolēnu brīvdienas pieejamas tikai publicētajiem gadiem.';
+  String get dataCoverage =>
+      'Kalendāra dati: 2020–2035. Skolēnu brīvdienas pieejamas tikai publicētajiem gadiem.';
 
   @override
   String get about => 'Par lietotni';
@@ -345,7 +353,8 @@ class AppLocalizationsLv extends AppLocalizations {
   String get usWeek => 'ASV nedēļa';
 
   @override
-  String get isoExplanation => 'Nedēļa sākas pirmdienā. Gada pirmajā ISO nedēļā ir 4. janvāris. ISO nedēļas gads var atšķirties no kalendārā gada.';
+  String get isoExplanation =>
+      'Nedēļa sākas pirmdienā. Gada pirmajā ISO nedēļā ir 4. janvāris. ISO nedēļas gads var atšķirties no kalendārā gada.';
 
   @override
   String get openData => 'Atvērtie dati';
@@ -363,7 +372,8 @@ class AppLocalizationsLv extends AppLocalizations {
   String get websiteResources => 'Vairāk vietnē';
 
   @override
-  String get websiteResourcesNote => 'Pārējie vietnes pakalpojumi atveras pārlūkā un prasa interneta savienojumu.';
+  String get websiteResourcesNote =>
+      'Pārējie vietnes pakalpojumi atveras pārlūkā un prasa interneta savienojumu.';
 
   @override
   String get contact => 'Kontakti';
@@ -446,7 +456,8 @@ class AppLocalizationsLv extends AppLocalizations {
   String get fiContent => 'Vietnes pirmavots ir somu valodā.';
 
   @override
-  String get nameDaysUnavailable => 'Vārda dienas tiks pievienotas pēc licences apstiprināšanas.';
+  String get nameDaysUnavailable =>
+      'Vārda dienas tiks pievienotas pēc licences apstiprināšanas.';
 
   @override
   String get weekList => 'Nedēļu saraksts';

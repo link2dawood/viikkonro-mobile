@@ -39,7 +39,8 @@ class AppLocalizationsIs extends AppLocalizations {
   String get homeTitle => 'Hvaða vika er núna?';
 
   @override
-  String get homeLead => 'Vikunúmer, dagsetningar og mikilvægir dagar á einum stað.';
+  String get homeLead =>
+      'Vikunúmer, dagsetningar og mikilvægir dagar á einum stað.';
 
   @override
   String get rightNow => 'AKKÚRAT NÚNA';
@@ -181,10 +182,12 @@ class AppLocalizationsIs extends AppLocalizations {
   String get unknown => 'Ekki enn birt';
 
   @override
-  String get noSchoolData => 'Engar birtar upplýsingar um skólafrí fyrir þetta ár.';
+  String get noSchoolData =>
+      'Engar birtar upplýsingar um skólafrí fyrir þetta ár.';
 
   @override
-  String get schoolCoverage => 'Dagsetningar skólans geta verið aðrar en dagatal sveitarfélagsins.';
+  String get schoolCoverage =>
+      'Dagsetningar skólans geta verið aðrar en dagatal sveitarfélagsins.';
 
   @override
   String get winterBreak => 'Vetrarfrí';
@@ -228,13 +231,16 @@ class AppLocalizationsIs extends AppLocalizations {
   String get lastDate => 'Lokadagur';
 
   @override
-  String get invalidRange => 'Lokadagur verður að vera sami dagur eða síðar en upphafsdagur.';
+  String get invalidRange =>
+      'Lokadagur verður að vera sami dagur eða síðar en upphafsdagur.';
 
   @override
-  String get distanceNote => 'Niðurstaðan er fjarlægðin milli dagsetninganna. Röðin skiptir ekki máli.';
+  String get distanceNote =>
+      'Niðurstaðan er fjarlægðin milli dagsetninganna. Röðin skiptir ekki máli.';
 
   @override
-  String get workingNote => 'Báðar dagsetningar teljast með. Virkir dagar eru mánudagur–föstudagur að frátöldum opinberum frídögum. Aðfangadagur og Jónsmessuaðfangadagur teljast virkir dagar.';
+  String get workingNote =>
+      'Báðar dagsetningar teljast með. Virkir dagar eru mánudagur–föstudagur að frátöldum opinberum frídögum. Aðfangadagur og Jónsmessuaðfangadagur teljast virkir dagar.';
 
   @override
   String get yearWeeks => 'Allar vikur ársins';
@@ -309,10 +315,12 @@ class AppLocalizationsIs extends AppLocalizations {
   String get firstScreen => 'Upphafsskjár';
 
   @override
-  String get privacyNote => 'Virkar án nettengingar. Enginn aðgangur, engin greining, engar auglýsingar.';
+  String get privacyNote =>
+      'Virkar án nettengingar. Enginn reikningur þarf. Forritið notar hrunskýrslur, greiningu og auglýsingar með persónuverndarstýringu.';
 
   @override
-  String get dataCoverage => 'Dagatalsgögn: 2020–2035. Skólafrí eru aðeins til fyrir birt ár.';
+  String get dataCoverage =>
+      'Dagatalsgögn: 2020–2035. Skólafrí eru aðeins til fyrir birt ár.';
 
   @override
   String get about => 'Um forritið';
@@ -345,7 +353,8 @@ class AppLocalizationsIs extends AppLocalizations {
   String get usWeek => 'Bandarísk vika';
 
   @override
-  String get isoExplanation => 'Vikan hefst á mánudegi. Fyrsta ISO-vika ársins inniheldur 4. janúar. ISO-vikuárið getur verið annað en almanaksárið.';
+  String get isoExplanation =>
+      'Vikan hefst á mánudegi. Fyrsta ISO-vika ársins inniheldur 4. janúar. ISO-vikuárið getur verið annað en almanaksárið.';
 
   @override
   String get openData => 'Opin gögn';
@@ -363,7 +372,8 @@ class AppLocalizationsIs extends AppLocalizations {
   String get websiteResources => 'Meira á vefsíðunni';
 
   @override
-  String get websiteResourcesNote => 'Aðrar þjónustur vefsíðunnar opnast í vafra og krefjast nettengingar.';
+  String get websiteResourcesNote =>
+      'Aðrar þjónustur vefsíðunnar opnast í vafra og krefjast nettengingar.';
 
   @override
   String get contact => 'Hafa samband';
@@ -446,7 +456,8 @@ class AppLocalizationsIs extends AppLocalizations {
   String get fiContent => 'Frumefni vefsíðunnar er á finnsku.';
 
   @override
-  String get nameDaysUnavailable => 'Nafnadögum verður bætt við þegar leyfi hefur verið staðfest.';
+  String get nameDaysUnavailable =>
+      'Nafnadögum verður bætt við þegar leyfi hefur verið staðfest.';
 
   @override
   String get weekList => 'Vikulisti';

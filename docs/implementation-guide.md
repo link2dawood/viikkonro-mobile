@@ -955,7 +955,7 @@ both platforms, on a physical device.
 
 ### 11.1 Privacy
 
-Ship with **no data collected**. No Firebase, no analytics SDK, no ads in v1.
+Ship only the approved Google Mobile Ads, Firebase Crashlytics and Google Analytics integrations. Initialize Firebase before UMP, keep debug telemetry opt-in, and declare advertising, diagnostics and analytics in store privacy disclosures.
 Then both forms are trivially honest:
 
 - Play Data Safety: no data collected, no data shared

@@ -39,7 +39,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get homeTitle => 'Hangi haftadayız?';
 
   @override
-  String get homeLead => 'Hafta numaraları, tarihler ve önemli takvim günleri tek bir yerde.';
+  String get homeLead =>
+      'Hafta numaraları, tarihler ve önemli takvim günleri tek bir yerde.';
 
   @override
   String get rightNow => 'TAM ŞU AN';
@@ -184,7 +185,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get noSchoolData => 'Bu yıl için yayımlanmış okul tatili verisi yok.';
 
   @override
-  String get schoolCoverage => 'Okulunuzun tarihleri belediye takviminden farklı olabilir.';
+  String get schoolCoverage =>
+      'Okulunuzun tarihleri belediye takviminden farklı olabilir.';
 
   @override
   String get winterBreak => 'Yarıyıl tatili';
@@ -228,13 +230,16 @@ class AppLocalizationsTr extends AppLocalizations {
   String get lastDate => 'Bitiş tarihi';
 
   @override
-  String get invalidRange => 'Bitiş tarihi, başlangıç tarihiyle aynı veya ondan sonra olmalıdır.';
+  String get invalidRange =>
+      'Bitiş tarihi, başlangıç tarihiyle aynı veya ondan sonra olmalıdır.';
 
   @override
-  String get distanceNote => 'Sonuç, tarihler arasındaki mesafedir. Sıra önemli değildir.';
+  String get distanceNote =>
+      'Sonuç, tarihler arasındaki mesafedir. Sıra önemli değildir.';
 
   @override
-  String get workingNote => 'Her iki tarih de sayılır. İş günleri, resmî tatiller hariç pazartesiden cumaya kadardır. Noel arifesi ve yaz ortası arifesi iş günü sayılır.';
+  String get workingNote =>
+      'Her iki tarih de sayılır. İş günleri, resmî tatiller hariç pazartesiden cumaya kadardır. Noel arifesi ve yaz ortası arifesi iş günü sayılır.';
 
   @override
   String get yearWeeks => 'Yılın tüm haftaları';
@@ -309,10 +314,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get firstScreen => 'Başlangıç ekranı';
 
   @override
-  String get privacyNote => 'Çevrimdışı çalışır. Hesap yok, analiz yok, reklam yok.';
+  String get privacyNote =>
+      'Çevrimdışı çalışır. Hesap gerekmez. Uygulama kilitlenme raporları, analiz ve gizlilik kontrollü reklamlar kullanır.';
 
   @override
-  String get dataCoverage => 'Takvim verileri: 2020–2035. Okul tatilleri yalnızca yayımlanmış yıllar için mevcuttur.';
+  String get dataCoverage =>
+      'Takvim verileri: 2020–2035. Okul tatilleri yalnızca yayımlanmış yıllar için mevcuttur.';
 
   @override
   String get about => 'Uygulama hakkında';
@@ -345,7 +352,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get usWeek => 'ABD haftası';
 
   @override
-  String get isoExplanation => 'Hafta pazartesi başlar. Yılın ilk ISO haftası 4 Ocak’ı içerir. ISO hafta yılı takvim yılından farklı olabilir.';
+  String get isoExplanation =>
+      'Hafta pazartesi başlar. Yılın ilk ISO haftası 4 Ocak’ı içerir. ISO hafta yılı takvim yılından farklı olabilir.';
 
   @override
   String get openData => 'Açık veri';
@@ -363,7 +371,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get websiteResources => 'Web sitesinde daha fazlası';
 
   @override
-  String get websiteResourcesNote => 'Web sitesinin diğer hizmetleri tarayıcıda açılır ve internet bağlantısı gerektirir.';
+  String get websiteResourcesNote =>
+      'Web sitesinin diğer hizmetleri tarayıcıda açılır ve internet bağlantısı gerektirir.';
 
   @override
   String get contact => 'İletişim';
@@ -446,7 +455,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get fiContent => 'Web sitesinin kaynak materyali Fincedir.';
 
   @override
-  String get nameDaysUnavailable => 'İsim günleri, lisans doğrulandıktan sonra eklenecektir.';
+  String get nameDaysUnavailable =>
+      'İsim günleri, lisans doğrulandıktan sonra eklenecektir.';
 
   @override
   String get weekList => 'Hafta listesi';

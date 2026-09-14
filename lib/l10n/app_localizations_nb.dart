@@ -39,7 +39,8 @@ class AppLocalizationsNb extends AppLocalizations {
   String get homeTitle => 'Hvilken uke er det?';
 
   @override
-  String get homeLead => 'Ukenumre, datoer og viktige kalenderdager på ett sted.';
+  String get homeLead =>
+      'Ukenumre, datoer og viktige kalenderdager på ett sted.';
 
   @override
   String get rightNow => 'AKKURAT NÅ';
@@ -181,10 +182,12 @@ class AppLocalizationsNb extends AppLocalizations {
   String get unknown => 'Ikke publisert ennå';
 
   @override
-  String get noSchoolData => 'Det finnes ingen publiserte skoleferiedata for dette året.';
+  String get noSchoolData =>
+      'Det finnes ingen publiserte skoleferiedata for dette året.';
 
   @override
-  String get schoolCoverage => 'Skolens datoer kan avvike fra kommunens kalender.';
+  String get schoolCoverage =>
+      'Skolens datoer kan avvike fra kommunens kalender.';
 
   @override
   String get winterBreak => 'Vinterferie';
@@ -228,13 +231,16 @@ class AppLocalizationsNb extends AppLocalizations {
   String get lastDate => 'Sluttdato';
 
   @override
-  String get invalidRange => 'Sluttdatoen må være samme dag som eller etter startdatoen.';
+  String get invalidRange =>
+      'Sluttdatoen må være samme dag som eller etter startdatoen.';
 
   @override
-  String get distanceNote => 'Resultatet er avstanden mellom datoene. Rekkefølgen spiller ingen rolle.';
+  String get distanceNote =>
+      'Resultatet er avstanden mellom datoene. Rekkefølgen spiller ingen rolle.';
 
   @override
-  String get workingNote => 'Begge datoene telles med. Virkedager er mandag–fredag utenom offisielle helligdager. Julaften og midtsommeraften telles som virkedager.';
+  String get workingNote =>
+      'Begge datoene telles med. Virkedager er mandag–fredag utenom offisielle helligdager. Julaften og midtsommeraften telles som virkedager.';
 
   @override
   String get yearWeeks => 'Alle årets uker';
@@ -309,10 +315,12 @@ class AppLocalizationsNb extends AppLocalizations {
   String get firstScreen => 'Startskjerm';
 
   @override
-  String get privacyNote => 'Fungerer uten nett. Ingen konto, ingen analyse, ingen annonser.';
+  String get privacyNote =>
+      'Fungerer uten nett. Ingen konto. Appen bruker krasjrapportering, analyse og annonser med personvernkontroller.';
 
   @override
-  String get dataCoverage => 'Kalenderdata: 2020–2035. Skoleferier finnes kun for publiserte år.';
+  String get dataCoverage =>
+      'Kalenderdata: 2020–2035. Skoleferier finnes kun for publiserte år.';
 
   @override
   String get about => 'Om appen';
@@ -345,7 +353,8 @@ class AppLocalizationsNb extends AppLocalizations {
   String get usWeek => 'Amerikansk uke';
 
   @override
-  String get isoExplanation => 'Uken begynner på mandag. Årets første ISO-uke inneholder 4. januar. ISO-ukeåret kan avvike fra kalenderåret.';
+  String get isoExplanation =>
+      'Uken begynner på mandag. Årets første ISO-uke inneholder 4. januar. ISO-ukeåret kan avvike fra kalenderåret.';
 
   @override
   String get openData => 'Åpne data';
@@ -363,7 +372,8 @@ class AppLocalizationsNb extends AppLocalizations {
   String get websiteResources => 'Mer på nettstedet';
 
   @override
-  String get websiteResourcesNote => 'Nettstedets øvrige tjenester åpnes i nettleseren og krever internettforbindelse.';
+  String get websiteResourcesNote =>
+      'Nettstedets øvrige tjenester åpnes i nettleseren og krever internettforbindelse.';
 
   @override
   String get contact => 'Kontakt';
@@ -446,7 +456,8 @@ class AppLocalizationsNb extends AppLocalizations {
   String get fiContent => 'Nettstedets kildemateriale er på finsk.';
 
   @override
-  String get nameDaysUnavailable => 'Navnedager legges til når lisensieringen er bekreftet.';
+  String get nameDaysUnavailable =>
+      'Navnedager legges til når lisensieringen er bekreftet.';
 
   @override
   String get weekList => 'Ukeliste';

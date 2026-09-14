@@ -94,7 +94,7 @@
   "light": "Clar",
   "dark": "Fosc",
   "firstScreen": "Pantalla d’inici",
-  "privacyNote": "Funciona sense connexió. Sense compte, sense analítica, sense anuncis.",
+  "privacyNote": "Funciona sense connexió. No cal cap compte. Inclou informes d’errors, analítica i anuncis amb controls de privadesa.",
   "dataCoverage": "Dades del calendari: 2020–2035. Les vacances escolars només estan disponibles per als anys publicats.",
   "about": "Quant a l’aplicació",
   "licenses": "Llicències de codi obert",

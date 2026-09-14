@@ -39,7 +39,8 @@ class AppLocalizationsFi extends AppLocalizations {
   String get homeTitle => 'Mikä viikko nyt on?';
 
   @override
-  String get homeLead => 'Viikkonumero, päivämäärät ja kalenterin tärkeät päivät yhdessä paikassa.';
+  String get homeLead =>
+      'Viikkonumero, päivämäärät ja kalenterin tärkeät päivät yhdessä paikassa.';
 
   @override
   String get rightNow => 'JUURI NYT ON';
@@ -181,10 +182,12 @@ class AppLocalizationsFi extends AppLocalizations {
   String get unknown => 'Ei vielä julkaistu';
 
   @override
-  String get noSchoolData => 'Tälle vuodelle ei ole julkaistua koululomatietoa.';
+  String get noSchoolData =>
+      'Tälle vuodelle ei ole julkaistua koululomatietoa.';
 
   @override
-  String get schoolCoverage => 'Kuntien yleiset päivät voivat poiketa oman koulun päivistä.';
+  String get schoolCoverage =>
+      'Kuntien yleiset päivät voivat poiketa oman koulun päivistä.';
 
   @override
   String get winterBreak => 'Talviloma';
@@ -228,13 +231,16 @@ class AppLocalizationsFi extends AppLocalizations {
   String get lastDate => 'Loppupäivä';
 
   @override
-  String get invalidRange => 'Loppupäivän on oltava alkupäivän jälkeen tai sama päivä.';
+  String get invalidRange =>
+      'Loppupäivän on oltava alkupäivän jälkeen tai sama päivä.';
 
   @override
-  String get distanceNote => 'Erotus on päivämäärien välinen etäisyys. Järjestyksellä ei ole väliä.';
+  String get distanceNote =>
+      'Erotus on päivämäärien välinen etäisyys. Järjestyksellä ei ole väliä.';
 
   @override
-  String get workingNote => 'Molemmat päivät lasketaan mukaan. Työpäivä on ma–pe, pois lukien viralliset pyhäpäivät. Jouluaatto ja juhannusaatto lasketaan työpäiviksi.';
+  String get workingNote =>
+      'Molemmat päivät lasketaan mukaan. Työpäivä on ma–pe, pois lukien viralliset pyhäpäivät. Jouluaatto ja juhannusaatto lasketaan työpäiviksi.';
 
   @override
   String get yearWeeks => 'Vuoden kaikki viikot';
@@ -309,10 +315,12 @@ class AppLocalizationsFi extends AppLocalizations {
   String get firstScreen => 'Aloitusnäkymä';
 
   @override
-  String get privacyNote => 'Toimii ilman verkkoyhteyttä. Ei käyttäjätiliä, analytiikkaa tai mainoksia.';
+  String get privacyNote =>
+      'Toimii ilman verkkoyhteyttä. Ei käyttäjätiliä. Sovellus käyttää kaatumisraportointia, analytiikkaa ja tietosuojavalintojen mukaisia mainoksia.';
 
   @override
-  String get dataCoverage => 'Kalenteritiedot: 2020–2035. Koululomat saatavilla vain julkaistuille vuosille.';
+  String get dataCoverage =>
+      'Kalenteritiedot: 2020–2035. Koululomat saatavilla vain julkaistuille vuosille.';
 
   @override
   String get about => 'Tietoa sovelluksesta';
@@ -345,7 +353,8 @@ class AppLocalizationsFi extends AppLocalizations {
   String get usWeek => 'USA:n viikko';
 
   @override
-  String get isoExplanation => 'Viikko alkaa maanantaista. Vuoden ensimmäinen ISO-viikko sisältää 4. tammikuuta. Viikkovuosi voi erota kalenterivuodesta.';
+  String get isoExplanation =>
+      'Viikko alkaa maanantaista. Vuoden ensimmäinen ISO-viikko sisältää 4. tammikuuta. Viikkovuosi voi erota kalenterivuodesta.';
 
   @override
   String get openData => 'Avoin data';
@@ -357,13 +366,15 @@ class AppLocalizationsFi extends AppLocalizations {
   String get bundledData => 'Sovelluksen mukana toimitettu aineisto';
 
   @override
-  String get dataCopyNote => 'Voit kopioida valitun vuoden tiedot JSON-muodossa.';
+  String get dataCopyNote =>
+      'Voit kopioida valitun vuoden tiedot JSON-muodossa.';
 
   @override
   String get websiteResources => 'Lisää verkkosivustolla';
 
   @override
-  String get websiteResourcesNote => 'Verkkosivuston lisäpalvelut avautuvat selaimessa ja tarvitsevat verkkoyhteyden.';
+  String get websiteResourcesNote =>
+      'Verkkosivuston lisäpalvelut avautuvat selaimessa ja tarvitsevat verkkoyhteyden.';
 
   @override
   String get contact => 'Ota yhteyttä';
@@ -446,7 +457,8 @@ class AppLocalizationsFi extends AppLocalizations {
   String get fiContent => 'Verkkosivuston lähdeaineisto on suomeksi.';
 
   @override
-  String get nameDaysUnavailable => 'Nimipäivät lisätään lisenssin varmistamisen jälkeen.';
+  String get nameDaysUnavailable =>
+      'Nimipäivät lisätään lisenssin varmistamisen jälkeen.';
 
   @override
   String get weekList => 'Viikkolista';

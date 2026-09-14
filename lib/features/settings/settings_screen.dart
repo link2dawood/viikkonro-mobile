@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import '../../core/ads/ad_service.dart';
 import '../../core/data/calendar_repository.dart';
 import '../../core/settings/app_settings.dart';
 import '../../shared/actions.dart';
@@ -76,6 +77,18 @@ class SettingsScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 4),
             child: Column(
               children: [
+                ListenableBuilder(
+                  listenable: AdService.instance,
+                  builder: (context, _) => AdService.instance.privacyOptionsRequired
+                      ? ListTile(
+                          minTileHeight: 52,
+                          leading: const Icon(Icons.ads_click_rounded),
+                          title: Text(s.privacy),
+                          subtitle: Text(s.settings),
+                          onTap: AdService.instance.showPrivacyOptions,
+                        )
+                      : const SizedBox.shrink(),
+                ),
                 ListTile(
                   minTileHeight: 52,
                   leading: const Icon(Icons.language_rounded),

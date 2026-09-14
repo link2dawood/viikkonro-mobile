@@ -39,7 +39,8 @@ class AppLocalizationsSv extends AppLocalizations {
   String get homeTitle => 'Vilken vecka är det?';
 
   @override
-  String get homeLead => 'Veckonummer, datum och viktiga kalenderdagar på ett ställe.';
+  String get homeLead =>
+      'Veckonummer, datum och viktiga kalenderdagar på ett ställe.';
 
   @override
   String get rightNow => 'JUST NU';
@@ -181,10 +182,12 @@ class AppLocalizationsSv extends AppLocalizations {
   String get unknown => 'Ännu inte publicerad';
 
   @override
-  String get noSchoolData => 'Det finns inga publicerade skollovsuppgifter för det här året.';
+  String get noSchoolData =>
+      'Det finns inga publicerade skollovsuppgifter för det här året.';
 
   @override
-  String get schoolCoverage => 'Din skolas datum kan skilja sig från kommunens kalender.';
+  String get schoolCoverage =>
+      'Din skolas datum kan skilja sig från kommunens kalender.';
 
   @override
   String get winterBreak => 'Sportlov';
@@ -228,13 +231,16 @@ class AppLocalizationsSv extends AppLocalizations {
   String get lastDate => 'Slutdatum';
 
   @override
-  String get invalidRange => 'Slutdatumet måste vara samma dag som eller efter startdatumet.';
+  String get invalidRange =>
+      'Slutdatumet måste vara samma dag som eller efter startdatumet.';
 
   @override
-  String get distanceNote => 'Resultatet är avståndet mellan datumen. Ordningen spelar ingen roll.';
+  String get distanceNote =>
+      'Resultatet är avståndet mellan datumen. Ordningen spelar ingen roll.';
 
   @override
-  String get workingNote => 'Båda datumen räknas med. Arbetsdagar är måndag–fredag utom officiella helgdagar. Julafton och midsommarafton räknas som arbetsdagar.';
+  String get workingNote =>
+      'Båda datumen räknas med. Arbetsdagar är måndag–fredag utom officiella helgdagar. Julafton och midsommarafton räknas som arbetsdagar.';
 
   @override
   String get yearWeeks => 'Årets alla veckor';
@@ -309,10 +315,12 @@ class AppLocalizationsSv extends AppLocalizations {
   String get firstScreen => 'Startvy';
 
   @override
-  String get privacyNote => 'Fungerar offline. Inget konto, ingen analys, inga annonser.';
+  String get privacyNote =>
+      'Fungerar offline. Inget konto. Appen använder kraschrapportering, analys och annonser med integritetskontroller.';
 
   @override
-  String get dataCoverage => 'Kalenderdata: 2020–2035. Skollov finns endast för publicerade år.';
+  String get dataCoverage =>
+      'Kalenderdata: 2020–2035. Skollov finns endast för publicerade år.';
 
   @override
   String get about => 'Om appen';
@@ -345,7 +353,8 @@ class AppLocalizationsSv extends AppLocalizations {
   String get usWeek => 'Amerikansk vecka';
 
   @override
-  String get isoExplanation => 'Veckan börjar på måndag. Årets första ISO-vecka innehåller den 4 januari. ISO-veckoåret kan skilja sig från kalenderåret.';
+  String get isoExplanation =>
+      'Veckan börjar på måndag. Årets första ISO-vecka innehåller den 4 januari. ISO-veckoåret kan skilja sig från kalenderåret.';
 
   @override
   String get openData => 'Öppna data';
@@ -363,7 +372,8 @@ class AppLocalizationsSv extends AppLocalizations {
   String get websiteResources => 'Mer på webbplatsen';
 
   @override
-  String get websiteResourcesNote => 'Webbplatsens övriga tjänster öppnas i webbläsaren och kräver internetanslutning.';
+  String get websiteResourcesNote =>
+      'Webbplatsens övriga tjänster öppnas i webbläsaren och kräver internetanslutning.';
 
   @override
   String get contact => 'Kontakt';
@@ -446,7 +456,8 @@ class AppLocalizationsSv extends AppLocalizations {
   String get fiContent => 'Webbplatsens källmaterial är på finska.';
 
   @override
-  String get nameDaysUnavailable => 'Namnsdagar läggs till när licensieringen är verifierad.';
+  String get nameDaysUnavailable =>
+      'Namnsdagar läggs till när licensieringen är verifierad.';
 
   @override
   String get weekList => 'Veckolista';

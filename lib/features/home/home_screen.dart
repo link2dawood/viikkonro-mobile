@@ -130,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
         const SizedBox(height: 14), Wrap(spacing: 7, runSpacing: 3, children: [for (var delta = -3; delta <= 3; delta++) _weekChip(context, addCalendarDays(now, delta * 7), delta == 0)]),
         // FP-H11 and FP-X01: the week, its span, and the matching site page.
         ResultActions(text: '${s.weekLabel(week)}/$year (${context.range(monday, sunday)})', url: SiteUrl.week(week, year)),
-        const AdSlot(), SectionTitle(s.lookupTitle),
+        const AdSlot(enabled: true), SectionTitle(s.lookupTitle),
         SitePanel(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

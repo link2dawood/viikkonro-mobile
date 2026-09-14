@@ -94,7 +94,7 @@
   "light": "Lyst",
   "dark": "Mørkt",
   "firstScreen": "Startskærm",
-  "privacyNote": "Virker offline. Ingen konto, ingen analyse, ingen annoncer.",
+  "privacyNote": "Virker offline. Ingen konto. Appen bruger nedbrudsrapportering, analyse og annoncer med privatlivskontrol.",
   "dataCoverage": "Kalenderdata: 2020–2035. Skoleferier findes kun for offentliggjorte år.",
   "about": "Om appen",
   "licenses": "Open source-licenser",

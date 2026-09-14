@@ -94,7 +94,7 @@
   "light": "Ljust",
   "dark": "Mörkt",
   "firstScreen": "Startvy",
-  "privacyNote": "Fungerar offline. Inget konto, ingen analys, inga annonser.",
+  "privacyNote": "Fungerar offline. Inget konto. Appen använder kraschrapportering, analys och annonser med integritetskontroller.",
   "dataCoverage": "Kalenderdata: 2020–2035. Skollov finns endast för publicerade år.",
   "about": "Om appen",
   "licenses": "Licenser för öppen källkod",

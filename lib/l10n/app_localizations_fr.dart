@@ -39,7 +39,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get homeTitle => 'Quelle semaine sommes-nous ?';
 
   @override
-  String get homeLead => 'Numéros de semaine, dates et jours importants du calendrier au même endroit.';
+  String get homeLead =>
+      'Numéros de semaine, dates et jours importants du calendrier au même endroit.';
 
   @override
   String get rightNow => 'EN CE MOMENT';
@@ -94,7 +95,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get thisYear => 'Cette année';
 
   @override
-  String get lookupTitle => 'Trouver le numéro de semaine de n’importe quelle date';
+  String get lookupTitle =>
+      'Trouver le numéro de semaine de n’importe quelle date';
 
   @override
   String get chooseDate => 'Choisir une date';
@@ -181,10 +183,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get unknown => 'Pas encore publié';
 
   @override
-  String get noSchoolData => 'Aucune donnée de vacances scolaires publiée pour cette année.';
+  String get noSchoolData =>
+      'Aucune donnée de vacances scolaires publiée pour cette année.';
 
   @override
-  String get schoolCoverage => 'Les dates de votre école peuvent différer du calendrier municipal.';
+  String get schoolCoverage =>
+      'Les dates de votre école peuvent différer du calendrier municipal.';
 
   @override
   String get winterBreak => 'Vacances d’hiver';
@@ -228,10 +232,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get lastDate => 'Date de fin';
 
   @override
-  String get invalidRange => 'La date de fin doit être identique ou postérieure à la date de début.';
+  String get invalidRange =>
+      'La date de fin doit être identique ou postérieure à la date de début.';
 
   @override
-  String get distanceNote => 'Le résultat est la distance entre les dates. L’ordre n’a pas d’importance.';
+  String get distanceNote =>
+      'Le résultat est la distance entre les dates. L’ordre n’a pas d’importance.';
 
   @override
   String get workingNote =>
@@ -310,10 +316,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get firstScreen => 'Écran de démarrage';
 
   @override
-  String get privacyNote => 'Fonctionne hors ligne. Pas de compte, pas d’analyse, pas de publicité.';
+  String get privacyNote =>
+      'Fonctionne hors ligne. Aucun compte. L’application utilise des rapports de plantage, des analyses et des annonces avec contrôle de confidentialité.';
 
   @override
-  String get dataCoverage => 'Données du calendrier : 2020–2035. Vacances scolaires disponibles uniquement pour les années publiées.';
+  String get dataCoverage =>
+      'Données du calendrier : 2020–2035. Vacances scolaires disponibles uniquement pour les années publiées.';
 
   @override
   String get about => 'À propos de l’application';
@@ -346,7 +354,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get usWeek => 'Semaine américaine';
 
   @override
-  String get isoExplanation => 'La semaine commence le lundi. La première semaine ISO de l’année contient le 4 janvier. L’année ISO peut différer de l’année civile.';
+  String get isoExplanation =>
+      'La semaine commence le lundi. La première semaine ISO de l’année contient le 4 janvier. L’année ISO peut différer de l’année civile.';
 
   @override
   String get openData => 'Données ouvertes';
@@ -364,7 +373,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get websiteResources => 'Plus sur le site';
 
   @override
-  String get websiteResourcesNote => 'Les autres services du site s’ouvrent dans le navigateur et nécessitent une connexion Internet.';
+  String get websiteResourcesNote =>
+      'Les autres services du site s’ouvrent dans le navigateur et nécessitent une connexion Internet.';
 
   @override
   String get contact => 'Contact';
@@ -447,7 +457,8 @@ class AppLocalizationsFr extends AppLocalizations {
   String get fiContent => 'Le matériel source du site est en finnois.';
 
   @override
-  String get nameDaysUnavailable => 'Les fêtes du prénom seront ajoutées une fois la licence vérifiée.';
+  String get nameDaysUnavailable =>
+      'Les fêtes du prénom seront ajoutées une fois la licence vérifiée.';
 
   @override
   String get weekList => 'Liste des semaines';

@@ -39,7 +39,8 @@ class AppLocalizationsPl extends AppLocalizations {
   String get homeTitle => 'Który mamy tydzień?';
 
   @override
-  String get homeLead => 'Numery tygodni, daty i ważne dni kalendarzowe w jednym miejscu.';
+  String get homeLead =>
+      'Numery tygodni, daty i ważne dni kalendarzowe w jednym miejscu.';
 
   @override
   String get rightNow => 'WŁAŚNIE TERAZ';
@@ -181,10 +182,12 @@ class AppLocalizationsPl extends AppLocalizations {
   String get unknown => 'Jeszcze nieopublikowane';
 
   @override
-  String get noSchoolData => 'Brak opublikowanych danych o feriach szkolnych na ten rok.';
+  String get noSchoolData =>
+      'Brak opublikowanych danych o feriach szkolnych na ten rok.';
 
   @override
-  String get schoolCoverage => 'Terminy twojej szkoły mogą różnić się od kalendarza gminnego.';
+  String get schoolCoverage =>
+      'Terminy twojej szkoły mogą różnić się od kalendarza gminnego.';
 
   @override
   String get winterBreak => 'Ferie zimowe';
@@ -228,13 +231,16 @@ class AppLocalizationsPl extends AppLocalizations {
   String get lastDate => 'Data końcowa';
 
   @override
-  String get invalidRange => 'Data końcowa musi być taka sama jak początkowa lub późniejsza.';
+  String get invalidRange =>
+      'Data końcowa musi być taka sama jak początkowa lub późniejsza.';
 
   @override
-  String get distanceNote => 'Wynik to odległość między datami. Kolejność nie ma znaczenia.';
+  String get distanceNote =>
+      'Wynik to odległość między datami. Kolejność nie ma znaczenia.';
 
   @override
-  String get workingNote => 'Obie daty są wliczane. Dni robocze to poniedziałek–piątek bez świąt ustawowych. Wigilia i wigilia nocy świętojańskiej liczą się jako dni robocze.';
+  String get workingNote =>
+      'Obie daty są wliczane. Dni robocze to poniedziałek–piątek bez świąt ustawowych. Wigilia i wigilia nocy świętojańskiej liczą się jako dni robocze.';
 
   @override
   String get yearWeeks => 'Wszystkie tygodnie roku';
@@ -309,10 +315,12 @@ class AppLocalizationsPl extends AppLocalizations {
   String get firstScreen => 'Ekran startowy';
 
   @override
-  String get privacyNote => 'Działa offline. Bez konta, bez analityki, bez reklam.';
+  String get privacyNote =>
+      'Działa offline. Konto nie jest wymagane. Aplikacja używa raportów o awariach, analityki i reklam z kontrolą prywatności.';
 
   @override
-  String get dataCoverage => 'Dane kalendarzowe: 2020–2035. Ferie szkolne dostępne tylko dla opublikowanych lat.';
+  String get dataCoverage =>
+      'Dane kalendarzowe: 2020–2035. Ferie szkolne dostępne tylko dla opublikowanych lat.';
 
   @override
   String get about => 'O aplikacji';
@@ -345,7 +353,8 @@ class AppLocalizationsPl extends AppLocalizations {
   String get usWeek => 'Tydzień amerykański';
 
   @override
-  String get isoExplanation => 'Tydzień zaczyna się w poniedziałek. Pierwszy tydzień ISO w roku zawiera 4 stycznia. Rok tygodniowy ISO może różnić się od roku kalendarzowego.';
+  String get isoExplanation =>
+      'Tydzień zaczyna się w poniedziałek. Pierwszy tydzień ISO w roku zawiera 4 stycznia. Rok tygodniowy ISO może różnić się od roku kalendarzowego.';
 
   @override
   String get openData => 'Otwarte dane';
@@ -363,7 +372,8 @@ class AppLocalizationsPl extends AppLocalizations {
   String get websiteResources => 'Więcej na stronie';
 
   @override
-  String get websiteResourcesNote => 'Pozostałe usługi strony otwierają się w przeglądarce i wymagają połączenia z internetem.';
+  String get websiteResourcesNote =>
+      'Pozostałe usługi strony otwierają się w przeglądarce i wymagają połączenia z internetem.';
 
   @override
   String get contact => 'Kontakt';
@@ -446,7 +456,8 @@ class AppLocalizationsPl extends AppLocalizations {
   String get fiContent => 'Materiał źródłowy strony jest po fińsku.';
 
   @override
-  String get nameDaysUnavailable => 'Imieniny zostaną dodane po potwierdzeniu licencji.';
+  String get nameDaysUnavailable =>
+      'Imieniny zostaną dodane po potwierdzeniu licencji.';
 
   @override
   String get weekList => 'Lista tygodni';

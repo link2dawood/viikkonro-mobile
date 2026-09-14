@@ -94,7 +94,7 @@
   "light": "Hell",
   "dark": "Dunkel",
   "firstScreen": "Startansicht",
-  "privacyNote": "Funktioniert offline. Kein Konto, keine Analyse, keine Werbung.",
+  "privacyNote": "Funktioniert offline. Kein Konto. Die App nutzt Absturzberichte, Analysen und datenschutzgesteuerte Anzeigen.",
   "dataCoverage": "Kalenderdaten: 2020–2035. Schulferien nur für veröffentlichte Jahre verfügbar.",
   "about": "Über die App",
   "licenses": "Open-Source-Lizenzen",

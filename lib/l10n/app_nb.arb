@@ -94,7 +94,7 @@
   "light": "Lyst",
   "dark": "Mørkt",
   "firstScreen": "Startskjerm",
-  "privacyNote": "Fungerer uten nett. Ingen konto, ingen analyse, ingen annonser.",
+  "privacyNote": "Fungerer uten nett. Ingen konto. Appen bruker krasjrapportering, analyse og annonser med personvernkontroller.",
   "dataCoverage": "Kalenderdata: 2020–2035. Skoleferier finnes kun for publiserte år.",
   "about": "Om appen",
   "licenses": "Åpen kildekode-lisenser",

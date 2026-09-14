@@ -48,9 +48,12 @@ Android and iOS only. Never run bare `flutter create .`; always specify
 7. Widgets operate with the Flutter engine dead. Android recomputes stale
    payloads in Kotlin. iOS computes each timeline entry in Swift and treats
    shared payloads as raw data, not cached week numbers.
-8. No data collection, Firebase, analytics SDK or ads in v1.0. No runtime
-   permissions beyond INTERNET. Keep an SDK-free `AdSlot` abstraction for a
-   later release; do not integrate an advertising SDK now.
+8. No accounts in v1.0. Google Mobile Ads, Firebase Crashlytics and Google
+   Analytics for Firebase are the only approved advertising/telemetry SDKs.
+   Initialize Firebase before Google's UMP flow so consent mode is propagated;
+   keep telemetry disabled in debug unless explicitly testing it. Ads must use
+   test units in debug, and every screen must remain available offline. No
+   runtime permissions beyond INTERNET.
 9. This repository is public. Never commit keystores, `key.properties`,
    provisioning profiles, API keys or `.env` files. Check `.gitignore` before
    introducing any new file type.

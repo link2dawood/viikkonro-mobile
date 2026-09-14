@@ -94,7 +94,7 @@
   "light": "Chiaro",
   "dark": "Scuro",
   "firstScreen": "Schermata iniziale",
-  "privacyNote": "Funziona offline. Nessun account, nessuna analisi, nessuna pubblicità.",
+  "privacyNote": "Funziona offline. Nessun account. L’app usa segnalazioni di arresti anomali, analisi e annunci con controlli sulla privacy.",
   "dataCoverage": "Dati del calendario: 2020–2035. Le vacanze scolastiche sono disponibili solo per gli anni pubblicati.",
   "about": "Informazioni sull’app",
   "licenses": "Licenze open source",

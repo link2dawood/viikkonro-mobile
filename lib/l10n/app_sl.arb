@@ -94,7 +94,7 @@
   "light": "Svetlo",
   "dark": "Temno",
   "firstScreen": "Začetni zaslon",
-  "privacyNote": "Deluje brez povezave. Brez računa, brez analitike, brez oglasov.",
+  "privacyNote": "Deluje brez povezave. Račun ni potreben. Aplikacija uporablja poročila o zrušitvah, analitiko in oglase z nastavitvami zasebnosti.",
   "dataCoverage": "Koledarski podatki: 2020–2035. Šolske počitnice so na voljo le za objavljena leta.",
   "about": "O aplikaciji",
   "licenses": "Licence odprte kode",

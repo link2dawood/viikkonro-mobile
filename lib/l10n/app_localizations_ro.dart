@@ -39,7 +39,8 @@ class AppLocalizationsRo extends AppLocalizations {
   String get homeTitle => 'În ce săptămână suntem?';
 
   @override
-  String get homeLead => 'Numere de săptămână, date și zile importante din calendar într-un singur loc.';
+  String get homeLead =>
+      'Numere de săptămână, date și zile importante din calendar într-un singur loc.';
 
   @override
   String get rightNow => 'CHIAR ACUM';
@@ -181,10 +182,12 @@ class AppLocalizationsRo extends AppLocalizations {
   String get unknown => 'Încă nepublicat';
 
   @override
-  String get noSchoolData => 'Nu există date publicate despre vacanțele școlare pentru acest an.';
+  String get noSchoolData =>
+      'Nu există date publicate despre vacanțele școlare pentru acest an.';
 
   @override
-  String get schoolCoverage => 'Datele școlii tale pot diferi de calendarul municipal.';
+  String get schoolCoverage =>
+      'Datele școlii tale pot diferi de calendarul municipal.';
 
   @override
   String get winterBreak => 'Vacanța de iarnă';
@@ -228,13 +231,16 @@ class AppLocalizationsRo extends AppLocalizations {
   String get lastDate => 'Data de sfârșit';
 
   @override
-  String get invalidRange => 'Data de sfârșit trebuie să fie aceeași sau ulterioară celei de început.';
+  String get invalidRange =>
+      'Data de sfârșit trebuie să fie aceeași sau ulterioară celei de început.';
 
   @override
-  String get distanceNote => 'Rezultatul este distanța dintre date. Ordinea nu contează.';
+  String get distanceNote =>
+      'Rezultatul este distanța dintre date. Ordinea nu contează.';
 
   @override
-  String get workingNote => 'Ambele date sunt incluse. Zilele lucrătoare sunt de luni până vineri, fără sărbătorile legale. Ajunul Crăciunului și ajunul Sânzienelor se consideră zile lucrătoare.';
+  String get workingNote =>
+      'Ambele date sunt incluse. Zilele lucrătoare sunt de luni până vineri, fără sărbătorile legale. Ajunul Crăciunului și ajunul Sânzienelor se consideră zile lucrătoare.';
 
   @override
   String get yearWeeks => 'Toate săptămânile anului';
@@ -309,10 +315,12 @@ class AppLocalizationsRo extends AppLocalizations {
   String get firstScreen => 'Ecran de pornire';
 
   @override
-  String get privacyNote => 'Funcționează offline. Fără cont, fără analiză, fără reclame.';
+  String get privacyNote =>
+      'Funcționează offline. Nu necesită cont. Aplicația folosește rapoarte de blocare, analiză și reclame cu opțiuni de confidențialitate.';
 
   @override
-  String get dataCoverage => 'Date de calendar: 2020–2035. Vacanțele școlare sunt disponibile doar pentru anii publicați.';
+  String get dataCoverage =>
+      'Date de calendar: 2020–2035. Vacanțele școlare sunt disponibile doar pentru anii publicați.';
 
   @override
   String get about => 'Despre aplicație';
@@ -345,7 +353,8 @@ class AppLocalizationsRo extends AppLocalizations {
   String get usWeek => 'Săptămâna americană';
 
   @override
-  String get isoExplanation => 'Săptămâna începe luni. Prima săptămână ISO a anului conține 4 ianuarie. Anul ISO poate diferi de anul calendaristic.';
+  String get isoExplanation =>
+      'Săptămâna începe luni. Prima săptămână ISO a anului conține 4 ianuarie. Anul ISO poate diferi de anul calendaristic.';
 
   @override
   String get openData => 'Date deschise';
@@ -363,7 +372,8 @@ class AppLocalizationsRo extends AppLocalizations {
   String get websiteResources => 'Mai multe pe site';
 
   @override
-  String get websiteResourcesNote => 'Celelalte servicii ale site-ului se deschid în browser și necesită conexiune la internet.';
+  String get websiteResourcesNote =>
+      'Celelalte servicii ale site-ului se deschid în browser și necesită conexiune la internet.';
 
   @override
   String get contact => 'Contact';
@@ -446,7 +456,8 @@ class AppLocalizationsRo extends AppLocalizations {
   String get fiContent => 'Materialul sursă al site-ului este în finlandeză.';
 
   @override
-  String get nameDaysUnavailable => 'Zilele onomastice vor fi adăugate după verificarea licenței.';
+  String get nameDaysUnavailable =>
+      'Zilele onomastice vor fi adăugate după verificarea licenței.';
 
   @override
   String get weekList => 'Lista săptămânilor';

@@ -27,6 +27,33 @@ certificate. Never commit signing keys, credentials, or provisioning profiles.
 
 ## Run locally
 
+Create the ignored Android AdMob configuration once. Debug builds always use
+Google's sample banner ID even when production values are present.
+
+```sh
+cp admob.properties.example .admob.properties
+```
+
+Set `ADMOB_ANDROID_APP_ID` and `ADMOB_ANDROID_BANNER_AD_UNIT_ID` in that local
+file for release builds. Never commit `.admob.properties`.
+
+Firebase project files are also local-only. Register Android production
+`fi.viikkonro.app`, Android debug `fi.viikkonro.app.debug`, and iOS
+`fi.viikkonro.app` in the Firebase Console, enable Analytics and Crashlytics,
+then place the downloaded files here:
+
+```text
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+ios/firebase_app_id_file.json
+```
+
+These paths are gitignored. Generate the iOS app-ID file with
+`flutterfire configure`, then run `pod install` on macOS so Crashlytics adds its
+symbol-upload phase. Release telemetry is enabled automatically. Debug
+telemetry stays disabled unless Flutter is run with
+`--dart-define=ENABLE_FIREBASE_TELEMETRY=true`.
+
 ```sh
 flutter pub get
 flutter run

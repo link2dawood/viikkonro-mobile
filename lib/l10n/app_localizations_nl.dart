@@ -39,7 +39,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get homeTitle => 'Welke week is het?';
 
   @override
-  String get homeLead => 'Weeknummers, datums en belangrijke kalenderdagen op één plek.';
+  String get homeLead =>
+      'Weeknummers, datums en belangrijke kalenderdagen op één plek.';
 
   @override
   String get rightNow => 'OP DIT MOMENT';
@@ -181,10 +182,12 @@ class AppLocalizationsNl extends AppLocalizations {
   String get unknown => 'Nog niet gepubliceerd';
 
   @override
-  String get noSchoolData => 'Er zijn geen gepubliceerde schoolvakantiegegevens voor dit jaar.';
+  String get noSchoolData =>
+      'Er zijn geen gepubliceerde schoolvakantiegegevens voor dit jaar.';
 
   @override
-  String get schoolCoverage => 'De data van je school kunnen afwijken van de gemeentelijke kalender.';
+  String get schoolCoverage =>
+      'De data van je school kunnen afwijken van de gemeentelijke kalender.';
 
   @override
   String get winterBreak => 'Voorjaarsvakantie';
@@ -228,13 +231,16 @@ class AppLocalizationsNl extends AppLocalizations {
   String get lastDate => 'Einddatum';
 
   @override
-  String get invalidRange => 'De einddatum moet gelijk zijn aan of na de begindatum liggen.';
+  String get invalidRange =>
+      'De einddatum moet gelijk zijn aan of na de begindatum liggen.';
 
   @override
-  String get distanceNote => 'Het resultaat is de afstand tussen de datums. De volgorde maakt niet uit.';
+  String get distanceNote =>
+      'Het resultaat is de afstand tussen de datums. De volgorde maakt niet uit.';
 
   @override
-  String get workingNote => 'Beide datums tellen mee. Werkdagen zijn maandag tot en met vrijdag, zonder officiële feestdagen. Kerstavond en midzomeravond tellen als werkdag.';
+  String get workingNote =>
+      'Beide datums tellen mee. Werkdagen zijn maandag tot en met vrijdag, zonder officiële feestdagen. Kerstavond en midzomeravond tellen als werkdag.';
 
   @override
   String get yearWeeks => 'Alle weken van het jaar';
@@ -309,10 +315,12 @@ class AppLocalizationsNl extends AppLocalizations {
   String get firstScreen => 'Startscherm';
 
   @override
-  String get privacyNote => 'Werkt offline. Geen account, geen analyse, geen advertenties.';
+  String get privacyNote =>
+      'Werkt offline. Geen account. De app gebruikt crashrapporten, analyses en advertenties met privacyinstellingen.';
 
   @override
-  String get dataCoverage => 'Kalendergegevens: 2020–2035. Schoolvakanties zijn alleen beschikbaar voor gepubliceerde jaren.';
+  String get dataCoverage =>
+      'Kalendergegevens: 2020–2035. Schoolvakanties zijn alleen beschikbaar voor gepubliceerde jaren.';
 
   @override
   String get about => 'Over de app';
@@ -345,7 +353,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get usWeek => 'Amerikaanse week';
 
   @override
-  String get isoExplanation => 'De week begint op maandag. De eerste ISO-week van het jaar bevat 4 januari. Het ISO-weekjaar kan afwijken van het kalenderjaar.';
+  String get isoExplanation =>
+      'De week begint op maandag. De eerste ISO-week van het jaar bevat 4 januari. Het ISO-weekjaar kan afwijken van het kalenderjaar.';
 
   @override
   String get openData => 'Open data';
@@ -363,7 +372,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get websiteResources => 'Meer op de website';
 
   @override
-  String get websiteResourcesNote => 'De overige diensten van de website openen in de browser en hebben internet nodig.';
+  String get websiteResourcesNote =>
+      'De overige diensten van de website openen in de browser en hebben internet nodig.';
 
   @override
   String get contact => 'Contact';
@@ -446,7 +456,8 @@ class AppLocalizationsNl extends AppLocalizations {
   String get fiContent => 'Het bronmateriaal van de website is in het Fins.';
 
   @override
-  String get nameDaysUnavailable => 'Naamdagen worden toegevoegd zodra de licentie is bevestigd.';
+  String get nameDaysUnavailable =>
+      'Naamdagen worden toegevoegd zodra de licentie is bevestigd.';
 
   @override
   String get weekList => 'Weeklijst';

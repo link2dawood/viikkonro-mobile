@@ -39,7 +39,8 @@ class AppLocalizationsIt extends AppLocalizations {
   String get homeTitle => 'In che settimana siamo?';
 
   @override
-  String get homeLead => 'Numeri di settimana, date e giorni importanti del calendario in un unico posto.';
+  String get homeLead =>
+      'Numeri di settimana, date e giorni importanti del calendario in un unico posto.';
 
   @override
   String get rightNow => 'PROPRIO ORA';
@@ -181,10 +182,12 @@ class AppLocalizationsIt extends AppLocalizations {
   String get unknown => 'Non ancora pubblicato';
 
   @override
-  String get noSchoolData => 'Non ci sono dati pubblicati sulle vacanze scolastiche per quest’anno.';
+  String get noSchoolData =>
+      'Non ci sono dati pubblicati sulle vacanze scolastiche per quest’anno.';
 
   @override
-  String get schoolCoverage => 'Le date della tua scuola possono differire dal calendario comunale.';
+  String get schoolCoverage =>
+      'Le date della tua scuola possono differire dal calendario comunale.';
 
   @override
   String get winterBreak => 'Vacanze invernali';
@@ -228,10 +231,12 @@ class AppLocalizationsIt extends AppLocalizations {
   String get lastDate => 'Data finale';
 
   @override
-  String get invalidRange => 'La data finale deve essere uguale o successiva a quella iniziale.';
+  String get invalidRange =>
+      'La data finale deve essere uguale o successiva a quella iniziale.';
 
   @override
-  String get distanceNote => 'Il risultato è la distanza tra le date. L’ordine non conta.';
+  String get distanceNote =>
+      'Il risultato è la distanza tra le date. L’ordine non conta.';
 
   @override
   String get workingNote =>
@@ -310,10 +315,12 @@ class AppLocalizationsIt extends AppLocalizations {
   String get firstScreen => 'Schermata iniziale';
 
   @override
-  String get privacyNote => 'Funziona offline. Nessun account, nessuna analisi, nessuna pubblicità.';
+  String get privacyNote =>
+      'Funziona offline. Nessun account. L’app usa segnalazioni di arresti anomali, analisi e annunci con controlli sulla privacy.';
 
   @override
-  String get dataCoverage => 'Dati del calendario: 2020–2035. Le vacanze scolastiche sono disponibili solo per gli anni pubblicati.';
+  String get dataCoverage =>
+      'Dati del calendario: 2020–2035. Le vacanze scolastiche sono disponibili solo per gli anni pubblicati.';
 
   @override
   String get about => 'Informazioni sull’app';
@@ -346,7 +353,8 @@ class AppLocalizationsIt extends AppLocalizations {
   String get usWeek => 'Settimana statunitense';
 
   @override
-  String get isoExplanation => 'La settimana inizia di lunedì. La prima settimana ISO dell’anno contiene il 4 gennaio. L’anno ISO può differire dall’anno solare.';
+  String get isoExplanation =>
+      'La settimana inizia di lunedì. La prima settimana ISO dell’anno contiene il 4 gennaio. L’anno ISO può differire dall’anno solare.';
 
   @override
   String get openData => 'Dati aperti';
@@ -364,7 +372,8 @@ class AppLocalizationsIt extends AppLocalizations {
   String get websiteResources => 'Altro sul sito';
 
   @override
-  String get websiteResourcesNote => 'Gli altri servizi del sito si aprono nel browser e richiedono una connessione a internet.';
+  String get websiteResourcesNote =>
+      'Gli altri servizi del sito si aprono nel browser e richiedono una connessione a internet.';
 
   @override
   String get contact => 'Contatti';
@@ -447,7 +456,8 @@ class AppLocalizationsIt extends AppLocalizations {
   String get fiContent => 'Il materiale originale del sito è in finlandese.';
 
   @override
-  String get nameDaysUnavailable => 'Gli onomastici saranno aggiunti una volta verificata la licenza.';
+  String get nameDaysUnavailable =>
+      'Gli onomastici saranno aggiunti una volta verificata la licenza.';
 
   @override
   String get weekList => 'Elenco delle settimane';

@@ -39,7 +39,8 @@ class AppLocalizationsCs extends AppLocalizations {
   String get homeTitle => 'Který je týden?';
 
   @override
-  String get homeLead => 'Čísla týdnů, data a významné dny kalendáře na jednom místě.';
+  String get homeLead =>
+      'Čísla týdnů, data a významné dny kalendáře na jednom místě.';
 
   @override
   String get rightNow => 'PRÁVĚ TEĎ';
@@ -181,10 +182,12 @@ class AppLocalizationsCs extends AppLocalizations {
   String get unknown => 'Zatím nezveřejněno';
 
   @override
-  String get noSchoolData => 'Pro tento rok nejsou zveřejněna žádná data o školních prázdninách.';
+  String get noSchoolData =>
+      'Pro tento rok nejsou zveřejněna žádná data o školních prázdninách.';
 
   @override
-  String get schoolCoverage => 'Termíny vaší školy se mohou lišit od obecního kalendáře.';
+  String get schoolCoverage =>
+      'Termíny vaší školy se mohou lišit od obecního kalendáře.';
 
   @override
   String get winterBreak => 'Jarní prázdniny';
@@ -228,13 +231,16 @@ class AppLocalizationsCs extends AppLocalizations {
   String get lastDate => 'Koncové datum';
 
   @override
-  String get invalidRange => 'Koncové datum musí být stejné nebo pozdější než počáteční.';
+  String get invalidRange =>
+      'Koncové datum musí být stejné nebo pozdější než počáteční.';
 
   @override
-  String get distanceNote => 'Výsledkem je vzdálenost mezi daty. Na pořadí nezáleží.';
+  String get distanceNote =>
+      'Výsledkem je vzdálenost mezi daty. Na pořadí nezáleží.';
 
   @override
-  String get workingNote => 'Obě data se počítají. Pracovní dny jsou pondělí až pátek bez státních svátků. Štědrý den a předvečer svatojánské noci se počítají jako pracovní.';
+  String get workingNote =>
+      'Obě data se počítají. Pracovní dny jsou pondělí až pátek bez státních svátků. Štědrý den a předvečer svatojánské noci se počítají jako pracovní.';
 
   @override
   String get yearWeeks => 'Všechny týdny roku';
@@ -309,10 +315,12 @@ class AppLocalizationsCs extends AppLocalizations {
   String get firstScreen => 'Úvodní obrazovka';
 
   @override
-  String get privacyNote => 'Funguje offline. Žádný účet, žádná analytika, žádné reklamy.';
+  String get privacyNote =>
+      'Funguje offline. Účet není potřeba. Aplikace používá hlášení pádů, analytiku a reklamy s nastavením soukromí.';
 
   @override
-  String get dataCoverage => 'Kalendářní data: 2020–2035. Školní prázdniny jsou k dispozici jen pro zveřejněné roky.';
+  String get dataCoverage =>
+      'Kalendářní data: 2020–2035. Školní prázdniny jsou k dispozici jen pro zveřejněné roky.';
 
   @override
   String get about => 'O aplikaci';
@@ -345,7 +353,8 @@ class AppLocalizationsCs extends AppLocalizations {
   String get usWeek => 'Americký týden';
 
   @override
-  String get isoExplanation => 'Týden začíná v pondělí. První týden ISO v roce obsahuje 4. leden. Rok podle ISO se může lišit od kalendářního roku.';
+  String get isoExplanation =>
+      'Týden začíná v pondělí. První týden ISO v roce obsahuje 4. leden. Rok podle ISO se může lišit od kalendářního roku.';
 
   @override
   String get openData => 'Otevřená data';
@@ -363,7 +372,8 @@ class AppLocalizationsCs extends AppLocalizations {
   String get websiteResources => 'Více na webu';
 
   @override
-  String get websiteResourcesNote => 'Ostatní služby webu se otevírají v prohlížeči a vyžadují připojení k internetu.';
+  String get websiteResourcesNote =>
+      'Ostatní služby webu se otevírají v prohlížeči a vyžadují připojení k internetu.';
 
   @override
   String get contact => 'Kontakt';
@@ -446,7 +456,8 @@ class AppLocalizationsCs extends AppLocalizations {
   String get fiContent => 'Zdrojový materiál webu je ve finštině.';
 
   @override
-  String get nameDaysUnavailable => 'Jmeniny budou doplněny po ověření licence.';
+  String get nameDaysUnavailable =>
+      'Jmeniny budou doplněny po ověření licence.';
 
   @override
   String get weekList => 'Seznam týdnů';

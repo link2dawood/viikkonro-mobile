@@ -94,7 +94,7 @@
   "light": "Jasny",
   "dark": "Ciemny",
   "firstScreen": "Ekran startowy",
-  "privacyNote": "Działa offline. Bez konta, bez analityki, bez reklam.",
+  "privacyNote": "Działa offline. Konto nie jest wymagane. Aplikacja używa raportów o awariach, analityki i reklam z kontrolą prywatności.",
   "dataCoverage": "Dane kalendarzowe: 2020–2035. Ferie szkolne dostępne tylko dla opublikowanych lat.",
   "about": "O aplikacji",
   "licenses": "Licencje open source",

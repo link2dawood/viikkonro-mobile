@@ -39,7 +39,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get homeTitle => 'Em que semana estamos?';
 
   @override
-  String get homeLead => 'Números da semana, datas e dias importantes do calendário num só lugar.';
+  String get homeLead =>
+      'Números da semana, datas e dias importantes do calendário num só lugar.';
 
   @override
   String get rightNow => 'NESTE MOMENTO';
@@ -181,10 +182,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get unknown => 'Ainda não publicado';
 
   @override
-  String get noSchoolData => 'Não há dados publicados de férias escolares para este ano.';
+  String get noSchoolData =>
+      'Não há dados publicados de férias escolares para este ano.';
 
   @override
-  String get schoolCoverage => 'As datas da sua escola podem diferir do calendário municipal.';
+  String get schoolCoverage =>
+      'As datas da sua escola podem diferir do calendário municipal.';
 
   @override
   String get winterBreak => 'Férias de inverno';
@@ -228,13 +231,16 @@ class AppLocalizationsPt extends AppLocalizations {
   String get lastDate => 'Data final';
 
   @override
-  String get invalidRange => 'A data final tem de ser igual ou posterior à data inicial.';
+  String get invalidRange =>
+      'A data final tem de ser igual ou posterior à data inicial.';
 
   @override
-  String get distanceNote => 'O resultado é a distância entre as datas. A ordem não importa.';
+  String get distanceNote =>
+      'O resultado é a distância entre as datas. A ordem não importa.';
 
   @override
-  String get workingNote => 'Ambas as datas são contadas. Os dias úteis são de segunda a sexta, excluindo feriados oficiais. A véspera de Natal e a véspera de São João contam como dias úteis.';
+  String get workingNote =>
+      'Ambas as datas são contadas. Os dias úteis são de segunda a sexta, excluindo feriados oficiais. A véspera de Natal e a véspera de São João contam como dias úteis.';
 
   @override
   String get yearWeeks => 'Todas as semanas do ano';
@@ -309,10 +315,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get firstScreen => 'Ecrã inicial';
 
   @override
-  String get privacyNote => 'Funciona offline. Sem conta, sem análise, sem publicidade.';
+  String get privacyNote =>
+      'Funciona offline. Sem conta. A aplicação usa relatórios de falhas, análise e anúncios com controlos de privacidade.';
 
   @override
-  String get dataCoverage => 'Dados do calendário: 2020–2035. As férias escolares só estão disponíveis para os anos publicados.';
+  String get dataCoverage =>
+      'Dados do calendário: 2020–2035. As férias escolares só estão disponíveis para os anos publicados.';
 
   @override
   String get about => 'Acerca da aplicação';
@@ -345,7 +353,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get usWeek => 'Semana norte-americana';
 
   @override
-  String get isoExplanation => 'A semana começa à segunda-feira. A primeira semana ISO do ano contém o dia 4 de janeiro. O ano ISO pode diferir do ano civil.';
+  String get isoExplanation =>
+      'A semana começa à segunda-feira. A primeira semana ISO do ano contém o dia 4 de janeiro. O ano ISO pode diferir do ano civil.';
 
   @override
   String get openData => 'Dados abertos';
@@ -363,7 +372,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get websiteResources => 'Mais no site';
 
   @override
-  String get websiteResourcesNote => 'Os restantes serviços do site abrem no navegador e requerem ligação à internet.';
+  String get websiteResourcesNote =>
+      'Os restantes serviços do site abrem no navegador e requerem ligação à internet.';
 
   @override
   String get contact => 'Contacto';
@@ -425,7 +435,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get backHome => 'Voltar ao início';
 
   @override
-  String get loadingError => 'Não foi possível carregar os dados do calendário.';
+  String get loadingError =>
+      'Não foi possível carregar os dados do calendário.';
 
   @override
   String get retry => 'Tentar novamente';
@@ -446,7 +457,8 @@ class AppLocalizationsPt extends AppLocalizations {
   String get fiContent => 'O material de origem do site está em finlandês.';
 
   @override
-  String get nameDaysUnavailable => 'Os dias onomásticos serão acrescentados após a verificação da licença.';
+  String get nameDaysUnavailable =>
+      'Os dias onomásticos serão acrescentados após a verificação da licença.';
 
   @override
   String get weekList => 'Lista de semanas';

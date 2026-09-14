@@ -39,7 +39,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get homeTitle => 'Який зараз тиждень?';
 
   @override
-  String get homeLead => 'Номери тижнів, дати та важливі дні календаря в одному місці.';
+  String get homeLead =>
+      'Номери тижнів, дати та важливі дні календаря в одному місці.';
 
   @override
   String get rightNow => 'ПРЯМО ЗАРАЗ';
@@ -181,10 +182,12 @@ class AppLocalizationsUk extends AppLocalizations {
   String get unknown => 'Ще не оприлюднено';
 
   @override
-  String get noSchoolData => 'Для цього року немає оприлюднених даних про шкільні канікули.';
+  String get noSchoolData =>
+      'Для цього року немає оприлюднених даних про шкільні канікули.';
 
   @override
-  String get schoolCoverage => 'Дати вашої школи можуть відрізнятися від календаря громади.';
+  String get schoolCoverage =>
+      'Дати вашої школи можуть відрізнятися від календаря громади.';
 
   @override
   String get winterBreak => 'Зимові канікули';
@@ -228,13 +231,16 @@ class AppLocalizationsUk extends AppLocalizations {
   String get lastDate => 'Кінцева дата';
 
   @override
-  String get invalidRange => 'Кінцева дата має бути тією самою або пізнішою за початкову.';
+  String get invalidRange =>
+      'Кінцева дата має бути тією самою або пізнішою за початкову.';
 
   @override
-  String get distanceNote => 'Результат — це відстань між датами. Порядок не має значення.';
+  String get distanceNote =>
+      'Результат — це відстань між датами. Порядок не має значення.';
 
   @override
-  String get workingNote => 'Обидві дати враховуються. Робочі дні — з понеділка по п’ятницю, крім офіційних свят. Святвечір і переддень Івана Купала вважаються робочими.';
+  String get workingNote =>
+      'Обидві дати враховуються. Робочі дні — з понеділка по п’ятницю, крім офіційних свят. Святвечір і переддень Івана Купала вважаються робочими.';
 
   @override
   String get yearWeeks => 'Усі тижні року';
@@ -309,10 +315,12 @@ class AppLocalizationsUk extends AppLocalizations {
   String get firstScreen => 'Початковий екран';
 
   @override
-  String get privacyNote => 'Працює без інтернету. Без облікового запису, без аналітики, без реклами.';
+  String get privacyNote =>
+      'Працює без інтернету. Обліковий запис не потрібен. Застосунок використовує звіти про збої, аналітику та рекламу з налаштуваннями приватності.';
 
   @override
-  String get dataCoverage => 'Дані календаря: 2020–2035. Шкільні канікули доступні лише для оприлюднених років.';
+  String get dataCoverage =>
+      'Дані календаря: 2020–2035. Шкільні канікули доступні лише для оприлюднених років.';
 
   @override
   String get about => 'Про застосунок';
@@ -345,7 +353,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get usWeek => 'Американський тиждень';
 
   @override
-  String get isoExplanation => 'Тиждень починається в понеділок. Перший тиждень ISO містить 4 січня. Рік за ISO може відрізнятися від календарного.';
+  String get isoExplanation =>
+      'Тиждень починається в понеділок. Перший тиждень ISO містить 4 січня. Рік за ISO може відрізнятися від календарного.';
 
   @override
   String get openData => 'Відкриті дані';
@@ -363,7 +372,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get websiteResources => 'Більше на сайті';
 
   @override
-  String get websiteResourcesNote => 'Інші послуги сайту відкриваються у браузері й потребують інтернету.';
+  String get websiteResourcesNote =>
+      'Інші послуги сайту відкриваються у браузері й потребують інтернету.';
 
   @override
   String get contact => 'Контакти';
@@ -446,7 +456,8 @@ class AppLocalizationsUk extends AppLocalizations {
   String get fiContent => 'Першоджерела сайту — фінською мовою.';
 
   @override
-  String get nameDaysUnavailable => 'Іменини буде додано після підтвердження ліцензії.';
+  String get nameDaysUnavailable =>
+      'Іменини буде додано після підтвердження ліцензії.';
 
   @override
   String get weekList => 'Список тижнів';

@@ -94,7 +94,7 @@
   "light": "Vaalea",
   "dark": "Tumma",
   "firstScreen": "Aloitusnäkymä",
-  "privacyNote": "Toimii ilman verkkoyhteyttä. Ei käyttäjätiliä, analytiikkaa tai mainoksia.",
+  "privacyNote": "Toimii ilman verkkoyhteyttä. Ei käyttäjätiliä. Sovellus käyttää kaatumisraportointia, analytiikkaa ja tietosuojavalintojen mukaisia mainoksia.",
   "dataCoverage": "Kalenteritiedot: 2020–2035. Koululomat saatavilla vain julkaistuille vuosille.",
   "about": "Tietoa sovelluksesta",
   "licenses": "Avoimen lähdekoodin lisenssit",

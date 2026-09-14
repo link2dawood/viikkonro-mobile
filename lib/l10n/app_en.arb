@@ -163,7 +163,7 @@
   "light": "Light",
   "dark": "Dark",
   "firstScreen": "First screen",
-  "privacyNote": "Works offline. No account, analytics or advertising.",
+  "privacyNote": "Works offline. No account. The app uses crash reporting, analytics, and privacy-controlled ads.",
   "dataCoverage": "Calendar data: 2020–2035. School holidays are available for published years only.",
   "about": "About the app",
   "licenses": "Open source licenses",

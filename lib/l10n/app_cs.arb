@@ -94,7 +94,7 @@
   "light": "Světlý",
   "dark": "Tmavý",
   "firstScreen": "Úvodní obrazovka",
-  "privacyNote": "Funguje offline. Žádný účet, žádná analytika, žádné reklamy.",
+  "privacyNote": "Funguje offline. Účet není potřeba. Aplikace používá hlášení pádů, analytiku a reklamy s nastavením soukromí.",
   "dataCoverage": "Kalendářní data: 2020–2035. Školní prázdniny jsou k dispozici jen pro zveřejněné roky.",
   "about": "O aplikaci",
   "licenses": "Licence open source",

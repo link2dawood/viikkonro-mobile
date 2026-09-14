@@ -39,7 +39,8 @@ class AppLocalizationsCa extends AppLocalizations {
   String get homeTitle => 'En quina setmana som?';
 
   @override
-  String get homeLead => 'Números de setmana, dates i dies assenyalats del calendari en un sol lloc.';
+  String get homeLead =>
+      'Números de setmana, dates i dies assenyalats del calendari en un sol lloc.';
 
   @override
   String get rightNow => 'ARA MATEIX';
@@ -181,10 +182,12 @@ class AppLocalizationsCa extends AppLocalizations {
   String get unknown => 'Encara no publicat';
 
   @override
-  String get noSchoolData => 'No hi ha dades publicades de vacances escolars per a aquest any.';
+  String get noSchoolData =>
+      'No hi ha dades publicades de vacances escolars per a aquest any.';
 
   @override
-  String get schoolCoverage => 'Les dates del teu centre poden diferir del calendari municipal.';
+  String get schoolCoverage =>
+      'Les dates del teu centre poden diferir del calendari municipal.';
 
   @override
   String get winterBreak => 'Vacances d’hivern';
@@ -228,13 +231,16 @@ class AppLocalizationsCa extends AppLocalizations {
   String get lastDate => 'Data final';
 
   @override
-  String get invalidRange => 'La data final ha de ser igual o posterior a la d’inici.';
+  String get invalidRange =>
+      'La data final ha de ser igual o posterior a la d’inici.';
 
   @override
-  String get distanceNote => 'El resultat és la distància entre les dates. L’ordre no importa.';
+  String get distanceNote =>
+      'El resultat és la distància entre les dates. L’ordre no importa.';
 
   @override
-  String get workingNote => 'Es compten totes dues dates. Els dies feiners van de dilluns a divendres, sense els festius oficials. La nit de Nadal i la revetlla de Sant Joan compten com a feiners.';
+  String get workingNote =>
+      'Es compten totes dues dates. Els dies feiners van de dilluns a divendres, sense els festius oficials. La nit de Nadal i la revetlla de Sant Joan compten com a feiners.';
 
   @override
   String get yearWeeks => 'Totes les setmanes de l’any';
@@ -309,10 +315,12 @@ class AppLocalizationsCa extends AppLocalizations {
   String get firstScreen => 'Pantalla d’inici';
 
   @override
-  String get privacyNote => 'Funciona sense connexió. Sense compte, sense analítica, sense anuncis.';
+  String get privacyNote =>
+      'Funciona sense connexió. No cal cap compte. Inclou informes d’errors, analítica i anuncis amb controls de privadesa.';
 
   @override
-  String get dataCoverage => 'Dades del calendari: 2020–2035. Les vacances escolars només estan disponibles per als anys publicats.';
+  String get dataCoverage =>
+      'Dades del calendari: 2020–2035. Les vacances escolars només estan disponibles per als anys publicats.';
 
   @override
   String get about => 'Quant a l’aplicació';
@@ -345,7 +353,8 @@ class AppLocalizationsCa extends AppLocalizations {
   String get usWeek => 'Setmana nord-americana';
 
   @override
-  String get isoExplanation => 'La setmana comença dilluns. La primera setmana ISO de l’any conté el 4 de gener. L’any ISO pot diferir de l’any natural.';
+  String get isoExplanation =>
+      'La setmana comença dilluns. La primera setmana ISO de l’any conté el 4 de gener. L’any ISO pot diferir de l’any natural.';
 
   @override
   String get openData => 'Dades obertes';
@@ -363,7 +372,8 @@ class AppLocalizationsCa extends AppLocalizations {
   String get websiteResources => 'Més al lloc web';
 
   @override
-  String get websiteResourcesNote => 'La resta de serveis del lloc s’obren al navegador i necessiten connexió a internet.';
+  String get websiteResourcesNote =>
+      'La resta de serveis del lloc s’obren al navegador i necessiten connexió a internet.';
 
   @override
   String get contact => 'Contacte';
@@ -446,7 +456,8 @@ class AppLocalizationsCa extends AppLocalizations {
   String get fiContent => 'El material original del lloc és en finès.';
 
   @override
-  String get nameDaysUnavailable => 'Les onomàstiques s’afegiran quan es verifiqui la llicència.';
+  String get nameDaysUnavailable =>
+      'Les onomàstiques s’afegiran quan es verifiqui la llicència.';
 
   @override
   String get weekList => 'Llista de setmanes';

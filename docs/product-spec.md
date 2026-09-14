@@ -177,7 +177,7 @@ Nimipäivät remains blocked on the licensing verification you flagged. It is on
 
 Explicitly out
 
-No accounts, no cloud sync, no analytics SDK, no ads in v1, nothing that adds a runtime permission. An empty Data Safety form and an empty App Privacy card is a competitive feature in this category, and it keeps both review paths short.
+No accounts or cloud sync in v1. The approved Google Mobile Ads, Firebase Crashlytics and Google Analytics SDKs add no runtime permission beyond INTERNET. Store privacy disclosures must accurately declare advertising, diagnostics and analytics collection.
 
 9. Deep links
 

@@ -41,8 +41,15 @@ production signing, iOS 16 hardware and API 24 hardware remain unverified.
 - The site repository is now specified as private `link2dawood/weekdays`.
   Existing fixture provenance records the URL used during generation and has
   not been rewritten. Future generator output uses the current repository URL.
-- `lib/core/ads/ad_slot.dart` preserves the future advertising integration point
-  as a no-op with no SDK, content, layout space or network activity in v1.0.
+- The original no-ads policy was revised on 13 September 2026. Android now uses
+  Google Mobile Ads for one Home banner, gated by Google's UMP consent flow.
+  Debug builds use Google's sample banner; release identifiers come from the
+  gitignored `.admob.properties` file.
+- The telemetry policy was revised on 13 September 2026. Firebase Crashlytics
+  captures uncaught Flutter and asynchronous production failures; Google
+  Analytics records navigation and primary-tab screen views. Both initialize
+  before UMP so Google consent mode can be propagated. Debug collection is
+  opt-in, and Firebase platform configuration remains gitignored.
 
 - JavaScript `setDate` is calendar arithmetic. Dart `add(Duration(days: ...))`
   adds 24-hour intervals, even at local midnight, so it is not equivalent around

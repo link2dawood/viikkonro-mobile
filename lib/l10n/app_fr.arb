@@ -94,7 +94,7 @@
   "light": "Clair",
   "dark": "Sombre",
   "firstScreen": "Écran de démarrage",
-  "privacyNote": "Fonctionne hors ligne. Pas de compte, pas d’analyse, pas de publicité.",
+  "privacyNote": "Fonctionne hors ligne. Aucun compte. L’application utilise des rapports de plantage, des analyses et des annonces avec contrôle de confidentialité.",
   "dataCoverage": "Données du calendrier : 2020–2035. Vacances scolaires disponibles uniquement pour les années publiées.",
   "about": "À propos de l’application",
   "licenses": "Licences open source",

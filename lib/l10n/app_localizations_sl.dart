@@ -39,7 +39,8 @@ class AppLocalizationsSl extends AppLocalizations {
   String get homeTitle => 'Kateri teden je?';
 
   @override
-  String get homeLead => 'Številke tednov, datumi in pomembni koledarski dnevi na enem mestu.';
+  String get homeLead =>
+      'Številke tednov, datumi in pomembni koledarski dnevi na enem mestu.';
 
   @override
   String get rightNow => 'PRAV ZDAJ';
@@ -181,10 +182,12 @@ class AppLocalizationsSl extends AppLocalizations {
   String get unknown => 'Še ni objavljeno';
 
   @override
-  String get noSchoolData => 'Za to leto ni objavljenih podatkov o šolskih počitnicah.';
+  String get noSchoolData =>
+      'Za to leto ni objavljenih podatkov o šolskih počitnicah.';
 
   @override
-  String get schoolCoverage => 'Datumi vaše šole se lahko razlikujejo od občinskega koledarja.';
+  String get schoolCoverage =>
+      'Datumi vaše šole se lahko razlikujejo od občinskega koledarja.';
 
   @override
   String get winterBreak => 'Zimske počitnice';
@@ -228,13 +231,16 @@ class AppLocalizationsSl extends AppLocalizations {
   String get lastDate => 'Končni datum';
 
   @override
-  String get invalidRange => 'Končni datum mora biti enak začetnemu ali poznejši.';
+  String get invalidRange =>
+      'Končni datum mora biti enak začetnemu ali poznejši.';
 
   @override
-  String get distanceNote => 'Rezultat je razdalja med datumoma. Vrstni red ni pomemben.';
+  String get distanceNote =>
+      'Rezultat je razdalja med datumoma. Vrstni red ni pomemben.';
 
   @override
-  String get workingNote => 'Oba datuma se štejeta. Delovni dnevi so od ponedeljka do petka brez uradnih praznikov. Božični večer in kres se štejeta kot delovna dneva.';
+  String get workingNote =>
+      'Oba datuma se štejeta. Delovni dnevi so od ponedeljka do petka brez uradnih praznikov. Božični večer in kres se štejeta kot delovna dneva.';
 
   @override
   String get yearWeeks => 'Vsi tedni v letu';
@@ -309,10 +315,12 @@ class AppLocalizationsSl extends AppLocalizations {
   String get firstScreen => 'Začetni zaslon';
 
   @override
-  String get privacyNote => 'Deluje brez povezave. Brez računa, brez analitike, brez oglasov.';
+  String get privacyNote =>
+      'Deluje brez povezave. Račun ni potreben. Aplikacija uporablja poročila o zrušitvah, analitiko in oglase z nastavitvami zasebnosti.';
 
   @override
-  String get dataCoverage => 'Koledarski podatki: 2020–2035. Šolske počitnice so na voljo le za objavljena leta.';
+  String get dataCoverage =>
+      'Koledarski podatki: 2020–2035. Šolske počitnice so na voljo le za objavljena leta.';
 
   @override
   String get about => 'O aplikaciji';
@@ -345,7 +353,8 @@ class AppLocalizationsSl extends AppLocalizations {
   String get usWeek => 'Ameriški teden';
 
   @override
-  String get isoExplanation => 'Teden se začne v ponedeljek. Prvi teden ISO v letu vsebuje 4. januar. Leto ISO se lahko razlikuje od koledarskega leta.';
+  String get isoExplanation =>
+      'Teden se začne v ponedeljek. Prvi teden ISO v letu vsebuje 4. januar. Leto ISO se lahko razlikuje od koledarskega leta.';
 
   @override
   String get openData => 'Odprti podatki';
@@ -363,7 +372,8 @@ class AppLocalizationsSl extends AppLocalizations {
   String get websiteResources => 'Več na spletnem mestu';
 
   @override
-  String get websiteResourcesNote => 'Druge storitve spletnega mesta se odprejo v brskalniku in potrebujejo internetno povezavo.';
+  String get websiteResourcesNote =>
+      'Druge storitve spletnega mesta se odprejo v brskalniku in potrebujejo internetno povezavo.';
 
   @override
   String get contact => 'Stik';
@@ -446,7 +456,8 @@ class AppLocalizationsSl extends AppLocalizations {
   String get fiContent => 'Izvorno gradivo spletnega mesta je v finščini.';
 
   @override
-  String get nameDaysUnavailable => 'Godovi bodo dodani, ko bo licenca potrjena.';
+  String get nameDaysUnavailable =>
+      'Godovi bodo dodani, ko bo licenca potrjena.';
 
   @override
   String get weekList => 'Seznam tednov';

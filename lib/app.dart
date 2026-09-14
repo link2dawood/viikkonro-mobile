@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'core/data/calendar_repository.dart';
 import 'core/date/iso_week.dart';
 import 'core/settings/app_settings.dart';
+import 'core/telemetry/telemetry_service.dart';
 import 'core/theme/brand_theme.dart';
 import 'features/calendar/month_screen.dart';
 import 'features/holidays/holidays_screen.dart';
@@ -79,6 +80,7 @@ class _ViikkonroAppState extends State<ViikkonroApp> {
         darkTheme: Brand.theme(Brightness.dark),
         themeMode: settings.theme,
         navigatorKey: _navigator,
+        navigatorObservers: TelemetryService.instance.navigatorObservers,
         home: AppShell(settings: settings, repository: repository),
         onGenerateRoute: (routeSettings) => _route(routeSettings),
         // FP-R07: an unrecognised path is never a dead end.
@@ -195,6 +197,21 @@ class AppShell extends StatefulWidget {
 class _AppShellState extends State<AppShell> {
   late int _tab = AppSettings.firstScreens.indexOf(widget.settings.firstScreen).clamp(0, 3);
 
+  static const _analyticsScreens = ['home', 'weeks', 'calendar', 'tools', 'more'];
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => TelemetryService.instance.logScreenView(_analyticsScreens[_tab]),
+    );
+  }
+
+  void _selectTab(int index) {
+    setState(() => _tab = index);
+    TelemetryService.instance.logScreenView(_analyticsScreens[index]);
+  }
+
   @override
   Widget build(BuildContext context) {
     final s = context.s;
@@ -217,7 +234,7 @@ class _AppShellState extends State<AppShell> {
       ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _tab,
-        onDestinationSelected: (index) => setState(() => _tab = index),
+        onDestinationSelected: _selectTab,
         destinations: [
           NavigationDestination(icon: const Icon(Icons.today_outlined), selectedIcon: const Icon(Icons.today), label: s.home),
           NavigationDestination(icon: const Icon(Icons.view_week_outlined), selectedIcon: const Icon(Icons.view_week), label: s.weeks),

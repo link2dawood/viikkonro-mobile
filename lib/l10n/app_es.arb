@@ -94,7 +94,7 @@
   "light": "Claro",
   "dark": "Oscuro",
   "firstScreen": "Pantalla inicial",
-  "privacyNote": "Funciona sin conexión. Sin cuenta, sin analítica, sin anuncios.",
+  "privacyNote": "Funciona sin conexión. Sin cuenta. La aplicación usa informes de fallos, analíticas y anuncios con controles de privacidad.",
   "dataCoverage": "Datos del calendario: 2020–2035. Las vacaciones escolares solo están disponibles para los años publicados.",
   "about": "Acerca de la aplicación",
   "licenses": "Licencias de código abierto",

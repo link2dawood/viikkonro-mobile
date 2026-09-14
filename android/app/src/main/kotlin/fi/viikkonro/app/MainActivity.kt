@@ -16,7 +16,8 @@ import io.flutter.plugin.common.MethodChannel
  */
 class MainActivity : FlutterActivity() {
     private companion object {
-        const val CHANNEL = "fi.viikkonro.app/routes"
+        const val ROUTES_CHANNEL = "fi.viikkonro.app/routes"
+        const val ADS_CHANNEL = "fi.viikkonro.app/ads"
     }
 
     private var channel: MethodChannel? = null
@@ -30,7 +31,7 @@ class MainActivity : FlutterActivity() {
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
-        channel = MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).apply {
+        channel = MethodChannel(flutterEngine.dartExecutor.binaryMessenger, ROUTES_CHANNEL).apply {
             setMethodCallHandler { call, result ->
                 when (call.method) {
                     // Read once at startup: a cold start has to find the route
@@ -41,6 +42,16 @@ class MainActivity : FlutterActivity() {
                     }
                     else -> result.notImplemented()
                 }
+            }
+        }
+        MethodChannel(flutterEngine.dartExecutor.binaryMessenger, ADS_CHANNEL).setMethodCallHandler { call, result ->
+            when (call.method) {
+                // The value is generated from the ignored local AdMob config.
+                // Debug builds always expose Google's official test ad unit.
+                "configuration" -> result.success(mapOf(
+                    "bannerAdUnitId" to BuildConfig.ADMOB_BANNER_AD_UNIT_ID,
+                ))
+                else -> result.notImplemented()
             }
         }
     }

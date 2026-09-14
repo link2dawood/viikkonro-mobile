@@ -39,7 +39,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeTitle => 'What week is it?';
 
   @override
-  String get homeLead => 'Week numbers, dates and important calendar days in one place.';
+  String get homeLead =>
+      'Week numbers, dates and important calendar days in one place.';
 
   @override
   String get rightNow => 'RIGHT NOW';
@@ -184,7 +185,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noSchoolData => 'No published school holiday data for this year.';
 
   @override
-  String get schoolCoverage => 'Your school dates may differ from the municipal calendar.';
+  String get schoolCoverage =>
+      'Your school dates may differ from the municipal calendar.';
 
   @override
   String get winterBreak => 'Winter break';
@@ -231,10 +233,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get invalidRange => 'End date must be on or after the start date.';
 
   @override
-  String get distanceNote => 'The result is the distance between dates. Either order is accepted.';
+  String get distanceNote =>
+      'The result is the distance between dates. Either order is accepted.';
 
   @override
-  String get workingNote => 'Both dates are included. Working days are Monday–Friday excluding official public holidays. Christmas Eve and Midsummer Eve count as working days.';
+  String get workingNote =>
+      'Both dates are included. Working days are Monday–Friday excluding official public holidays. Christmas Eve and Midsummer Eve count as working days.';
 
   @override
   String get yearWeeks => 'All weeks of the year';
@@ -309,10 +313,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get firstScreen => 'First screen';
 
   @override
-  String get privacyNote => 'Works offline. No account, analytics or advertising.';
+  String get privacyNote =>
+      'Works offline. No account. The app uses crash reporting, analytics, and privacy-controlled ads.';
 
   @override
-  String get dataCoverage => 'Calendar data: 2020–2035. School holidays are available for published years only.';
+  String get dataCoverage =>
+      'Calendar data: 2020–2035. School holidays are available for published years only.';
 
   @override
   String get about => 'About the app';
@@ -345,7 +351,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get usWeek => 'US week';
 
   @override
-  String get isoExplanation => 'Weeks start on Monday. The first ISO week contains 4 January. The ISO week year may differ from the calendar year.';
+  String get isoExplanation =>
+      'Weeks start on Monday. The first ISO week contains 4 January. The ISO week year may differ from the calendar year.';
 
   @override
   String get openData => 'Open data';
@@ -363,7 +370,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get websiteResources => 'More on the website';
 
   @override
-  String get websiteResourcesNote => 'Additional website services open in your browser and need an internet connection.';
+  String get websiteResourcesNote =>
+      'Additional website services open in your browser and need an internet connection.';
 
   @override
   String get contact => 'Contact';
@@ -446,7 +454,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get fiContent => 'The website source material is in Finnish.';
 
   @override
-  String get nameDaysUnavailable => 'Name days will be added after licensing is verified.';
+  String get nameDaysUnavailable =>
+      'Name days will be added after licensing is verified.';
 
   @override
   String get weekList => 'Week list';

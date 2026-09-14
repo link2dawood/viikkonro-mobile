@@ -58,7 +58,10 @@ key.properties
 *.mobileprovision
 .env
 .env.*
+.admob.properties
+android/app/google-services.json
 ios/Runner/GoogleService-Info.plist
+ios/firebase_app_id_file.json
 ios/fastlane/report.xml
 ios/fastlane/Preview.html
 .build/

@@ -94,7 +94,7 @@
   "light": "Licht",
   "dark": "Donker",
   "firstScreen": "Startscherm",
-  "privacyNote": "Werkt offline. Geen account, geen analyse, geen advertenties.",
+  "privacyNote": "Werkt offline. Geen account. De app gebruikt crashrapporten, analyses en advertenties met privacyinstellingen.",
   "dataCoverage": "Kalendergegevens: 2020–2035. Schoolvakanties zijn alleen beschikbaar voor gepubliceerde jaren.",
   "about": "Over de app",
   "licenses": "Opensourcelicenties",

@@ -94,7 +94,7 @@
   "light": "Açık",
   "dark": "Koyu",
   "firstScreen": "Başlangıç ekranı",
-  "privacyNote": "Çevrimdışı çalışır. Hesap yok, analiz yok, reklam yok.",
+  "privacyNote": "Çevrimdışı çalışır. Hesap gerekmez. Uygulama kilitlenme raporları, analiz ve gizlilik kontrollü reklamlar kullanır.",
   "dataCoverage": "Takvim verileri: 2020–2035. Okul tatilleri yalnızca yayımlanmış yıllar için mevcuttur.",
   "about": "Uygulama hakkında",
   "licenses": "Açık kaynak lisansları",

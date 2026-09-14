@@ -39,7 +39,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get homeTitle => 'Welche Kalenderwoche ist heute?';
 
   @override
-  String get homeLead => 'Kalenderwochen, Datumsangaben und wichtige Kalendertage an einem Ort.';
+  String get homeLead =>
+      'Kalenderwochen, Datumsangaben und wichtige Kalendertage an einem Ort.';
 
   @override
   String get rightNow => 'GERADE JETZT';
@@ -181,10 +182,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get unknown => 'Noch nicht veröffentlicht';
 
   @override
-  String get noSchoolData => 'Für dieses Jahr liegen keine veröffentlichten Schulferiendaten vor.';
+  String get noSchoolData =>
+      'Für dieses Jahr liegen keine veröffentlichten Schulferiendaten vor.';
 
   @override
-  String get schoolCoverage => 'Die Termine Ihrer Schule können vom kommunalen Kalender abweichen.';
+  String get schoolCoverage =>
+      'Die Termine Ihrer Schule können vom kommunalen Kalender abweichen.';
 
   @override
   String get winterBreak => 'Winterferien';
@@ -228,13 +231,16 @@ class AppLocalizationsDe extends AppLocalizations {
   String get lastDate => 'Enddatum';
 
   @override
-  String get invalidRange => 'Das Enddatum muss am oder nach dem Startdatum liegen.';
+  String get invalidRange =>
+      'Das Enddatum muss am oder nach dem Startdatum liegen.';
 
   @override
-  String get distanceNote => 'Das Ergebnis ist der Abstand zwischen den Daten. Die Reihenfolge spielt keine Rolle.';
+  String get distanceNote =>
+      'Das Ergebnis ist der Abstand zwischen den Daten. Die Reihenfolge spielt keine Rolle.';
 
   @override
-  String get workingNote => 'Beide Daten werden mitgezählt. Arbeitstage sind Montag bis Freitag ohne gesetzliche Feiertage. Heiligabend und Mittsommerabend gelten als Arbeitstage.';
+  String get workingNote =>
+      'Beide Daten werden mitgezählt. Arbeitstage sind Montag bis Freitag ohne gesetzliche Feiertage. Heiligabend und Mittsommerabend gelten als Arbeitstage.';
 
   @override
   String get yearWeeks => 'Alle Wochen des Jahres';
@@ -309,10 +315,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get firstScreen => 'Startansicht';
 
   @override
-  String get privacyNote => 'Funktioniert offline. Kein Konto, keine Analyse, keine Werbung.';
+  String get privacyNote =>
+      'Funktioniert offline. Kein Konto. Die App nutzt Absturzberichte, Analysen und datenschutzgesteuerte Anzeigen.';
 
   @override
-  String get dataCoverage => 'Kalenderdaten: 2020–2035. Schulferien nur für veröffentlichte Jahre verfügbar.';
+  String get dataCoverage =>
+      'Kalenderdaten: 2020–2035. Schulferien nur für veröffentlichte Jahre verfügbar.';
 
   @override
   String get about => 'Über die App';
@@ -345,7 +353,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get usWeek => 'US-Woche';
 
   @override
-  String get isoExplanation => 'Die Woche beginnt am Montag. Die erste ISO-Woche des Jahres enthält den 4. Januar. Das ISO-Wochenjahr kann vom Kalenderjahr abweichen.';
+  String get isoExplanation =>
+      'Die Woche beginnt am Montag. Die erste ISO-Woche des Jahres enthält den 4. Januar. Das ISO-Wochenjahr kann vom Kalenderjahr abweichen.';
 
   @override
   String get openData => 'Offene Daten';
@@ -363,7 +372,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get websiteResources => 'Mehr auf der Website';
 
   @override
-  String get websiteResourcesNote => 'Weitere Dienste der Website öffnen sich im Browser und benötigen eine Internetverbindung.';
+  String get websiteResourcesNote =>
+      'Weitere Dienste der Website öffnen sich im Browser und benötigen eine Internetverbindung.';
 
   @override
   String get contact => 'Kontakt';
@@ -446,7 +456,8 @@ class AppLocalizationsDe extends AppLocalizations {
   String get fiContent => 'Das Quellmaterial der Website ist auf Finnisch.';
 
   @override
-  String get nameDaysUnavailable => 'Namenstage werden ergänzt, sobald die Lizenzierung geklärt ist.';
+  String get nameDaysUnavailable =>
+      'Namenstage werden ergänzt, sobald die Lizenzierung geklärt ist.';
 
   @override
   String get weekList => 'Wochenliste';

@@ -39,7 +39,8 @@ class AppLocalizationsEt extends AppLocalizations {
   String get homeTitle => 'Mitmes nädal praegu on?';
 
   @override
-  String get homeLead => 'Nädalanumbrid, kuupäevad ja tähtsad kalendripäevad ühes kohas.';
+  String get homeLead =>
+      'Nädalanumbrid, kuupäevad ja tähtsad kalendripäevad ühes kohas.';
 
   @override
   String get rightNow => 'PRAEGU ON';
@@ -181,10 +182,12 @@ class AppLocalizationsEt extends AppLocalizations {
   String get unknown => 'Veel avaldamata';
 
   @override
-  String get noSchoolData => 'Selle aasta kohta pole avaldatud koolivaheaegade andmeid.';
+  String get noSchoolData =>
+      'Selle aasta kohta pole avaldatud koolivaheaegade andmeid.';
 
   @override
-  String get schoolCoverage => 'Sinu kooli kuupäevad võivad omavalitsuse kalendrist erineda.';
+  String get schoolCoverage =>
+      'Sinu kooli kuupäevad võivad omavalitsuse kalendrist erineda.';
 
   @override
   String get winterBreak => 'Talvevaheaeg';
@@ -228,13 +231,16 @@ class AppLocalizationsEt extends AppLocalizations {
   String get lastDate => 'Lõppkuupäev';
 
   @override
-  String get invalidRange => 'Lõppkuupäev peab olema sama või hilisem kui alguskuupäev.';
+  String get invalidRange =>
+      'Lõppkuupäev peab olema sama või hilisem kui alguskuupäev.';
 
   @override
-  String get distanceNote => 'Tulemus on kuupäevade vaheline kaugus. Järjekord ei loe.';
+  String get distanceNote =>
+      'Tulemus on kuupäevade vaheline kaugus. Järjekord ei loe.';
 
   @override
-  String get workingNote => 'Mõlemad kuupäevad lähevad arvesse. Tööpäevad on esmaspäevast reedeni, välja arvatud ametlikud riigipühad. Jõululaupäev ja jaanilaupäev loetakse tööpäevadeks.';
+  String get workingNote =>
+      'Mõlemad kuupäevad lähevad arvesse. Tööpäevad on esmaspäevast reedeni, välja arvatud ametlikud riigipühad. Jõululaupäev ja jaanilaupäev loetakse tööpäevadeks.';
 
   @override
   String get yearWeeks => 'Aasta kõik nädalad';
@@ -309,10 +315,12 @@ class AppLocalizationsEt extends AppLocalizations {
   String get firstScreen => 'Avavaade';
 
   @override
-  String get privacyNote => 'Töötab võrguühenduseta. Ilma kontota, analüütikata ja reklaamita.';
+  String get privacyNote =>
+      'Töötab võrguühenduseta. Kontot pole vaja. Rakendus kasutab krahhiaruandeid, analüütikat ja privaatsusvalikutega reklaame.';
 
   @override
-  String get dataCoverage => 'Kalendriandmed: 2020–2035. Koolivaheajad on saadaval ainult avaldatud aastate kohta.';
+  String get dataCoverage =>
+      'Kalendriandmed: 2020–2035. Koolivaheajad on saadaval ainult avaldatud aastate kohta.';
 
   @override
   String get about => 'Rakendusest';
@@ -345,7 +353,8 @@ class AppLocalizationsEt extends AppLocalizations {
   String get usWeek => 'USA nädal';
 
   @override
-  String get isoExplanation => 'Nädal algab esmaspäeval. Aasta esimene ISO-nädal sisaldab 4. jaanuari. ISO-nädala aasta võib kalendriaastast erineda.';
+  String get isoExplanation =>
+      'Nädal algab esmaspäeval. Aasta esimene ISO-nädal sisaldab 4. jaanuari. ISO-nädala aasta võib kalendriaastast erineda.';
 
   @override
   String get openData => 'Avaandmed';
@@ -363,7 +372,8 @@ class AppLocalizationsEt extends AppLocalizations {
   String get websiteResources => 'Rohkem veebisaidil';
 
   @override
-  String get websiteResourcesNote => 'Veebisaidi muud teenused avanevad brauseris ja vajavad internetiühendust.';
+  String get websiteResourcesNote =>
+      'Veebisaidi muud teenused avanevad brauseris ja vajavad internetiühendust.';
 
   @override
   String get contact => 'Kontakt';
@@ -446,7 +456,8 @@ class AppLocalizationsEt extends AppLocalizations {
   String get fiContent => 'Veebisaidi lähtematerjal on soome keeles.';
 
   @override
-  String get nameDaysUnavailable => 'Nimepäevad lisatakse pärast litsentsi kinnitamist.';
+  String get nameDaysUnavailable =>
+      'Nimepäevad lisatakse pärast litsentsi kinnitamist.';
 
   @override
   String get weekList => 'Nädalate loend';
