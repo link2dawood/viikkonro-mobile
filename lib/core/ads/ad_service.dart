@@ -41,39 +41,59 @@ class AdService extends ChangeNotifier {
       return;
     }
 
-    ConsentInformation.instance.requestConsentInfoUpdate(
-      ConsentRequestParameters(),
-      () => unawaited(_gatherConsent()),
-      (error) => unawaited(_handleConsentUpdateFailure(error)),
-    );
+    try {
+      ConsentInformation.instance.requestConsentInfoUpdate(
+        ConsentRequestParameters(),
+        () => unawaited(_gatherConsent()),
+        (error) => unawaited(_handleConsentUpdateFailure(error)),
+      );
+    } on Object catch (error, stack) {
+      _logFailure('consent update', error, stack);
+    }
   }
 
   Future<void> showPrivacyOptions() async {
-    await ConsentForm.showPrivacyOptionsForm(
-      (error) => unawaited(_finishConsent(error, 'privacy options')),
-    );
+    try {
+      await ConsentForm.showPrivacyOptionsForm(
+        (error) => unawaited(_finishConsent(error, 'privacy options')),
+      );
+    } on Object catch (error, stack) {
+      _logFailure('privacy options', error, stack);
+    }
   }
 
   Future<void> _gatherConsent() async {
-    await _refreshPrivacyOptionsRequirement();
-    // A previous valid decision may already allow requests while a form is
-    // being checked. The guard prevents duplicate SDK initialization.
-    await _startAdsIfAllowed();
-    await ConsentForm.loadAndShowConsentFormIfRequired(
-      (error) => unawaited(_finishConsent(error, 'consent form')),
-    );
+    try {
+      await _refreshPrivacyOptionsRequirement();
+      // A previous valid decision may already allow requests while a form is
+      // being checked. The guard prevents duplicate SDK initialization.
+      await _startAdsIfAllowed();
+      await ConsentForm.loadAndShowConsentFormIfRequired(
+        (error) => unawaited(_finishConsent(error, 'consent form')),
+      );
+    } on Object catch (error, stack) {
+      _logFailure('consent form', error, stack);
+    }
   }
 
   Future<void> _handleConsentUpdateFailure(FormError error) async {
     debugPrint('AdMob consent update failed: ${error.message}');
     // UMP can still permit ads using a valid decision from an earlier run.
-    await _startAdsIfAllowed();
+    try {
+      await _startAdsIfAllowed();
+    } on Object catch (fallbackError, stack) {
+      _logFailure('cached consent', fallbackError, stack);
+    }
   }
 
   Future<void> _finishConsent(FormError? error, String source) async {
     if (error != null) debugPrint('AdMob $source failed: ${error.message}');
-    await _refreshPrivacyOptionsRequirement();
-    await _startAdsIfAllowed();
+    try {
+      await _refreshPrivacyOptionsRequirement();
+      await _startAdsIfAllowed();
+    } on Object catch (finishError, stack) {
+      _logFailure(source, finishError, stack);
+    }
   }
 
   Future<void> _refreshPrivacyOptionsRequirement() async {
@@ -98,5 +118,10 @@ class AdService extends ChangeNotifier {
     if (_canRequestAds) return;
     _canRequestAds = true;
     notifyListeners();
+  }
+
+  void _logFailure(String source, Object error, StackTrace stack) {
+    debugPrint('AdMob $source unavailable: $error');
+    debugPrintStack(stackTrace: stack);
   }
 }

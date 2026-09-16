@@ -84,7 +84,11 @@ class SettingsScreen extends StatelessWidget {
                           minTileHeight: 52,
                           leading: const Icon(Icons.ads_click_rounded),
                           title: Text(s.privacy),
-                          subtitle: Text(s.settings),
+                          subtitle: Text(
+                            s.privacyNote,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                           onTap: AdService.instance.showPrivacyOptions,
                         )
                       : const SizedBox.shrink(),

@@ -41,6 +41,13 @@ Set the signing values, `ADMOB_ANDROID_APP_ID`, and
 public publisher ID mirrors the seller record hosted at
 `https://viikkonro.fi/app-ads.txt`. Never commit `android/key.properties`.
 
+The app requests an updated Google UMP consent status on every launch, shows
+the consent form when Google requires it, and does not initialize Mobile Ads
+until UMP allows ad requests. To make the form available in production, create
+and publish the applicable message for this Android app under **AdMob > Privacy
+& messaging**. When Google requires a privacy-options entry point, it appears
+automatically in the app's Settings screen so users can revisit their choice.
+
 Firebase project files are also local-only. Register Android production
 `fi.viikkonro.app`, Android debug `fi.viikkonro.app.debug`, and iOS
 `fi.viikkonro.app` in the Firebase Console, enable Analytics and Crashlytics,
@@ -96,6 +103,41 @@ xcodebuild test -workspace ios/Runner.xcworkspace -scheme Runner \
   -configuration Debug -destination 'platform=iOS Simulator,id=YOUR_SIMULATOR_ID' \
   -parallel-testing-enabled NO CODE_SIGNING_ALLOWED=NO
 ```
+
+## Publish to Google Play internal testing
+
+The manually triggered **Publish Android to Play internal testing** workflow
+builds a signed release AAB and uploads it to the `internal` track. Production
+promotion remains a manual Play Console operation.
+
+Enable the Google Play Android Developer API, create a Google Cloud service
+account, and invite its email under **Play Console > Users and permissions**.
+Grant access only to `fi.viikkonro.app` and permission to manage testing-track
+releases. The app must have been created in Play Console before the API can
+upload to it.
+
+Configure these GitHub Actions repository secrets:
+
+| Secret | Contents |
+| --- | --- |
+| `PLAY_SERVICE_ACCOUNT_JSON` | Complete service-account JSON key |
+| `ANDROID_UPLOAD_KEYSTORE_BASE64` | Upload keystore encoded as one-line base64 |
+| `ANDROID_STORE_PASSWORD` | Upload-keystore password |
+| `ANDROID_KEY_PASSWORD` | Upload-key password |
+| `ANDROID_KEY_ALIAS` | Upload-key alias |
+| `ADMOB_ANDROID_APP_ID` | Production Android AdMob app ID |
+| `ADMOB_ANDROID_BANNER_AD_UNIT_ID` | Production Android banner unit ID |
+| `FIREBASE_ANDROID_CONFIG_BASE64` | Production `google-services.json` encoded as one-line base64 |
+
+Create either base64 value without committing the source file:
+
+```sh
+openssl base64 -A -in /path/to/file
+```
+
+Run the workflow from GitHub's Actions page and supply a semantic version plus
+a positive, previously unused build number. GitHub retains the generated AAB
+artifact for 14 days, and the workflow also uploads the R8 mapping file to Play.
 
 The Swift source at `ios/Shared/IsoWeek.swift` is compiled into RunnerTests and
 the WidgetKit extension. All three platforms read
