@@ -107,6 +107,8 @@ class CalendarSnapshotData(
     val schoolBreaks: List<SchoolBreak>,
     val version: Int,
 ) {
+    fun cities(): List<String> = schoolBreaks.flatMap { it.cities }.distinct().sorted()
+
     fun on(date: LocalDate): List<Observance> = observances.filter { it.date == date }
 
     fun isPublicHoliday(date: LocalDate): Boolean =

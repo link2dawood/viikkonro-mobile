@@ -15,6 +15,16 @@
     <string name="widget_winter_break">Winter break</string>
     <string name="widget_autumn_break">Autumn break</string>
     <string name="widget_no_data">No data</string>
+    <string name="widget_no_upcoming_holiday">No upcoming public holiday in the offline data</string>
+    <string name="widget_no_upcoming_flag_day">No upcoming flag day in the offline data</string>
+    <string name="widget_school_not_published">School-holiday dates have not been published</string>
+    <string name="widget_config_title">Widget settings</string>
+    <string name="widget_config_city">School-holiday city</string>
+    <string name="widget_config_automatic">Automatic</string>
+    <string name="widget_config_countdown_target">Countdown target</string>
+    <string name="widget_config_show_events">Show holidays and flag days</string>
+    <string name="widget_config_dynamic_colors">Use system wallpaper colors</string>
+    <string name="widget_config_save">Save widget</string>
 
     <string name="widget_mini_label">Viikkonro: week</string>
     <string name="widget_mini_desc">The current ISO week number.</string>

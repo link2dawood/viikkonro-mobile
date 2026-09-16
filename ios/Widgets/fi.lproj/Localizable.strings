@@ -1,0 +1,17 @@
+"week" = "Viikko";
+"next_holiday" = "Seuraava pyhäpäivä";
+"next_flag" = "Seuraava liputuspäivä";
+"school_break" = "Koululoma";
+"estimated" = "arvio";
+"not_published" = "Ei julkaistu";
+"winter_break" = "Talviloma";
+"autumn_break" = "Syysloma";
+"days" = "%lld päivää";
+"today" = "tänään";
+"week_mini_name" = "Viikkonumero";
+"week_card_name" = "Viikkokortti";
+"week_strip_name" = "Viikkonauha";
+"month_name" = "Kuukausi";
+"countdown_name" = "Laskuri";
+"holidays_name" = "Pyhät ja liputus";
+"school_name" = "Koululomat";

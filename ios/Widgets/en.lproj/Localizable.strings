@@ -1,0 +1,17 @@
+"week" = "Week";
+"next_holiday" = "Next public holiday";
+"next_flag" = "Next flag day";
+"school_break" = "School break";
+"estimated" = "estimated";
+"not_published" = "Not published";
+"winter_break" = "Winter break";
+"autumn_break" = "Autumn break";
+"days" = "%lld days";
+"today" = "today";
+"week_mini_name" = "Week number";
+"week_card_name" = "Week card";
+"week_strip_name" = "Week strip";
+"month_name" = "Month";
+"countdown_name" = "Countdown";
+"holidays_name" = "Holidays and flags";
+"school_name" = "School holidays";

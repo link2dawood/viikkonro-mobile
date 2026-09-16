@@ -81,6 +81,19 @@ class _ViikkonroAppState extends State<ViikkonroApp> {
         themeMode: settings.theme,
         navigatorKey: _navigator,
         navigatorObservers: TelemetryService.instance.navigatorObservers,
+        // Native edge-to-edge follows the device theme. Keep Android's system
+        // bar icons legible when the user explicitly chooses the opposite app
+        // theme without replacing Android's three-button navigation scrim.
+        builder: (context, child) {
+          final iconBrightness = Theme.of(context).brightness == Brightness.dark ? Brightness.light : Brightness.dark;
+          return AnnotatedRegion<SystemUiOverlayStyle>(
+            value: SystemUiOverlayStyle(
+              statusBarIconBrightness: iconBrightness,
+              systemNavigationBarIconBrightness: iconBrightness,
+            ),
+            child: child!,
+          );
+        },
         home: AppShell(settings: settings, repository: repository),
         onGenerateRoute: (routeSettings) => _route(routeSettings),
         // FP-R07: an unrecognised path is never a dead end.

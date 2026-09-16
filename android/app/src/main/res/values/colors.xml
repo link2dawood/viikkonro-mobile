@@ -8,6 +8,20 @@
     <color name="brand_soft">#FF56655F</color>
     <color name="brand_accent">#FF1F7A5C</color>
     <color name="brand_amber">#FFE0A23B</color>
+    <!-- Text-safe amber: 7.2:1 against brand_card. Keep brand_amber for
+         non-text event markers where its brighter tone is useful. -->
+    <color name="brand_amber_text">#FF704700</color>
     <color name="brand_divider">#FFCCD5D1</color>
     <color name="brand_selected">#FFD7E7DF</color>
+    <!-- Dynamic-color fallbacks used on Android 7–11. Android 12+ replaces
+         these aliases with wallpaper-derived system palette resources. -->
+    <color name="widget_dynamic_surface">@color/brand_card</color>
+    <color name="widget_dynamic_on_surface">@color/brand_ink</color>
+    <color name="widget_dynamic_muted">@color/brand_soft</color>
+    <color name="widget_dynamic_primary">@color/brand_accent</color>
+    <color name="widget_dynamic_secondary">@color/brand_amber</color>
+    <color name="widget_dynamic_secondary_text">@color/brand_amber_text</color>
+    <color name="widget_dynamic_divider">@color/brand_divider</color>
+    <color name="widget_dynamic_selected">@color/brand_selected</color>
+    <color name="ic_launcher_background">#FFF5F8F7</color>
 </resources>

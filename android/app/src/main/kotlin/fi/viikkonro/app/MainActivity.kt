@@ -3,8 +3,10 @@ package fi.viikkonro.app
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import androidx.core.view.WindowCompat
 import fi.viikkonro.app.widget.ROUTE_EXTRA
 import fi.viikkonro.app.widget.UpdateScheduler
+import fi.viikkonro.app.widget.WidgetPreviewPublisher
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
@@ -24,9 +26,15 @@ class MainActivity : FlutterActivity() {
     private var pendingRoute: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Android 15+ enforces edge-to-edge for this target SDK. Use the
+        // focused decor-insets API on older versions too: unlike
+        // WindowCompat.enableEdgeToEdge(), it does not set legacy system-bar
+        // colors or LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES.
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
         pendingRoute = routeFrom(intent)
         UpdateScheduler.scheduleNextMidnight(this)
+        WidgetPreviewPublisher.publishIfNeeded(this)
     }
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
@@ -46,7 +54,7 @@ class MainActivity : FlutterActivity() {
         }
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, ADS_CHANNEL).setMethodCallHandler { call, result ->
             when (call.method) {
-                // The value is generated from the ignored local AdMob config.
+                // The value is generated from ignored android/key.properties.
                 // Debug builds always expose Google's official test ad unit.
                 "configuration" -> result.success(mapOf(
                     "bannerAdUnitId" to BuildConfig.ADMOB_BANNER_AD_UNIT_ID,

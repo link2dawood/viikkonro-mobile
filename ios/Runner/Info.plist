@@ -22,6 +22,15 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>fi.viikkonro.app.widgets</string>
+			<key>CFBundleURLSchemes</key>
+			<array><string>viikkonro</string></array>
+		</dict>
+	</array>
 	<!-- The supplied Viikkonro AdMob identity is Android-only. Keeping Google's
 	     sample app ID here makes the shared Flutter plugin safe on iOS without
 	     enabling iOS ad requests. Replace it with a separate iOS app ID when one

@@ -50,23 +50,26 @@ class _HolidaysScreenState extends State<HolidaysScreen> with SingleTickerProvid
           ],
         ),
       ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(20, 16, 20, 0),
-            child: YearStepper(year: year, onChanged: (value) => setState(() => year = value)),
-          ),
-          Expanded(
-            child: TabBarView(
-              controller: _tabs,
-              children: [
-                _EventList(repository: widget.repository, today: widget.today, year: year, flags: false),
-                _EventList(repository: widget.repository, today: widget.today, year: year, flags: true),
-                _SchoolList(repository: widget.repository, year: year),
-              ],
+      body: SafeArea(
+        top: false,
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 16, 20, 0),
+              child: YearStepper(year: year, onChanged: (value) => setState(() => year = value)),
             ),
-          ),
-        ],
+            Expanded(
+              child: TabBarView(
+                controller: _tabs,
+                children: [
+                  _EventList(repository: widget.repository, today: widget.today, year: year, flags: false),
+                  _EventList(repository: widget.repository, today: widget.today, year: year, flags: true),
+                  _SchoolList(repository: widget.repository, year: year),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

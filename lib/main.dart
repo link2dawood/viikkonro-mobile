@@ -46,10 +46,12 @@ class _StartupFailure extends StatelessWidget {
     darkTheme: Brand.theme(Brightness.dark),
     home: Builder(
       builder: (context) => Scaffold(
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(28),
-            child: Text(AppLocalizations.of(context).loadingError, textAlign: TextAlign.center),
+        body: SafeArea(
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(28),
+              child: Text(AppLocalizations.of(context).loadingError, textAlign: TextAlign.center),
+            ),
           ),
         ),
       ),

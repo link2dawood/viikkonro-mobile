@@ -44,12 +44,16 @@ production signing, iOS 16 hardware and API 24 hardware remain unverified.
 - The original no-ads policy was revised on 13 September 2026. Android now uses
   Google Mobile Ads for one Home banner, gated by Google's UMP consent flow.
   Debug builds use Google's sample banner; release identifiers come from the
-  gitignored `.admob.properties` file.
+  gitignored `android/key.properties` file. The public app-ads.txt seller record
+  is deployed by the private `link2dawood/weekdays` website repository.
 - The telemetry policy was revised on 13 September 2026. Firebase Crashlytics
   captures uncaught Flutter and asynchronous production failures; Google
   Analytics records navigation and primary-tab screen views. Both initialize
   before UMP so Google consent mode can be propagated. Debug collection is
   opt-in, and Firebase platform configuration remains gitignored.
+- Android release builds use AGP 9.1 with R8 code shrinking, resource shrinking,
+  and AGP's integrated optimized resource shrinker. Debug builds remain
+  unminified for normal development and diagnostics.
 
 - JavaScript `setDate` is calendar arithmetic. Dart `add(Duration(days: ...))`
   adds 24-hour intervals, even at local midnight, so it is not equivalent around
@@ -62,8 +66,8 @@ production signing, iOS 16 hardware and API 24 hardware remain unverified.
   uses the page model and does not promote regional dates into city confirmations.
 - CI runs Swift parity on pull requests too. A check that only runs after merging
   cannot prevent a parity regression from merging.
-- App Group entitlements and widget targets will be added together with the
-  bridge, so their identifiers are reserved but capabilities are not yet enabled.
+- The Runner and WidgetKit targets carry the shared App Group entitlement.
+  Production provisioning profiles must enable that capability before signing.
 
 ## Second milestone: the app shell and the 1.0 screens
 
@@ -90,6 +94,9 @@ Implemented:
 - `test/screen_smoke_test.dart` renders every route and every tab at 360x740 in
   Finnish and English, at a 200% font scale, and in landscape, asserting that
   nothing overflows. It found seven real layout defects, all since fixed.
+- Android opts into edge-to-edge consistently on every supported OS version.
+  Flutter bodies consume side, display-cutout and bottom system insets while
+  app bars and navigation surfaces continue drawing behind their system bars.
 - Installed and driven on a physical Pixel 6 (Android 17). Week 37, the
   Finnish long form `Lauantai 12. syyskuuta 2026`, `2026-W37 · Vuoden päivä
   255 / 365`, the year grid opening on the current week with its quarter
@@ -121,8 +128,11 @@ Android home screen widgets (FP-W):
   over a method channel, and the Dart router opens the matching screen on a
   cold start as well as a warm one (FP-W12).
 - Widget palette comes from Android colour resources with a `values-night`
-  variant, so dark mode is the platform's concern rather than the widget's.
-  Material You (FP-W13) is still opt-in work for a later release.
+  variant. Each instance can optionally use Android 12+ wallpaper colours.
+- Every provider supports native reconfiguration. Options are stored per widget:
+  school city, countdown target, applicable event markers and colour mode.
+- Exact-size layouts, OEM corner radii, generated Android 15 previews and
+  widget-specific static preview assets cover the launcher compatibility tiers.
 
 Languages:
 
@@ -171,10 +181,6 @@ Languages:
   but not yet used by any screen.
 - The twenty new translations were produced in-house and have not been reviewed
   by native speakers. They are a starting point for review, not finished copy.
-- FP-W06's per-instance widget configuration is not built: the Laskuri widget
-  counts down to the next public holiday, which needs no setup. FP-W08's city
-  comes from a `schoolCity` preference the app does not write yet, so the
-  widget falls back to the next published break for any city.
 - The widgets were verified by unit test, by provider registration and by the
   deep-link path on the device. Placing one on the home screen cannot be
   driven over adb, so the on-device visual check is still a manual step.
@@ -189,8 +195,9 @@ Languages:
 3. Versioned network refresh, atomic cache write, background schedule, and the
    Settings refresh control (FP-D05 to FP-D07, FP-S07, FP-S08).
 4. Calendar export and the remaining sharing points (FP-P06, FP-X04, FP-X05).
-5. iOS: App Group wiring and the WidgetKit bundle (FP-I).
-6. Deep-link platform wiring and website association files, quick access.
+5. Finish on-device visual validation of the iOS WidgetKit bundle and Android
+   size/theme matrix; the targets and offline timeline implementations exist.
+6. Website association files and quick access.
 7. A TalkBack and VoiceOver pass, and a measured cold start on a mid-range
    device.
 8. Store metadata, production signing, internal-track/TestFlight builds.

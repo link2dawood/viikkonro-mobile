@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="140" viewBox="0 0 500 140">
+  <rect width="500" height="140" rx="28" fill="#F5F8F7"/>
+  <g font-family="sans-serif" text-anchor="middle"><g font-size="18" fill="#56655F">
+    <text x="52" y="46">1</text><text x="118" y="46">2</text><text x="184" y="46">3</text><text x="250" y="46">4</text><text x="316" y="46">5</text><text x="382" y="46">6</text><text x="448" y="46">7</text>
+  </g><g font-size="28" font-weight="700" fill="#15211F">
+    <text x="52" y="91">7</text><text x="118" y="91">8</text><text x="184" y="91">9</text><text x="250" y="91">10</text><text x="316" y="91">11</text><text x="382" y="91">12</text><text x="448" y="91">13</text>
+  </g></g><rect x="229" y="56" width="43" height="43" rx="16" fill="#D7E7DF"/><circle cx="382" cy="112" r="5" fill="#E0A23B"/>
+</svg>

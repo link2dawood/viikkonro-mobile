@@ -30,25 +30,28 @@ class _ToolsScreenState extends State<ToolsScreen> with SingleTickerProviderStat
   @override
   Widget build(BuildContext context) {
     final s = context.s;
-    final body = Column(
-      children: [
-        TabBar(
-          controller: _tabs,
-          tabs: [
-            Tab(text: s.daysBetween),
-            Tab(text: s.workingDaysBetween),
-          ],
-        ),
-        Expanded(
-          child: TabBarView(
+    final body = SafeArea(
+      top: false,
+      child: Column(
+        children: [
+          TabBar(
             controller: _tabs,
-            children: [
-              _DaysBetween(repository: widget.repository, today: widget.today),
-              _WorkdaysRemaining(repository: widget.repository, today: widget.today),
+            tabs: [
+              Tab(text: s.daysBetween),
+              Tab(text: s.workingDaysBetween),
             ],
           ),
-        ),
-      ],
+          Expanded(
+            child: TabBarView(
+              controller: _tabs,
+              children: [
+                _DaysBetween(repository: widget.repository, today: widget.today),
+                _WorkdaysRemaining(repository: widget.repository, today: widget.today),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
     if (widget.embedded) return body;
     return Scaffold(

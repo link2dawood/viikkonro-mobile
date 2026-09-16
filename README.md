@@ -13,29 +13,33 @@ milestones. See [development status](docs/development-status.md), the supplied
 
 ## Toolchain and identifiers
 
-- Flutter 3.38.9 / Dart 3.10.8 (the version pinned in CI).
+- Flutter 3.47.4 / Dart 3.13.3 (the version pinned in CI).
 - Android SDK 36, minimum API 24; JDK 17.
 - Xcode with an installed iOS simulator, CocoaPods; minimum deployment iOS 16.
 - Android release: `fi.viikkonro.app`; debug: `fi.viikkonro.app.debug`.
 - iOS: `fi.viikkonro.app` in Debug, Release, and Profile.
-- Reserved iOS widget ID: `fi.viikkonro.app.widgets`.
+- iOS widget extension: `fi.viikkonro.app.widgets`.
 - Android widget package: `fi.viikkonro.app.widget`.
-- Reserved App Group: `group.fi.viikkonro.app` (capability wiring comes with widgets).
+- App Group: `group.fi.viikkonro.app` (enable it on both provisioning profiles).
 
 Production signing is not configured. Release builds no longer use the debug
 certificate. Never commit signing keys, credentials, or provisioning profiles.
 
 ## Run locally
 
-Create the ignored Android AdMob configuration once. Debug builds always use
-Google's sample banner ID even when production values are present.
+Create the ignored Android signing and AdMob configuration once. If you already
+have `android/key.properties`, merge the AdMob entries instead of overwriting
+your signing credentials. Debug builds always use Google's sample banner ID
+even when production values are present.
 
 ```sh
-cp admob.properties.example .admob.properties
+cp android/key.properties.example android/key.properties
 ```
 
-Set `ADMOB_ANDROID_APP_ID` and `ADMOB_ANDROID_BANNER_AD_UNIT_ID` in that local
-file for release builds. Never commit `.admob.properties`.
+Set the signing values, `ADMOB_ANDROID_APP_ID`, and
+`ADMOB_ANDROID_BANNER_AD_UNIT_ID` in that local file for release builds. The
+public publisher ID mirrors the seller record hosted at
+`https://viikkonro.fi/app-ads.txt`. Never commit `android/key.properties`.
 
 Firebase project files are also local-only. Register Android production
 `fi.viikkonro.app`, Android debug `fi.viikkonro.app.debug`, and iOS
@@ -93,8 +97,8 @@ xcodebuild test -workspace ios/Runner.xcworkspace -scheme Runner \
   -parallel-testing-enabled NO CODE_SIGNING_ALLOWED=NO
 ```
 
-The Swift source at `ios/Shared/IsoWeek.swift` is compiled into RunnerTests now
-and will also be used by the WidgetKit extension. All three platforms read
+The Swift source at `ios/Shared/IsoWeek.swift` is compiled into RunnerTests and
+the WidgetKit extension. All three platforms read
 `test/fixtures/iso_week_fixture.json`, covering 5,844 dates and 835 week spans.
 Dart and Swift cover Helsinki, UTC, New York, and Auckland time zones.
 CI runs every parity suite on pull requests and pushes to `main`.

@@ -13,6 +13,16 @@
     <string name="widget_winter_break">Talviloma</string>
     <string name="widget_autumn_break">Syysloma</string>
     <string name="widget_no_data">Ei tietoa</string>
+    <string name="widget_no_upcoming_holiday">Offline-tiedoissa ei ole tulevaa pyhäpäivää</string>
+    <string name="widget_no_upcoming_flag_day">Offline-tiedoissa ei ole tulevaa liputuspäivää</string>
+    <string name="widget_school_not_published">Koululomapäiviä ei ole vielä julkaistu</string>
+    <string name="widget_config_title">Pienoisohjelman asetukset</string>
+    <string name="widget_config_city">Koululomakaupunki</string>
+    <string name="widget_config_automatic">Automaattinen</string>
+    <string name="widget_config_countdown_target">Laskurin kohde</string>
+    <string name="widget_config_show_events">Näytä pyhät ja liputuspäivät</string>
+    <string name="widget_config_dynamic_colors">Käytä järjestelmän taustakuvan värejä</string>
+    <string name="widget_config_save">Tallenna pienoisohjelma</string>
 
     <string name="widget_mini_label">Viikkonro: viikko</string>
     <string name="widget_mini_desc">Kuluva ISO-viikkonumero.</string>

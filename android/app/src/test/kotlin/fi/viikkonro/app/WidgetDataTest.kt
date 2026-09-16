@@ -53,6 +53,14 @@ class WidgetDataTest {
         val helsinki = snapshot.nextSchoolBreak(LocalDate.of(2026, 1, 1), "Helsinki")
         assertNotNull(helsinki)
         assertTrue(helsinki!!.cities.contains("Helsinki"))
+        assertTrue(snapshot.cities().containsAll(listOf("Helsinki", "Oulu")))
+    }
+
+    @Test fun exhaustedOfflineDataProducesIntentionalEmptyStates() {
+        val afterPublishedRange = LocalDate.of(2036, 1, 1)
+        assertEquals(null, snapshot.nextHoliday(afterPublishedRange))
+        assertEquals(null, snapshot.nextFlagDay(afterPublishedRange))
+        assertEquals(null, snapshot.nextSchoolBreak(afterPublishedRange, "Helsinki"))
     }
 
     @Test fun monthGridStartsOnMondayAndCoversTheMonth() {

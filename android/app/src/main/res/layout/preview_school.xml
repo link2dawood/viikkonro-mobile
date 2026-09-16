@@ -7,15 +7,15 @@
     android:orientation="vertical"
     android:padding="10dp">
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="KOULULOMA" android:textSize="9sp" android:textColor="@color/brand_accent"
+        android:text="@string/widget_school_break" android:textSize="9sp" android:textColor="@color/brand_accent"
         android:textStyle="normal" />
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Syysloma" android:textSize="15sp" android:textColor="@color/brand_ink"
+        android:text="@string/widget_autumn_break" android:textSize="15sp" android:textColor="@color/brand_ink"
         android:textStyle="bold" />
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:text="12.10.–16.10." android:textSize="12sp" android:textColor="@color/brand_soft"
         android:textStyle="normal" />
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="arvio" android:textSize="9sp" android:textColor="@color/brand_amber"
+        android:text="@string/widget_estimated" android:textSize="9sp" android:textColor="@color/brand_amber_text"
         android:textStyle="normal" />
 </LinearLayout>

@@ -1,4 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- AdMob and the optional data refresh require network access. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <!-- Needed to re-arm the midnight widget job after a reboot (FP-W10). -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
@@ -6,9 +8,10 @@
         android:label="Viikkonro"
         android:enableOnBackInvokedCallback="true"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher">
         <!-- Google Mobile Ads reads this before Flutter starts. The value comes
-             from the ignored .admob.properties file through Gradle. -->
+             from the ignored android/key.properties file through Gradle. -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="${admobAppId}"/>
@@ -49,6 +52,10 @@
                 <data android:scheme="viikkonro" android:host="widget"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".widget.WidgetConfigActivity"
+            android:exported="true"
+            android:theme="@style/WidgetConfigTheme" />
 
         <!-- FP-W01: seven separate providers, so the picker lists seven entries. -->
         <receiver

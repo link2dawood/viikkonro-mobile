@@ -1,5 +1,0 @@
-# Copy this file to .admob.properties. The copied file is gitignored.
-# Google sample IDs are safe for development; use the Viikkonro production IDs
-# only in your local/release configuration.
-ADMOB_ANDROID_APP_ID=ca-app-pub-3940256099942544~3347511713
-ADMOB_ANDROID_BANNER_AD_UNIT_ID=ca-app-pub-3940256099942544/6300978111

@@ -1,15 +1,20 @@
 package fi.viikkonro.app.widget
 
+import android.appwidget.AppWidgetProviderInfo.WIDGET_CATEGORY_HOME_SCREEN
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.os.Build
+import androidx.collection.intSetOf
 import androidx.glance.appwidget.GlanceAppWidget
+import androidx.glance.appwidget.GlanceAppWidgetManager
 import androidx.glance.appwidget.updateAll
 import androidx.work.CoroutineWorker
 import androidx.work.ExistingWorkPolicy
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.WorkerParameters
+import fi.viikkonro.app.BuildConfig
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -70,6 +75,44 @@ object UpdateScheduler {
                 .setInitialDelay(delay)
                 .build(),
         )
+    }
+}
+
+/**
+ * Android 15 can render the real Glance UI in the widget picker. Publish each
+ * provider once per app version; the platform rate-limits preview writes.
+ * Android 12–14 continue to use the localized previewLayout fallback.
+ */
+object WidgetPreviewPublisher {
+    private const val PREFS = "widget-preview-publication"
+
+    fun publishIfNeeded(context: Context) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.VANILLA_ICE_CREAM) return
+        val appContext = context.applicationContext
+        val prefs = appContext.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+        val receivers = listOf(
+            WeekMiniReceiver::class,
+            WeekCardReceiver::class,
+            WeekStripReceiver::class,
+            MonthReceiver::class,
+            CountdownReceiver::class,
+            HolidaysReceiver::class,
+            SchoolHolidayReceiver::class,
+        ).filter { prefs.getInt(it.java.name, -1) != BuildConfig.VERSION_CODE }
+        if (receivers.isEmpty()) return
+
+        CoroutineScope(Dispatchers.Default).launch {
+            val manager = GlanceAppWidgetManager(appContext)
+            val categories = intSetOf(WIDGET_CATEGORY_HOME_SCREEN)
+            receivers.forEach { receiver ->
+                val result = runCatching { manager.setWidgetPreviews(receiver, categories) }.getOrNull()
+                if (result == GlanceAppWidgetManager.SET_WIDGET_PREVIEWS_RESULT_SUCCESS) {
+                    // Store each success independently. If Android rate-limits
+                    // later providers, a future launch resumes at that point.
+                    prefs.edit().putInt(receiver.java.name, BuildConfig.VERSION_CODE).apply()
+                }
+            }
+        }
     }
 }
 

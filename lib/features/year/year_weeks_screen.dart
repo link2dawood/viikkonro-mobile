@@ -53,41 +53,44 @@ class _YearWeeksScreenState extends State<YearWeeksScreen> {
     final currentYear = year == isoYear(widget.today);
     final currentWeek = isoWeek(widget.today);
     _controller ??= ScrollController(initialScrollOffset: _initialOffset());
-    final body = Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.fromLTRB(20, 18, 20, 0),
-          child: Column(
-            children: [
-              YearStepper(year: year, onChanged: _setYear),
-              // Wraps instead of clipping when the font scale is turned up.
-              Wrap(
-                alignment: WrapAlignment.spaceBetween,
-                spacing: 12,
-                runSpacing: 2,
-                children: [
-                  Mono(s.weeksTotal),
-                  Mono(s.weekOf(currentYear ? currentWeek : total, total), weight: FontWeight.w600),
-                ],
-              ),
-              const AdSlot(),
-            ],
-          ),
-        ),
-        const SizedBox(height: 10),
-        Expanded(
-          child: Scrollbar(
-            controller: _controller,
-            child: ListView.builder(
-              controller: _controller,
-              padding: const EdgeInsets.fromLTRB(14, 0, 14, 28),
-              itemExtent: _rowExtent(context),
-              itemCount: total,
-              itemBuilder: (context, index) => _WeekRow(week: index + 1, year: year, repository: widget.repository, current: currentYear && index + 1 == currentWeek),
+    final body = SafeArea(
+      top: false,
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20, 18, 20, 0),
+            child: Column(
+              children: [
+                YearStepper(year: year, onChanged: _setYear),
+                // Wraps instead of clipping when the font scale is turned up.
+                Wrap(
+                  alignment: WrapAlignment.spaceBetween,
+                  spacing: 12,
+                  runSpacing: 2,
+                  children: [
+                    Mono(s.weeksTotal),
+                    Mono(s.weekOf(currentYear ? currentWeek : total, total), weight: FontWeight.w600),
+                  ],
+                ),
+                const AdSlot(),
+              ],
             ),
           ),
-        ),
-      ],
+          const SizedBox(height: 10),
+          Expanded(
+            child: Scrollbar(
+              controller: _controller,
+              child: ListView.builder(
+                controller: _controller,
+                padding: const EdgeInsets.fromLTRB(14, 0, 14, 28),
+                itemExtent: _rowExtent(context),
+                itemCount: total,
+                itemBuilder: (context, index) => _WeekRow(week: index + 1, year: year, repository: widget.repository, current: currentYear && index + 1 == currentWeek),
+              ),
+            ),
+          ),
+        ],
+      ),
     );
     if (widget.embedded) return body;
     return Scaffold(

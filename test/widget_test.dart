@@ -5,6 +5,7 @@ import 'package:viikkonro/app.dart';
 import 'package:viikkonro/core/data/calendar_repository.dart';
 import 'package:viikkonro/core/date/iso_week.dart';
 import 'package:viikkonro/core/settings/app_settings.dart';
+import 'package:viikkonro/shared/components.dart';
 
 void main() {
   // 2026-09-11 is a Friday in ISO week 37 of a 53-week year, which makes it a
@@ -91,5 +92,24 @@ void main() {
     expect(isoYear(clock), 2026);
 
     await tester.pumpWidget(const SizedBox.shrink());
+  });
+
+  testWidgets('page content stays inside side and bottom system insets', (tester) async {
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: MediaQuery(
+          data: MediaQueryData(padding: EdgeInsets.fromLTRB(24, 0, 18, 32)),
+          child: PageBody(children: [SizedBox(key: Key('inset-content'), height: 20)]),
+        ),
+      ),
+    );
+
+    final safeArea = tester.widget<SafeArea>(find.descendant(of: find.byType(PageBody), matching: find.byType(SafeArea)));
+    expect(safeArea.top, isFalse);
+    expect(safeArea.left, isTrue);
+    expect(safeArea.right, isTrue);
+    expect(safeArea.bottom, isTrue);
+    // 24 logical pixels of system inset plus PageBody's 20-pixel margin.
+    expect(tester.getTopLeft(find.byKey(const Key('inset-content'))).dx, 44);
   });
 }

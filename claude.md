@@ -249,8 +249,10 @@ requests ads only after the Google UMP consent flow permits it, uses Google's te
 banner in debug builds, and exposes required privacy options in Settings. The
 repository is public: never add keystores, signing properties, provisioning
 profiles, credentials, API keys, or `.env` files. AdMob identifiers live in the
-gitignored `.admob.properties`; `admob.properties.example` contains safe sample
-values. Firebase platform configuration is also gitignored. Crashlytics records
+gitignored `android/key.properties`; `android/key.properties.example` documents
+the required fields without real secrets. The public publisher ID also appears
+in the website's app-ads.txt record. Firebase platform configuration is also
+gitignored. Crashlytics records
 uncaught production failures, Analytics records navigation/screen views, and
 debug telemetry requires an explicit build define.
 
@@ -308,7 +310,7 @@ Test responsibilities:
 - Android `IsoWeekParityTest` and `WidgetDataTest`: shared fixture parity,
   packaged data parsing, holiday/flag separation, confidence, and month grids.
 - `RunnerTests.swift`: Swift parity and boundaries in four time zones.
-- `.github/workflows/ci.yml`: pinned Flutter 3.38.9/Dart 3.10.8 matrix plus
+- `.github/workflows/ci.yml`: pinned Flutter 3.47.4/Dart 3.13.3 matrix plus
   Android/JDK 17 and macOS/iOS jobs.
 
 When changing only documentation, inspect the diff; code test reruns are not

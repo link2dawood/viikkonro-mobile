@@ -32,25 +32,28 @@ class _LookupScreenState extends State<LookupScreen> with SingleTickerProviderSt
   @override
   Widget build(BuildContext context) {
     final s = context.s;
-    final body = Column(
-      children: [
-        TabBar(
-          controller: _tabs,
-          tabs: [
-            Tab(text: s.dateToWeek),
-            Tab(text: s.weekToDate),
-          ],
-        ),
-        Expanded(
-          child: TabBarView(
+    final body = SafeArea(
+      top: false,
+      child: Column(
+        children: [
+          TabBar(
             controller: _tabs,
-            children: [
-              _DateToWeek(repository: widget.repository, today: widget.today),
-              _WeekToDate(repository: widget.repository, today: widget.today),
+            tabs: [
+              Tab(text: s.dateToWeek),
+              Tab(text: s.weekToDate),
             ],
           ),
-        ),
-      ],
+          Expanded(
+            child: TabBarView(
+              controller: _tabs,
+              children: [
+                _DateToWeek(repository: widget.repository, today: widget.today),
+                _WeekToDate(repository: widget.repository, today: widget.today),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
     if (widget.embedded) return body;
     return Scaffold(

@@ -1,0 +1,11 @@
+# Copy this file to key.properties in the same directory. The copied file is
+# gitignored. Never commit real signing credentials or production ad unit IDs.
+storePassword=replace-with-upload-keystore-password
+keyPassword=replace-with-upload-key-password
+keyAlias=upload
+storeFile=replace-with-absolute-or-app-relative-keystore-path
+
+# This publisher ID is public and must match the app-ads.txt seller record.
+ADMOB_PUBLISHER_ID=pub-5553975522423673
+ADMOB_ANDROID_APP_ID=ca-app-pub-5553975522423673~replace-with-app-id-suffix
+ADMOB_ANDROID_BANNER_AD_UNIT_ID=ca-app-pub-5553975522423673/replace-with-banner-id-suffix

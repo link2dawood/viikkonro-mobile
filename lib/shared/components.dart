@@ -8,12 +8,17 @@ class PageBody extends StatelessWidget {
   const PageBody({super.key, required this.children});
   final List<Widget> children;
   @override
-  Widget build(BuildContext context) => SingleChildScrollView(
-    padding: const EdgeInsets.fromLTRB(20, 22, 20, 36),
-    child: Center(
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 960),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: children),
+  Widget build(BuildContext context) => SafeArea(
+    // AppBar owns the status-bar inset. SafeArea still protects the sides from
+    // landscape cutouts and the bottom from gesture/three-button navigation.
+    top: false,
+    child: SingleChildScrollView(
+      padding: const EdgeInsets.fromLTRB(20, 22, 20, 36),
+      child: Center(
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 960),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: children),
+        ),
       ),
     ),
   );

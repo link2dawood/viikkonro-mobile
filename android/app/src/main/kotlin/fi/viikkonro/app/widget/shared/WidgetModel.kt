@@ -31,6 +31,7 @@ class WidgetModel(context: Context, val today: LocalDate = LocalDate.now()) {
     fun isPublicHoliday(date: LocalDate): Boolean = data.isPublicHoliday(date)
     fun observances(date: LocalDate): List<Observance> = data.on(date)
     fun nextSchoolBreak(city: String?): SchoolBreak? = data.nextSchoolBreak(today, city)
+    fun schoolCities(): List<String> = data.cities()
 
     fun daysUntil(date: LocalDate): Long = ChronoUnit.DAYS.between(today, date)
 

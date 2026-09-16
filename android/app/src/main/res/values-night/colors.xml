@@ -4,6 +4,8 @@
     <color name="brand_ink">#FFE7ECEB</color>
     <color name="brand_soft">#FFB1C3BB</color>
     <color name="brand_accent">#FF91D4B7</color>
+    <color name="brand_amber">#FFF2B95C</color>
+    <color name="brand_amber_text">#FFFFD38A</color>
     <color name="brand_divider">#FF34483E</color>
     <color name="brand_selected">#FF24453A</color>
 </resources>

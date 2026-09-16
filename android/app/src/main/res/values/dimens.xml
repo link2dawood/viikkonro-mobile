@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Android 7–11 fallback. Android 12+ replaces this with the launcher's
+         OEM-specific widget radius. -->
+    <dimen name="widget_corner_radius">18dp</dimen>
+</resources>
