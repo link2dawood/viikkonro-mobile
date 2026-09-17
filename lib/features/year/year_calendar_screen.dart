@@ -10,7 +10,12 @@ import '../calendar/month_screen.dart' show MarkerLegend;
 
 /// The whole year as twelve compact month grids, week gutters included.
 class YearCalendarScreen extends StatefulWidget {
-  const YearCalendarScreen({super.key, required this.repository, required this.today, required this.year});
+  const YearCalendarScreen({
+    super.key,
+    required this.repository,
+    required this.today,
+    required this.year,
+  });
   final CalendarRepository repository;
   final DateTime today;
   final int year;
@@ -23,16 +28,36 @@ class _YearCalendarScreenState extends State<YearCalendarScreen> {
   @override
   Widget build(BuildContext context) {
     final s = context.s;
-    final counts = countWorkingDays(DateTime(year, 1, 1), DateTime(year, 12, 31), isHoliday: widget.repository.isHoliday);
+    final counts = countWorkingDays(
+      DateTime(year, 1, 1),
+      DateTime(year, 12, 31),
+      isHoliday: widget.repository.isHoliday,
+    );
     return Scaffold(
       appBar: AppBar(
         title: Text(s.yearCalendar),
-        actions: [IconButton(tooltip: s.openWebsite, onPressed: () => openUrl(context, SiteUrl.path('kalenteri-$year')), icon: const Icon(Icons.open_in_new_rounded))],
+        actions: [
+          IconButton(
+            tooltip: s.openWebsite,
+            onPressed: () => openUrl(context, SiteUrl.path('kalenteri-$year')),
+            icon: const Icon(Icons.open_in_new_rounded),
+          ),
+        ],
       ),
       body: PageBody(
         children: [
-          YearStepper(year: year, onChanged: (value) => setState(() => year = value)),
-          SitePanel(child: StatRow([(s.workingDays, '${counts.working}'), (s.weekends, '${counts.weekend}'), (s.weekdayHolidays, '${counts.holidays}'), (s.totalDays, '${counts.total}')])),
+          YearStepper(
+            year: year,
+            onChanged: (value) => setState(() => year = value),
+          ),
+          SitePanel(
+            child: StatRow([
+              (s.workingDays, '${counts.working}'),
+              (s.weekends, '${counts.weekend}'),
+              (s.weekdayHolidays, '${counts.holidays}'),
+              (s.totalDays, '${counts.total}'),
+            ]),
+          ),
           const SizedBox(height: 12),
           const MarkerLegend(),
           const AdSlot(),
@@ -47,20 +72,36 @@ class _YearCalendarScreenState extends State<YearCalendarScreen> {
                 children: [
                   for (var month = 1; month <= 12; month++)
                     SizedBox(
-                      width: (constraints.maxWidth - (columns - 1) * 16) / columns,
+                      width:
+                          (constraints.maxWidth - (columns - 1) * 16) / columns,
                       child: SitePanel(
                         padding: const EdgeInsets.fromLTRB(8, 12, 8, 14),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.only(left: 6, bottom: 8),
+                              padding: const EdgeInsets.only(
+                                left: 6,
+                                bottom: 8,
+                              ),
                               child: InkWell(
-                                onTap: () => Navigator.pushNamed(context, '/kuukausi-$month-$year'),
-                                child: Text(context.monthName(year, month), style: Theme.of(context).textTheme.titleLarge),
+                                onTap: () => Navigator.pushNamed(
+                                  context,
+                                  '/kuukausi-$month-$year',
+                                ),
+                                child: Text(
+                                  context.monthName(year, month),
+                                  style: Theme.of(context).textTheme.titleLarge,
+                                ),
                               ),
                             ),
-                            MonthGrid(year: year, month: month, repository: widget.repository, today: widget.today, compact: true),
+                            MonthGrid(
+                              year: year,
+                              month: month,
+                              repository: widget.repository,
+                              today: widget.today,
+                              compact: true,
+                            ),
                           ],
                         ),
                       ),

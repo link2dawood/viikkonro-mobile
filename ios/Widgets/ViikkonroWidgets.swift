@@ -400,30 +400,96 @@ private struct SchoolView: View {
     }
 }
 
-private struct BasicWidget<Content: View>: Widget {
-    let kind: String
-    let name: LocalizedStringKey
-    let families: [WidgetFamily]
-    let content: (WidgetEntry) -> Content
-    init(kind: String, name: LocalizedStringKey, families: [WidgetFamily], @ViewBuilder content: @escaping (WidgetEntry) -> Content) {
-        self.kind = kind; self.name = name; self.families = families; self.content = content
-    }
+private func basicConfiguration<Content: View>(
+    kind: String,
+    name: LocalizedStringKey,
+    families: [WidgetFamily],
+    @ViewBuilder content: @escaping (WidgetEntry) -> Content
+) -> some WidgetConfiguration {
+    StaticConfiguration(kind: kind, provider: Provider()) { content($0) }
+        .configurationDisplayName(name)
+        .description(name)
+        .supportedFamilies(families)
+}
+
+private struct WeekMiniWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { content($0) }
-            .configurationDisplayName(name)
-            .description(name)
-            .supportedFamilies(families)
+        basicConfiguration(
+            kind: "week-mini",
+            name: "week_mini_name",
+            families: [.systemSmall, .accessoryCircular, .accessoryInline]
+        ) { WeekMiniView(entry: $0) }
+    }
+}
+
+private struct WeekCardWidget: Widget {
+    var body: some WidgetConfiguration {
+        basicConfiguration(
+            kind: "week-card",
+            name: "week_card_name",
+            families: [.systemSmall, .systemMedium]
+        ) { WeekCardView(entry: $0) }
+    }
+}
+
+private struct WeekStripWidget: Widget {
+    var body: some WidgetConfiguration {
+        basicConfiguration(
+            kind: "week-strip",
+            name: "week_strip_name",
+            families: [.systemMedium]
+        ) { WeekStripView(entry: $0) }
+    }
+}
+
+private struct MonthWidget: Widget {
+    var body: some WidgetConfiguration {
+        basicConfiguration(
+            kind: "month",
+            name: "month_name",
+            families: [.systemLarge]
+        ) { MonthView(entry: $0) }
+    }
+}
+
+private struct CountdownWidget: Widget {
+    var body: some WidgetConfiguration {
+        basicConfiguration(
+            kind: "countdown",
+            name: "countdown_name",
+            families: [.systemSmall, .accessoryRectangular]
+        ) { CountdownView(entry: $0) }
+    }
+}
+
+private struct HolidaysWidget: Widget {
+    var body: some WidgetConfiguration {
+        basicConfiguration(
+            kind: "holidays",
+            name: "holidays_name",
+            families: [.systemMedium]
+        ) { HolidaysView(entry: $0) }
+    }
+}
+
+private struct SchoolWidget: Widget {
+    var body: some WidgetConfiguration {
+        basicConfiguration(
+            kind: "school",
+            name: "school_name",
+            families: [.systemMedium]
+        ) { SchoolView(entry: $0) }
     }
 }
 
 @main struct ViikkonroWidgetBundle: WidgetBundle {
     var body: some Widget {
-        BasicWidget(kind: "week-mini", name: "week_mini_name", families: [.systemSmall, .accessoryCircular, .accessoryInline]) { WeekMiniView(entry: $0) }
-        BasicWidget(kind: "week-card", name: "week_card_name", families: [.systemSmall, .systemMedium]) { WeekCardView(entry: $0) }
-        BasicWidget(kind: "week-strip", name: "week_strip_name", families: [.systemMedium]) { WeekStripView(entry: $0) }
-        BasicWidget(kind: "month", name: "month_name", families: [.systemLarge]) { MonthView(entry: $0) }
-        BasicWidget(kind: "countdown", name: "countdown_name", families: [.systemSmall, .accessoryRectangular]) { CountdownView(entry: $0) }
-        BasicWidget(kind: "holidays", name: "holidays_name", families: [.systemMedium]) { HolidaysView(entry: $0) }
-        BasicWidget(kind: "school", name: "school_name", families: [.systemMedium]) { SchoolView(entry: $0) }
+        WeekMiniWidget()
+        WeekCardWidget()
+        WeekStripWidget()
+        MonthWidget()
+        CountdownWidget()
+        HolidaysWidget()
+        SchoolWidget()
     }
 }

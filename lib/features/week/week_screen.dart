@@ -9,7 +9,13 @@ import '../../shared/formatters.dart';
 
 /// FP-L04 / FP-Y07: one week, its seven days, and the observances on them.
 class WeekScreen extends StatefulWidget {
-  const WeekScreen({super.key, required this.repository, required this.today, required this.week, required this.year});
+  const WeekScreen({
+    super.key,
+    required this.repository,
+    required this.today,
+    required this.week,
+    required this.year,
+  });
   final CalendarRepository repository;
   final DateTime today;
   final int week, year;
@@ -24,7 +30,9 @@ class _WeekScreenState extends State<WeekScreen> {
   /// week 1 of the next ISO year follows week 52 or 53 without a special case.
   void _step(int weeks) {
     final monday = addCalendarDays(mondayOf(week, year), weeks * 7);
-    if (monday.year < CalendarRepository.minYear || monday.year > CalendarRepository.maxYear) return;
+    if (monday.year < CalendarRepository.minYear ||
+        monday.year > CalendarRepository.maxYear)
+      return;
     setState(() {
       week = isoWeek(monday);
       year = isoYear(monday);
@@ -36,13 +44,22 @@ class _WeekScreenState extends State<WeekScreen> {
     final s = context.s;
     final monday = mondayOf(week, year), sunday = sundayOf(week, year);
     final days = [for (var i = 0; i < 7; i++) addCalendarDays(monday, i)];
-    final summary = '${s.weekLabel(week)}/$year (${context.range(monday, sunday)})';
+    final summary =
+        '${s.weekLabel(week)}/$year (${context.range(monday, sunday)})';
     return Scaffold(
       appBar: AppBar(
         title: Text('${s.weekLabel(week)}/$year'),
         actions: [
-          IconButton(tooltip: s.previous, onPressed: () => _step(-1), icon: const Icon(Icons.chevron_left)),
-          IconButton(tooltip: s.next, onPressed: () => _step(1), icon: const Icon(Icons.chevron_right)),
+          IconButton(
+            tooltip: s.previous,
+            onPressed: () => _step(-1),
+            icon: const Icon(Icons.chevron_left),
+          ),
+          IconButton(
+            tooltip: s.next,
+            onPressed: () => _step(1),
+            icon: const Icon(Icons.chevron_right),
+          ),
         ],
       ),
       body: PageBody(
@@ -67,12 +84,24 @@ class _WeekScreenState extends State<WeekScreen> {
                         children: [
                           Text(
                             '$week',
-                            style: TextStyle(fontFamily: 'Bricolage', fontSize: 82, height: .95, letterSpacing: -3, fontWeight: FontWeight.w800, color: context.colors.onSurface),
+                            style: TextStyle(
+                              fontFamily: 'Bricolage',
+                              fontSize: 82,
+                              height: .95,
+                              letterSpacing: -3,
+                              fontWeight: FontWeight.w800,
+                              color: context.colors.onSurface,
+                            ),
                           ),
                           const SizedBox(width: 10),
                           Padding(
                             padding: const EdgeInsets.only(bottom: 14),
-                            child: Mono('/ $year', size: 20, weight: FontWeight.w600, color: context.colors.primary),
+                            child: Mono(
+                              '/ $year',
+                              size: 20,
+                              weight: FontWeight.w600,
+                              color: context.colors.primary,
+                            ),
                           ),
                         ],
                       ),
@@ -80,7 +109,10 @@ class _WeekScreenState extends State<WeekScreen> {
                   ),
                 ),
                 const SizedBox(height: 10),
-                Text(context.range(monday, sunday), style: Theme.of(context).textTheme.bodyLarge),
+                Text(
+                  context.range(monday, sunday),
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
                 const SizedBox(height: 4),
                 Mono(isoWeekLabel(monday)),
                 const SizedBox(height: 18),
@@ -94,7 +126,14 @@ class _WeekScreenState extends State<WeekScreen> {
           SitePanel(
             padding: const EdgeInsets.symmetric(vertical: 6),
             child: Column(
-              children: [for (final day in days) DayRow(date: day, repository: widget.repository, today: widget.today)],
+              children: [
+                for (final day in days)
+                  DayRow(
+                    date: day,
+                    repository: widget.repository,
+                    today: widget.today,
+                  ),
+              ],
             ),
           ),
           SectionTitle(context.monthName(sunday.year, sunday.month)),
@@ -102,10 +141,25 @@ class _WeekScreenState extends State<WeekScreen> {
             spacing: 8,
             runSpacing: 4,
             children: [
-              OutlinedButton(onPressed: () => Navigator.pushNamed(context, '/kuukausi-${monday.month}-${monday.year}'), child: Text(context.monthName(monday.year, monday.month))),
+              OutlinedButton(
+                onPressed: () => Navigator.pushNamed(
+                  context,
+                  '/kuukausi-${monday.month}-${monday.year}',
+                ),
+                child: Text(context.monthName(monday.year, monday.month)),
+              ),
               if (sunday.month != monday.month)
-                OutlinedButton(onPressed: () => Navigator.pushNamed(context, '/kuukausi-${sunday.month}-${sunday.year}'), child: Text(context.monthName(sunday.year, sunday.month))),
-              OutlinedButton(onPressed: () => Navigator.pushNamed(context, '/vuosi-$year'), child: Text(s.yearLabel(year))),
+                OutlinedButton(
+                  onPressed: () => Navigator.pushNamed(
+                    context,
+                    '/kuukausi-${sunday.month}-${sunday.year}',
+                  ),
+                  child: Text(context.monthName(sunday.year, sunday.month)),
+                ),
+              OutlinedButton(
+                onPressed: () => Navigator.pushNamed(context, '/vuosi-$year'),
+                child: Text(s.yearLabel(year)),
+              ),
             ],
           ),
         ],
@@ -117,7 +171,12 @@ class _WeekScreenState extends State<WeekScreen> {
 /// A single day inside a week listing. Observances carry an icon as well as a
 /// colour so the distinction survives greyscale and colour blindness (FP-A05).
 class DayRow extends StatelessWidget {
-  const DayRow({super.key, required this.date, required this.repository, required this.today});
+  const DayRow({
+    super.key,
+    required this.date,
+    required this.repository,
+    required this.today,
+  });
   final DateTime date;
   final CalendarRepository repository;
   final DateTime today;
@@ -134,9 +193,19 @@ class DayRow extends StatelessWidget {
       selectedTileColor: context.colors.primary.withValues(alpha: .08),
       leading: SizedBox(
         width: 42,
-        child: Mono(context.weekdayShort(date), size: 12, weight: FontWeight.w600, color: holiday || weekend ? context.colors.secondary : null),
+        child: Mono(
+          context.weekdayShort(date),
+          size: 12,
+          weight: FontWeight.w600,
+          color: holiday || weekend ? context.colors.secondary : null,
+        ),
       ),
-      title: Text(context.longDate(date), style: TextStyle(fontWeight: current ? FontWeight.w700 : FontWeight.w400)),
+      title: Text(
+        context.longDate(date),
+        style: TextStyle(
+          fontWeight: current ? FontWeight.w700 : FontWeight.w400,
+        ),
+      ),
       subtitle: events.isEmpty
           ? Mono('${s.dayOfYear} ${dayOfYear(date)}', size: 12)
           : Column(
@@ -155,13 +224,21 @@ class DayRow extends StatelessWidget {
                         color: context.colors.secondary,
                       ),
                       const SizedBox(width: 6),
-                      Expanded(child: Text(event.name, style: Theme.of(context).textTheme.bodyMedium)),
+                      Expanded(
+                        child: Text(
+                          event.name,
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ),
+                      ),
                     ],
                   ),
               ],
             ),
       trailing: const Icon(Icons.chevron_right),
-      onTap: () => Navigator.pushNamed(context, '/viikonpaiva?paiva=${formatDate(date)}'),
+      onTap: () => Navigator.pushNamed(
+        context,
+        '/viikonpaiva?paiva=${formatDate(date)}',
+      ),
     );
   }
 }

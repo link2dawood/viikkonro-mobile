@@ -1,11 +1,45 @@
 import 'iso_week.dart';
 
 // Finnish forms from the pinned website revision in the parity fixture.
-const monthGenitive = <String>['tammikuun', 'helmikuun', 'maaliskuun', 'huhtikuun', 'toukokuun', 'kesäkuun', 'heinäkuun', 'elokuun', 'syyskuun', 'lokakuun', 'marraskuun', 'joulukuun'];
+const monthGenitive = <String>[
+  'tammikuun',
+  'helmikuun',
+  'maaliskuun',
+  'huhtikuun',
+  'toukokuun',
+  'kesäkuun',
+  'heinäkuun',
+  'elokuun',
+  'syyskuun',
+  'lokakuun',
+  'marraskuun',
+  'joulukuun',
+];
 
-const monthPartitive = <String>['tammikuuta', 'helmikuuta', 'maaliskuuta', 'huhtikuuta', 'toukokuuta', 'kesäkuuta', 'heinäkuuta', 'elokuuta', 'syyskuuta', 'lokakuuta', 'marraskuuta', 'joulukuuta'];
+const monthPartitive = <String>[
+  'tammikuuta',
+  'helmikuuta',
+  'maaliskuuta',
+  'huhtikuuta',
+  'toukokuuta',
+  'kesäkuuta',
+  'heinäkuuta',
+  'elokuuta',
+  'syyskuuta',
+  'lokakuuta',
+  'marraskuuta',
+  'joulukuuta',
+];
 
-const weekdayNames = <String>['Sunnuntai', 'Maanantai', 'Tiistai', 'Keskiviikko', 'Torstai', 'Perjantai', 'Lauantai'];
+const weekdayNames = <String>[
+  'Sunnuntai',
+  'Maanantai',
+  'Tiistai',
+  'Keskiviikko',
+  'Torstai',
+  'Perjantai',
+  'Lauantai',
+];
 
 String finnishLong(DateTime input) {
   final date = dateOnly(input);
@@ -39,6 +73,8 @@ String finnishRange(DateTime start, DateTime end) {
 // Abbreviations as the website writes them: two lower-case letters, ma–su.
 const weekdayAbbreviations = <String>['su', 'ma', 'ti', 'ke', 'to', 'pe', 'la'];
 
-String finnishWeekday(DateTime input) => weekdayNames[dateOnly(input).weekday % 7];
+String finnishWeekday(DateTime input) =>
+    weekdayNames[dateOnly(input).weekday % 7];
 
-String finnishWeekdayShort(DateTime input) => weekdayAbbreviations[dateOnly(input).weekday % 7];
+String finnishWeekdayShort(DateTime input) =>
+    weekdayAbbreviations[dateOnly(input).weekday % 7];

@@ -17,7 +17,10 @@ class PageBody extends StatelessWidget {
       child: Center(
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 960),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: children),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: children,
+          ),
         ),
       ),
     ),
@@ -38,7 +41,10 @@ class PageHeading extends StatelessWidget {
         if (subtitle != null)
           Padding(
             padding: const EdgeInsets.only(top: 12),
-            child: Text(subtitle!, style: Theme.of(context).textTheme.bodyLarge),
+            child: Text(
+              subtitle!,
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
           ),
       ],
     ),
@@ -56,7 +62,11 @@ class SectionTitle extends StatelessWidget {
 }
 
 class SitePanel extends StatelessWidget {
-  const SitePanel({super.key, required this.child, this.padding = const EdgeInsets.all(22)});
+  const SitePanel({
+    super.key,
+    required this.child,
+    this.padding = const EdgeInsets.all(22),
+  });
   final Widget child;
   final EdgeInsets padding;
   @override
@@ -72,7 +82,14 @@ class SitePanel extends StatelessWidget {
 }
 
 class Mono extends StatelessWidget {
-  const Mono(this.text, {super.key, this.size = 13, this.color, this.weight = FontWeight.w400, this.maxLines});
+  const Mono(
+    this.text, {
+    super.key,
+    this.size = 13,
+    this.color,
+    this.weight = FontWeight.w400,
+    this.maxLines,
+  });
   final String text;
   final double size;
   final Color? color;
@@ -83,12 +100,24 @@ class Mono extends StatelessWidget {
     text,
     maxLines: maxLines,
     overflow: maxLines == null ? null : TextOverflow.ellipsis,
-    style: TextStyle(fontFamily: 'PlexMono', fontSize: size, height: 1.5, fontWeight: weight, color: color ?? context.colors.onSurfaceVariant, fontFeatures: const [FontFeature.tabularFigures()]),
+    style: TextStyle(
+      fontFamily: 'PlexMono',
+      fontSize: size,
+      height: 1.5,
+      fontWeight: weight,
+      color: color ?? context.colors.onSurfaceVariant,
+      fontFeatures: const [FontFeature.tabularFigures()],
+    ),
   );
 }
 
 class DateField extends StatelessWidget {
-  const DateField({super.key, required this.label, required this.value, required this.onChanged});
+  const DateField({
+    super.key,
+    required this.label,
+    required this.value,
+    required this.onChanged,
+  });
   final String label;
   final DateTime value;
   final ValueChanged<DateTime> onChanged;
@@ -103,14 +132,25 @@ class DateField extends StatelessWidget {
           minimumSize: const Size.fromHeight(52),
           alignment: Alignment.centerLeft,
           backgroundColor: context.colors.surfaceContainerLow,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(11)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(11),
+          ),
         ),
         onPressed: () async {
-          final d = await showDatePicker(context: context, initialDate: value, firstDate: DateTime(2020), lastDate: DateTime(2035, 12, 31));
+          final d = await showDatePicker(
+            context: context,
+            initialDate: value,
+            firstDate: DateTime(2020),
+            lastDate: DateTime(2035, 12, 31),
+          );
           if (d != null) onChanged(d);
         },
         icon: const Icon(Icons.calendar_today_outlined, size: 19),
-        label: Text(context.longDate(value), maxLines: 2, overflow: TextOverflow.ellipsis),
+        label: Text(
+          context.longDate(value),
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+        ),
       ),
     ],
   );
@@ -140,8 +180,15 @@ class YearStepper extends StatelessWidget {
             child: DropdownButton<int>(
               value: year,
               underline: const SizedBox.shrink(),
-              style: TextStyle(fontFamily: 'PlexMono', fontSize: 20, color: context.colors.onSurface),
-              items: [for (var y = 2020; y <= 2035; y++) DropdownMenuItem(value: y, child: Text('$y'))],
+              style: TextStyle(
+                fontFamily: 'PlexMono',
+                fontSize: 20,
+                color: context.colors.onSurface,
+              ),
+              items: [
+                for (var y = 2020; y <= 2035; y++)
+                  DropdownMenuItem(value: y, child: Text('$y')),
+              ],
               onChanged: (y) {
                 if (y != null) onChanged(y);
               },
@@ -200,12 +247,21 @@ class BrandLogo extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              for (final bar in [(16.0, Brand.accent), (22.0, Brand.deep), (28.0, Brand.amber), (14.0, const Color(0xFF9DBFB1)), (11.0, const Color(0xFFC4D8CE))])
+              for (final bar in [
+                (16.0, Brand.accent),
+                (22.0, Brand.deep),
+                (28.0, Brand.amber),
+                (14.0, const Color(0xFF9DBFB1)),
+                (11.0, const Color(0xFFC4D8CE)),
+              ])
                 Container(
                   width: 4,
                   height: bar.$1,
                   margin: const EdgeInsets.only(right: 2),
-                  decoration: BoxDecoration(color: bar.$2, borderRadius: BorderRadius.circular(2)),
+                  decoration: BoxDecoration(
+                    color: bar.$2,
+                    borderRadius: BorderRadius.circular(2),
+                  ),
                 ),
             ],
           ),
@@ -213,7 +269,12 @@ class BrandLogo extends StatelessWidget {
         const SizedBox(width: 9),
         Text(
           context.s.wordmark,
-          style: const TextStyle(fontFamily: 'Bricolage', fontWeight: FontWeight.w800, fontSize: 24, letterSpacing: -.7),
+          style: const TextStyle(
+            fontFamily: 'Bricolage',
+            fontWeight: FontWeight.w800,
+            fontSize: 24,
+            letterSpacing: -.7,
+          ),
         ),
       ],
     ),
@@ -250,7 +311,9 @@ class WeekProgress extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 1.2),
                     child: AnimatedContainer(
-                      duration: MediaQuery.disableAnimationsOf(context) ? Duration.zero : const Duration(milliseconds: 350),
+                      duration: MediaQuery.disableAnimationsOf(context)
+                          ? Duration.zero
+                          : const Duration(milliseconds: 350),
                       height: w == week
                           ? 52
                           : w < week
@@ -270,7 +333,11 @@ class WeekProgress extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 12), Align(alignment: Alignment.centerLeft, child: Mono(context.s.yearProgress((week / total * 100).round()))),
+        const SizedBox(height: 12),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Mono(context.s.yearProgress((week / total * 100).round())),
+        ),
       ],
     );
   }

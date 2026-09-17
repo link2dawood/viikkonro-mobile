@@ -3,7 +3,12 @@ import 'package:flutter/services.dart';
 import '../date/iso_week.dart';
 
 class CalendarEvent {
-  const CalendarEvent({required this.date, required this.name, required this.official, this.flag = false});
+  const CalendarEvent({
+    required this.date,
+    required this.name,
+    required this.official,
+    this.flag = false,
+  });
   final DateTime date;
   final String name;
   final bool official;
@@ -11,7 +16,15 @@ class CalendarEvent {
 }
 
 class SchoolPeriod {
-  const SchoolPeriod({required this.year, required this.kind, required this.cities, required this.confidence, this.start, this.end, this.sourceKey});
+  const SchoolPeriod({
+    required this.year,
+    required this.kind,
+    required this.cities,
+    required this.confidence,
+    this.start,
+    this.end,
+    this.sourceKey,
+  });
   final int year;
   final String kind;
   final List<String> cities;
@@ -25,11 +38,24 @@ class CalendarRepository {
   CalendarRepository.fromJson(this.data, this.information, this.sun) {
     for (final year in data['years'] as List) {
       for (final h in year['holidays'] as List) {
-        events.add(CalendarEvent(date: DateTime.parse(h['date'] as String), name: h['name'] as String, official: h['official'] as bool));
+        events.add(
+          CalendarEvent(
+            date: DateTime.parse(h['date'] as String),
+            name: h['name'] as String,
+            official: h['official'] as bool,
+          ),
+        );
       }
       for (final f in year['flagDays'] as List) {
         for (final name in f['names'] as List) {
-          events.add(CalendarEvent(date: DateTime.parse(f['date'] as String), name: name as String, official: false, flag: true));
+          events.add(
+            CalendarEvent(
+              date: DateTime.parse(f['date'] as String),
+              name: name as String,
+              official: false,
+              flag: true,
+            ),
+          );
         }
       }
     }
@@ -58,9 +84,17 @@ class CalendarRepository {
           );
         }
       }
-      final unknown = (page['autumnUnknownCities'] as List?)?.cast<String>() ?? [];
+      final unknown =
+          (page['autumnUnknownCities'] as List?)?.cast<String>() ?? [];
       if (unknown.isNotEmpty) {
-        schoolPeriods.add(SchoolPeriod(year: page['year'] as int, kind: 'autumn', cities: unknown, confidence: 'unknown'));
+        schoolPeriods.add(
+          SchoolPeriod(
+            year: page['year'] as int,
+            kind: 'autumn',
+            cities: unknown,
+            confidence: 'unknown',
+          ),
+        );
       }
     }
   }
@@ -76,13 +110,21 @@ class CalendarRepository {
 
   static Future<CalendarRepository> load({AssetBundle? bundle}) async {
     final assets = bundle ?? rootBundle;
-    final json = await Future.wait(['calendar', 'information', 'sun'].map((name) async => jsonDecode(await assets.loadString('assets/data/$name.json')) as Map<String, dynamic>));
+    final json = await Future.wait(
+      ['calendar', 'information', 'sun'].map(
+        (name) async =>
+            jsonDecode(await assets.loadString('assets/data/$name.json'))
+                as Map<String, dynamic>,
+      ),
+    );
     return CalendarRepository.fromJson(json[0], json[1], json[2]);
   }
 
-  List<CalendarEvent> on(DateTime date) => _byDate[formatDate(date)] ?? const [];
+  List<CalendarEvent> on(DateTime date) =>
+      _byDate[formatDate(date)] ?? const [];
   bool isHoliday(DateTime date) => _official.contains(formatDate(date));
-  List<CalendarEvent> forYear(int year, {bool flags = false}) => events.where((e) => e.date.year == year && e.flag == flags).toList();
+  List<CalendarEvent> forYear(int year, {bool flags = false}) =>
+      events.where((e) => e.date.year == year && e.flag == flags).toList();
   CalendarEvent? nextHoliday(DateTime date) {
     final today = dateOnly(date);
     for (final e in events) {
@@ -98,6 +140,9 @@ class CalendarRepository {
     return null;
   }
 
-  Map<String, dynamic>? solar(DateTime date) => (sun['days'] as Map<String, dynamic>)[formatDate(date)] as Map<String, dynamic>?;
-  List<String> get cities => schoolPeriods.expand((p) => p.cities).toSet().toList()..sort();
+  Map<String, dynamic>? solar(DateTime date) =>
+      (sun['days'] as Map<String, dynamic>)[formatDate(date)]
+          as Map<String, dynamic>?;
+  List<String> get cities =>
+      schoolPeriods.expand((p) => p.cities).toSet().toList()..sort();
 }

@@ -9,7 +9,13 @@ import '../../shared/formatters.dart';
 
 /// FP-T01–FP-T05 and FP-T17: the two day calculators that ship in 1.0.
 class ToolsScreen extends StatefulWidget {
-  const ToolsScreen({super.key, required this.repository, required this.today, this.tab = 0, this.embedded = false});
+  const ToolsScreen({
+    super.key,
+    required this.repository,
+    required this.today,
+    this.tab = 0,
+    this.embedded = false,
+  });
   final CalendarRepository repository;
   final DateTime today;
   final int tab;
@@ -18,8 +24,13 @@ class ToolsScreen extends StatefulWidget {
   State<ToolsScreen> createState() => _ToolsScreenState();
 }
 
-class _ToolsScreenState extends State<ToolsScreen> with SingleTickerProviderStateMixin {
-  late final TabController _tabs = TabController(length: 2, vsync: this, initialIndex: widget.tab);
+class _ToolsScreenState extends State<ToolsScreen>
+    with SingleTickerProviderStateMixin {
+  late final TabController _tabs = TabController(
+    length: 2,
+    vsync: this,
+    initialIndex: widget.tab,
+  );
 
   @override
   void dispose() {
@@ -45,8 +56,14 @@ class _ToolsScreenState extends State<ToolsScreen> with SingleTickerProviderStat
             child: TabBarView(
               controller: _tabs,
               children: [
-                _DaysBetween(repository: widget.repository, today: widget.today),
-                _WorkdaysRemaining(repository: widget.repository, today: widget.today),
+                _DaysBetween(
+                  repository: widget.repository,
+                  today: widget.today,
+                ),
+                _WorkdaysRemaining(
+                  repository: widget.repository,
+                  today: widget.today,
+                ),
               ],
             ),
           ),
@@ -83,8 +100,16 @@ class _DaysBetweenState extends State<_DaysBetween> {
     // FP-T02: dropping the last day is exactly one day of difference.
     final last = inclusive ? end : addCalendarDays(end, -1);
     final empty = last.isBefore(start);
-    final counts = empty ? const WorkingDayCount(0, 0, 0, 0) : countWorkingDays(start, last, isHoliday: widget.repository.isHoliday);
-    final excluded = empty ? <DateTime>[] : workdayHolidaysBetween(start, last, isHoliday: widget.repository.isHoliday);
+    final counts = empty
+        ? const WorkingDayCount(0, 0, 0, 0)
+        : countWorkingDays(start, last, isHoliday: widget.repository.isHoliday);
+    final excluded = empty
+        ? <DateTime>[]
+        : workdayHolidaysBetween(
+            start,
+            last,
+            isHoliday: widget.repository.isHoliday,
+          );
     final weeks = counts.total ~/ 7, spare = counts.total % 7;
     final summary =
         '${context.shortDate(start)} – ${context.shortDate(end)}: '
@@ -94,23 +119,41 @@ class _DaysBetweenState extends State<_DaysBetween> {
         SitePanel(
           child: Column(
             children: [
-              DateField(label: s.firstDate, value: from, onChanged: (value) => setState(() => from = dateOnly(value))),
+              DateField(
+                label: s.firstDate,
+                value: from,
+                onChanged: (value) => setState(() => from = dateOnly(value)),
+              ),
               const SizedBox(height: 16),
-              DateField(label: s.lastDate, value: to, onChanged: (value) => setState(() => to = dateOnly(value))),
+              DateField(
+                label: s.lastDate,
+                value: to,
+                onChanged: (value) => setState(() => to = dateOnly(value)),
+              ),
               const Divider(height: 30),
               SwitchListTile(
                 contentPadding: EdgeInsets.zero,
                 value: inclusive,
                 onChanged: (value) => setState(() => inclusive = value),
                 title: Text(s.lastDate),
-                subtitle: Mono(inclusive ? s.totalDays : s.distanceNote, size: 12),
+                subtitle: Mono(
+                  inclusive ? s.totalDays : s.distanceNote,
+                  size: 12,
+                ),
               ),
             ],
           ),
         ),
         const SizedBox(height: 14),
         // FP-T01: three results, always all three.
-        SitePanel(child: StatRow([(s.totalDays, '${counts.total}'), (s.workingDays, '${counts.working}'), (s.weekends, '${counts.weekend}'), (s.weekdayHolidays, '${counts.holidays}')])),
+        SitePanel(
+          child: StatRow([
+            (s.totalDays, '${counts.total}'),
+            (s.workingDays, '${counts.working}'),
+            (s.weekends, '${counts.weekend}'),
+            (s.weekdayHolidays, '${counts.holidays}'),
+          ]),
+        ),
         const SizedBox(height: 12),
         Mono(s.weekDaysResult(weeks, spare)),
         ResultActions(text: summary, url: SiteUrl.path('paivien-erotus')),
@@ -128,9 +171,22 @@ class _DaysBetweenState extends State<_DaysBetween> {
                   ListTile(
                     minTileHeight: 48,
                     dense: true,
-                    leading: Icon(Icons.star_rounded, size: 18, color: context.colors.secondary),
-                    title: Text(widget.repository.on(date).where((e) => !e.flag).map((e) => e.name).join(', ')),
-                    subtitle: Mono('${context.weekday(date)} ${context.shortDate(date)}', size: 11),
+                    leading: Icon(
+                      Icons.star_rounded,
+                      size: 18,
+                      color: context.colors.secondary,
+                    ),
+                    title: Text(
+                      widget.repository
+                          .on(date)
+                          .where((e) => !e.flag)
+                          .map((e) => e.name)
+                          .join(', '),
+                    ),
+                    subtitle: Mono(
+                      '${context.weekday(date)} ${context.shortDate(date)}',
+                      size: 11,
+                    ),
                   ),
               ],
             ),
@@ -151,23 +207,37 @@ class _WorkdaysRemaining extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = context.s;
     final now = dateOnly(today);
-    final periods = <(String, (DateTime, DateTime))>[(s.thisMonth, monthBounds(now)), (s.quarterLabel((now.month + 2) ~/ 3), quarterBounds(now)), (s.thisYear, yearBounds(now))];
+    final periods = <(String, (DateTime, DateTime))>[
+      (s.thisMonth, monthBounds(now)),
+      (s.quarterLabel((now.month + 2) ~/ 3), quarterBounds(now)),
+      (s.thisYear, yearBounds(now)),
+    ];
     return PageBody(
       children: [
         SitePanel(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Mono(s.today.toUpperCase(), size: 11, color: context.colors.primary),
+              Mono(
+                s.today.toUpperCase(),
+                size: 11,
+                color: context.colors.primary,
+              ),
               const SizedBox(height: 8),
-              Text(context.headingDate(now), style: Theme.of(context).textTheme.titleLarge),
+              Text(
+                context.headingDate(now),
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
               const SizedBox(height: 4),
-              Mono('${isoWeekLabel(now)} · ${s.dayOfYear} ${dayOfYear(now)} / ${daysInYear(now.year)}'),
+              Mono(
+                '${isoWeekLabel(now)} · ${s.dayOfYear} ${dayOfYear(now)} / ${daysInYear(now.year)}',
+              ),
             ],
           ),
         ),
         const SizedBox(height: 14),
-        for (final (label, bounds) in periods) _period(context, label, bounds.$1, bounds.$2, now),
+        for (final (label, bounds) in periods)
+          _period(context, label, bounds.$1, bounds.$2, now),
         const AdSlot(),
         const SizedBox(height: 14),
         Mono(s.workingNote, size: 12),
@@ -177,10 +247,26 @@ class _WorkdaysRemaining extends StatelessWidget {
 
   /// FP-T04/FP-T05: total, elapsed and remaining for each period, with the
   /// `14 / 21 työpäivää` reading the spec asks for.
-  Widget _period(BuildContext context, String label, DateTime start, DateTime end, DateTime now) {
+  Widget _period(
+    BuildContext context,
+    String label,
+    DateTime start,
+    DateTime end,
+    DateTime now,
+  ) {
     final s = context.s;
-    final total = countWorkingDays(start, end, isHoliday: repository.isHoliday).working;
-    final elapsed = now.isBefore(start) ? 0 : countWorkingDays(start, now.isAfter(end) ? end : now, isHoliday: repository.isHoliday).working;
+    final total = countWorkingDays(
+      start,
+      end,
+      isHoliday: repository.isHoliday,
+    ).working;
+    final elapsed = now.isBefore(start)
+        ? 0
+        : countWorkingDays(
+            start,
+            now.isAfter(end) ? end : now,
+            isHoliday: repository.isHoliday,
+          ).working;
     final remaining = total - elapsed;
     final summary = '$elapsed / $total ${s.workingDays.toLowerCase()}';
     return Padding(
@@ -213,15 +299,26 @@ class _WorkdaysRemaining extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.baseline,
                         textBaseline: TextBaseline.alphabetic,
                         children: [
-                          Text('$elapsed', style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: context.colors.primary)),
-                          Mono(' / $total ${s.workingDays.toLowerCase()}', size: 14),
+                          Text(
+                            '$elapsed',
+                            style: Theme.of(context).textTheme.headlineMedium
+                                ?.copyWith(color: context.colors.primary),
+                          ),
+                          Mono(
+                            ' / $total ${s.workingDays.toLowerCase()}',
+                            size: 14,
+                          ),
                         ],
                       ),
                     ),
                     const SizedBox(height: 10),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(3),
-                      child: LinearProgressIndicator(value: total == 0 ? 0 : elapsed / total, minHeight: 6, backgroundColor: context.colors.outlineVariant),
+                      child: LinearProgressIndicator(
+                        value: total == 0 ? 0 : elapsed / total,
+                        minHeight: 6,
+                        backgroundColor: context.colors.outlineVariant,
+                      ),
                     ),
                   ],
                 ),
@@ -229,7 +326,10 @@ class _WorkdaysRemaining extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Mono('${s.daysRemaining}: $remaining'),
-            ResultActions(text: '$label — $summary', url: SiteUrl.path('tyopaivalaskuri')),
+            ResultActions(
+              text: '$label — $summary',
+              url: SiteUrl.path('tyopaivalaskuri'),
+            ),
           ],
         ),
       ),

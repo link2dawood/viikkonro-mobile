@@ -6,10 +6,17 @@ import 'package:viikkonro/core/date/finnish_format.dart';
 import 'package:viikkonro/core/date/iso_week.dart';
 
 void main() {
-  final fixture = jsonDecode(File('test/fixtures/iso_week_fixture.json').readAsStringSync()) as Map<String, dynamic>;
+  final fixture =
+      jsonDecode(File('test/fixtures/iso_week_fixture.json').readAsStringSync())
+          as Map<String, dynamic>;
 
   test('test process uses the requested time zone', () {
-    const januaryOffsets = {'Europe/Helsinki': 120, 'UTC': 0, 'America/New_York': -300, 'Pacific/Auckland': 780};
+    const januaryOffsets = {
+      'Europe/Helsinki': 120,
+      'UTC': 0,
+      'America/New_York': -300,
+      'Pacific/Auckland': 780,
+    };
     final expected = januaryOffsets[Platform.environment['TZ']];
     if (expected != null) {
       expect(DateTime(2026, 1, 15).timeZoneOffset.inMinutes, expected);
@@ -30,26 +37,29 @@ void main() {
     }
   });
 
-  test('every ISO year and week span matches the website at local midnight', () {
-    var count = 0;
-    for (final year in fixture['years'] as List<dynamic>) {
-      final number = year['year'] as int;
-      expect(weeksInIsoYear(number), year['weeksInYear']);
-      for (final row in year['weeks'] as List<dynamic>) {
-        final monday = mondayOf(row['week'] as int, number);
-        final sunday = sundayOf(row['week'] as int, number);
-        expect(formatDate(monday), row['monday']);
-        expect(formatDate(sunday), row['sunday']);
-        expect(monday.weekday, DateTime.monday);
-        expect(sunday.weekday, DateTime.sunday);
-        expect(monday.hour, 0);
-        expect(sunday.hour, 0);
-        expect(finnishRange(monday, sunday), row['finnishRange']);
-        count++;
+  test(
+    'every ISO year and week span matches the website at local midnight',
+    () {
+      var count = 0;
+      for (final year in fixture['years'] as List<dynamic>) {
+        final number = year['year'] as int;
+        expect(weeksInIsoYear(number), year['weeksInYear']);
+        for (final row in year['weeks'] as List<dynamic>) {
+          final monday = mondayOf(row['week'] as int, number);
+          final sunday = sundayOf(row['week'] as int, number);
+          expect(formatDate(monday), row['monday']);
+          expect(formatDate(sunday), row['sunday']);
+          expect(monday.weekday, DateTime.monday);
+          expect(sunday.weekday, DateTime.sunday);
+          expect(monday.hour, 0);
+          expect(sunday.hour, 0);
+          expect(finnishRange(monday, sunday), row['finnishRange']);
+          count++;
+        }
       }
-    }
-    expect(count, 835);
-  });
+      expect(count, 835);
+    },
+  );
 
   test('ISO year boundaries, leap day and invalid week input', () {
     expect(isoWeekLabel(DateTime(2021, 1, 1)), '2020-W53');
@@ -64,7 +74,10 @@ void main() {
     expect(monthGenitive, finnish['monthGenitive']);
     expect(monthPartitive, finnish['monthPartitive']);
     expect(weekdayNames, finnish['weekdays']);
-    expect(finnishHeading(DateTime(2026, 9, 14)), 'Maanantai 14. syyskuuta 2026');
+    expect(
+      finnishHeading(DateTime(2026, 9, 14)),
+      'Maanantai 14. syyskuuta 2026',
+    );
   });
 
   test('calendar shifts survive both daylight-saving transitions', () {

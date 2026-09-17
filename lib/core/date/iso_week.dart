@@ -19,10 +19,16 @@ int isoWeek(DateTime input) {
   final date = dateOnly(input);
   final thursday = addCalendarDays(date, DateTime.thursday - date.weekday);
   final january = DateTime(thursday.year, 1, 1);
-  final firstThursday = addCalendarDays(january, (DateTime.thursday - january.weekday + 7) % 7);
+  final firstThursday = addCalendarDays(
+    january,
+    (DateTime.thursday - january.weekday + 7) % 7,
+  );
   // Preserve the fraction until rounding, as dateUtils.js does. Truncating
   // elapsed days here would throw away the daylight-saving offset.
-  return 1 + (thursday.difference(firstThursday).inMilliseconds / (Duration.millisecondsPerDay * 7)).round();
+  return 1 +
+      (thursday.difference(firstThursday).inMilliseconds /
+              (Duration.millisecondsPerDay * 7))
+          .round();
 }
 
 int weeksInIsoYear(int year) => isoWeek(DateTime(year, 12, 28));
@@ -33,7 +39,8 @@ DateTime mondayOf(int week, int year) {
   return addCalendarDays(january4, 1 - january4.weekday + (week - 1) * 7);
 }
 
-DateTime sundayOf(int week, int year) => addCalendarDays(mondayOf(week, year), 6);
+DateTime sundayOf(int week, int year) =>
+    addCalendarDays(mondayOf(week, year), 6);
 
 String formatDate(DateTime input) {
   final date = dateOnly(input);
@@ -42,4 +49,5 @@ String formatDate(DateTime input) {
       '${date.day.toString().padLeft(2, '0')}';
 }
 
-String isoWeekLabel(DateTime date) => '${isoYear(date)}-W${isoWeek(date).toString().padLeft(2, '0')}';
+String isoWeekLabel(DateTime date) =>
+    '${isoYear(date)}-W${isoWeek(date).toString().padLeft(2, '0')}';

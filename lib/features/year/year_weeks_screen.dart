@@ -8,7 +8,13 @@ import '../../shared/formatters.dart';
 
 /// FP-Y01–FP-Y08: every week of a year, one tappable row each.
 class YearWeeksScreen extends StatefulWidget {
-  const YearWeeksScreen({super.key, required this.repository, required this.today, required this.year, this.embedded = false});
+  const YearWeeksScreen({
+    super.key,
+    required this.repository,
+    required this.today,
+    required this.year,
+    this.embedded = false,
+  });
   final CalendarRepository repository;
   final DateTime today;
   final int year;
@@ -31,12 +37,16 @@ class _YearWeeksScreenState extends State<YearWeeksScreen> {
   /// FP-Y06: the current week must already be on screen, not below the fold.
   double _initialOffset() {
     if (year != isoYear(widget.today)) return 0;
-    return ((isoWeek(widget.today) - 3) * _rowExtent(context)).clamp(0, double.infinity);
+    return ((isoWeek(widget.today) - 3) * _rowExtent(context)).clamp(
+      0,
+      double.infinity,
+    );
   }
 
   /// A fixed extent keeps the jump to the current week cheap, so it has to
   /// grow with the user's font scale or the row's two lines would clip.
-  double _rowExtent(BuildContext context) => _baseRowExtent * MediaQuery.textScalerOf(context).scale(14) / 14;
+  double _rowExtent(BuildContext context) =>
+      _baseRowExtent * MediaQuery.textScalerOf(context).scale(14) / 14;
 
   void _setYear(int value) {
     setState(() {
@@ -69,7 +79,10 @@ class _YearWeeksScreenState extends State<YearWeeksScreen> {
                   runSpacing: 2,
                   children: [
                     Mono(s.weeksTotal),
-                    Mono(s.weekOf(currentYear ? currentWeek : total, total), weight: FontWeight.w600),
+                    Mono(
+                      s.weekOf(currentYear ? currentWeek : total, total),
+                      weight: FontWeight.w600,
+                    ),
                   ],
                 ),
                 const AdSlot(),
@@ -85,7 +98,12 @@ class _YearWeeksScreenState extends State<YearWeeksScreen> {
                 padding: const EdgeInsets.fromLTRB(14, 0, 14, 28),
                 itemExtent: _rowExtent(context),
                 itemCount: total,
-                itemBuilder: (context, index) => _WeekRow(week: index + 1, year: year, repository: widget.repository, current: currentYear && index + 1 == currentWeek),
+                itemBuilder: (context, index) => _WeekRow(
+                  week: index + 1,
+                  year: year,
+                  repository: widget.repository,
+                  current: currentYear && index + 1 == currentWeek,
+                ),
               ),
             ),
           ),
@@ -97,8 +115,19 @@ class _YearWeeksScreenState extends State<YearWeeksScreen> {
       appBar: AppBar(
         title: Text(s.yearWeeks),
         actions: [
-          IconButton(tooltip: s.share, onPressed: () => shareText(context, '${s.yearWeeks} $year\n${SiteUrl.weeks(year)}'), icon: const Icon(Icons.ios_share_rounded)),
-          IconButton(tooltip: s.openWebsite, onPressed: () => openUrl(context, SiteUrl.weeks(year)), icon: const Icon(Icons.open_in_new_rounded)),
+          IconButton(
+            tooltip: s.share,
+            onPressed: () => shareText(
+              context,
+              '${s.yearWeeks} $year\n${SiteUrl.weeks(year)}',
+            ),
+            icon: const Icon(Icons.ios_share_rounded),
+          ),
+          IconButton(
+            tooltip: s.openWebsite,
+            onPressed: () => openUrl(context, SiteUrl.weeks(year)),
+            icon: const Icon(Icons.open_in_new_rounded),
+          ),
         ],
       ),
       body: body,
@@ -108,10 +137,16 @@ class _YearWeeksScreenState extends State<YearWeeksScreen> {
 
 /// The ISO week belongs to the quarter containing its Thursday, so week 1 of a
 /// year whose Monday still falls in December is Q1, not Q4.
-int _quarterOfWeek(int week, int year) => (addCalendarDays(mondayOf(week, year), 3).month + 2) ~/ 3;
+int _quarterOfWeek(int week, int year) =>
+    (addCalendarDays(mondayOf(week, year), 3).month + 2) ~/ 3;
 
 class _WeekRow extends StatelessWidget {
-  const _WeekRow({required this.week, required this.year, required this.repository, required this.current});
+  const _WeekRow({
+    required this.week,
+    required this.year,
+    required this.repository,
+    required this.current,
+  });
   final int week, year;
   final CalendarRepository repository;
   final bool current;
@@ -125,7 +160,9 @@ class _WeekRow extends StatelessWidget {
     final quarter = _quarterOfWeek(week, year);
     final quarterStart = week == 1 || quarter != _quarterOfWeek(week - 1, year);
     // FP-Y02: month context is the month the week ends in when it straddles two.
-    final months = monday.month == sunday.month ? context.monthName(sunday.year, sunday.month) : '${context.monthName(monday.year, monday.month)} – ${context.monthName(sunday.year, sunday.month)}';
+    final months = monday.month == sunday.month
+        ? context.monthName(sunday.year, sunday.month)
+        : '${context.monthName(monday.year, monday.month)} – ${context.monthName(sunday.year, sunday.month)}';
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -135,7 +172,12 @@ class _WeekRow extends StatelessWidget {
             height: 18,
             child: Row(
               children: [
-                Mono(s.quarterLabel(quarter), size: 10, weight: FontWeight.w600, color: context.colors.primary),
+                Mono(
+                  s.quarterLabel(quarter),
+                  size: 10,
+                  weight: FontWeight.w600,
+                  color: context.colors.primary,
+                ),
                 const SizedBox(width: 10),
                 const Expanded(child: Divider(height: 1)),
               ],
@@ -145,29 +187,48 @@ class _WeekRow extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 2),
             child: Material(
-              color: current ? context.colors.primary.withValues(alpha: .12) : Colors.transparent,
+              color: current
+                  ? context.colors.primary.withValues(alpha: .12)
+                  : Colors.transparent,
               borderRadius: BorderRadius.circular(12),
               child: InkWell(
                 borderRadius: BorderRadius.circular(12),
-                onTap: () => Navigator.pushNamed(context, '/viikko-$week-$year'),
+                onTap: () =>
+                    Navigator.pushNamed(context, '/viikko-$week-$year'),
                 child: Semantics(
                   button: true,
                   selected: current,
-                  label: '${s.weekLabel(week)} $year, ${context.range(monday, sunday)}${holidays > 0 ? ', ${s.holidays}' : ''}',
+                  label:
+                      '${s.weekLabel(week)} $year, ${context.range(monday, sunday)}${holidays > 0 ? ', ${s.holidays}' : ''}',
                   child: ExcludeSemantics(
                     child: Container(
                       // FP-A06: 48dp minimum, before the row's own vertical padding.
                       constraints: const BoxConstraints(minHeight: 48),
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 6,
+                      ),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: current ? context.colors.primary : context.colors.outlineVariant, width: current ? 2 : 1),
+                        border: Border.all(
+                          color: current
+                              ? context.colors.primary
+                              : context.colors.outlineVariant,
+                          width: current ? 2 : 1,
+                        ),
                       ),
                       child: Row(
                         children: [
                           SizedBox(
                             width: 44,
-                            child: Mono('$week', size: 20, weight: FontWeight.w700, color: current ? context.colors.primary : context.colors.onSurface),
+                            child: Mono(
+                              '$week',
+                              size: 20,
+                              weight: FontWeight.w700,
+                              color: current
+                                  ? context.colors.primary
+                                  : context.colors.onSurface,
+                            ),
                           ),
                           Expanded(
                             child: Column(
@@ -177,7 +238,12 @@ class _WeekRow extends StatelessWidget {
                                 // The row has a fixed height, so each line must
                                 // stay one line; the month context is the part
                                 // that can afford to be cut.
-                                Text(context.range(monday, sunday), maxLines: 1, overflow: TextOverflow.ellipsis, style: Theme.of(context).textTheme.bodyMedium),
+                                Text(
+                                  context.range(monday, sunday),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: Theme.of(context).textTheme.bodyMedium,
+                                ),
                                 Mono(months, size: 11, maxLines: 1),
                               ],
                             ),
@@ -186,8 +252,18 @@ class _WeekRow extends StatelessWidget {
                           if (holidays > 0)
                             Row(
                               children: [
-                                Icon(Icons.star_rounded, size: 16, color: context.colors.secondary),
-                                if (holidays > 1) Mono('$holidays', size: 11, weight: FontWeight.w600, color: context.colors.secondary),
+                                Icon(
+                                  Icons.star_rounded,
+                                  size: 16,
+                                  color: context.colors.secondary,
+                                ),
+                                if (holidays > 1)
+                                  Mono(
+                                    '$holidays',
+                                    size: 11,
+                                    weight: FontWeight.w600,
+                                    color: context.colors.secondary,
+                                  ),
                               ],
                             ),
                           const Icon(Icons.chevron_right, size: 20),

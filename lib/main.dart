@@ -23,10 +23,14 @@ Future<void> main() async {
   final preferences = await SharedPreferences.getInstance();
   try {
     final repository = await CalendarRepository.load();
-    runApp(ViikkonroApp(settings: AppSettings(preferences), repository: repository));
+    runApp(
+      ViikkonroApp(settings: AppSettings(preferences), repository: repository),
+    );
     // UMP may need an Activity to present its consent form, so begin only after
     // the first frame. App startup and every screen remain independent of ads.
-    WidgetsBinding.instance.addPostFrameCallback((_) => unawaited(AdService.instance.initialize()));
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => unawaited(AdService.instance.initialize()),
+    );
   } on Object catch (error, stack) {
     debugPrint('Calendar data failed to load: $error\n$stack');
     runApp(const _StartupFailure());
@@ -50,7 +54,10 @@ class _StartupFailure extends StatelessWidget {
           child: Center(
             child: Padding(
               padding: const EdgeInsets.all(28),
-              child: Text(AppLocalizations.of(context).loadingError, textAlign: TextAlign.center),
+              child: Text(
+                AppLocalizations.of(context).loadingError,
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
         ),

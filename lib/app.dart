@@ -23,7 +23,12 @@ import 'shared/components.dart';
 import 'shared/formatters.dart';
 
 class ViikkonroApp extends StatefulWidget {
-  const ViikkonroApp({super.key, required this.settings, required this.repository, this.clock});
+  const ViikkonroApp({
+    super.key,
+    required this.settings,
+    required this.repository,
+    this.clock,
+  });
   final AppSettings settings;
   final CalendarRepository repository;
 
@@ -85,7 +90,9 @@ class _ViikkonroAppState extends State<ViikkonroApp> {
         // bar icons legible when the user explicitly chooses the opposite app
         // theme without replacing Android's three-button navigation scrim.
         builder: (context, child) {
-          final iconBrightness = Theme.of(context).brightness == Brightness.dark ? Brightness.light : Brightness.dark;
+          final iconBrightness = Theme.of(context).brightness == Brightness.dark
+              ? Brightness.light
+              : Brightness.dark;
           return AnnotatedRegion<SystemUiOverlayStyle>(
             value: SystemUiOverlayStyle(
               statusBarIconBrightness: iconBrightness,
@@ -99,7 +106,8 @@ class _ViikkonroAppState extends State<ViikkonroApp> {
         // FP-R07: an unrecognised path is never a dead end.
         onUnknownRoute: (routeSettings) => MaterialPageRoute(
           settings: routeSettings,
-          builder: (context) => AppShell(settings: settings, repository: repository),
+          builder: (context) =>
+              AppShell(settings: settings, repository: repository),
         ),
       ),
     ),
@@ -112,23 +120,80 @@ class _ViikkonroAppState extends State<ViikkonroApp> {
       final route = AppRoute.parse(routeSettings.name ?? '/', today);
       final year = route.year ?? isoYear(today);
       return switch (route.kind) {
-        'week' => WeekScreen(repository: repository, today: today, week: route.week!, year: route.year!),
-        'weekday' => DayScreen(repository: repository, today: today, date: route.date ?? today),
-        'weeks' || 'weekList' || 'quarter' => YearWeeksScreen(repository: repository, today: today, year: year),
-        'yearCalendar' || 'printCalendar' => YearCalendarScreen(repository: repository, today: today, year: year),
-        'month' => MonthScreen(repository: repository, today: today, year: year, month: route.month ?? today.month),
-        'holidays' || 'holidayDetail' => HolidaysScreen(repository: repository, today: today, year: year),
-        'flags' => HolidaysScreen(repository: repository, today: today, year: year, tab: 1),
-        'school' => HolidaysScreen(repository: repository, today: today, year: year, tab: 2),
+        'week' => WeekScreen(
+          repository: repository,
+          today: today,
+          week: route.week!,
+          year: route.year!,
+        ),
+        'weekday' => DayScreen(
+          repository: repository,
+          today: today,
+          date: route.date ?? today,
+        ),
+        'weeks' || 'weekList' || 'quarter' => YearWeeksScreen(
+          repository: repository,
+          today: today,
+          year: year,
+        ),
+        'yearCalendar' || 'printCalendar' => YearCalendarScreen(
+          repository: repository,
+          today: today,
+          year: year,
+        ),
+        'month' => MonthScreen(
+          repository: repository,
+          today: today,
+          year: year,
+          month: route.month ?? today.month,
+        ),
+        'holidays' || 'holidayDetail' => HolidaysScreen(
+          repository: repository,
+          today: today,
+          year: year,
+        ),
+        'flags' => HolidaysScreen(
+          repository: repository,
+          today: today,
+          year: year,
+          tab: 1,
+        ),
+        'school' => HolidaysScreen(
+          repository: repository,
+          today: today,
+          year: year,
+          tab: 2,
+        ),
         'dateLookup' => LookupScreen(repository: repository, today: today),
-        'weekLookup' => LookupScreen(repository: repository, today: today, tab: 1),
+        'weekLookup' => LookupScreen(
+          repository: repository,
+          today: today,
+          tab: 1,
+        ),
         'daysBetween' => ToolsScreen(repository: repository, today: today),
-        'tools' || 'workingBetween' || 'workingYear' || 'workingMonth' => ToolsScreen(repository: repository, today: today, tab: 1),
-        'settings' => SettingsScreen(settings: settings, repository: repository),
-        'faq' => WebsiteScreen(title: AppLocalizations.of(context).faq, slug: 'ukk'),
-        'nameDays' => WebsiteScreen(title: AppLocalizations.of(context).appName, slug: 'nimipaivat/tanaan', note: AppLocalizations.of(context).nameDaysUnavailable),
-        'article' => WebsiteScreen(title: AppLocalizations.of(context).websiteResources, slug: route.slug ?? ''),
-        'data' => WebsiteScreen(title: AppLocalizations.of(context).openData, slug: 'avoin-data'),
+        'tools' || 'workingBetween' || 'workingYear' || 'workingMonth' =>
+          ToolsScreen(repository: repository, today: today, tab: 1),
+        'settings' => SettingsScreen(
+          settings: settings,
+          repository: repository,
+        ),
+        'faq' => WebsiteScreen(
+          title: AppLocalizations.of(context).faq,
+          slug: 'ukk',
+        ),
+        'nameDays' => WebsiteScreen(
+          title: AppLocalizations.of(context).appName,
+          slug: 'nimipaivat/tanaan',
+          note: AppLocalizations.of(context).nameDaysUnavailable,
+        ),
+        'article' => WebsiteScreen(
+          title: AppLocalizations.of(context).websiteResources,
+          slug: route.slug ?? '',
+        ),
+        'data' => WebsiteScreen(
+          title: AppLocalizations.of(context).openData,
+          slug: 'avoin-data',
+        ),
         _ => AppShell(settings: settings, repository: repository),
       };
     },
@@ -142,7 +207,8 @@ class TodayScope extends StatefulWidget {
   final Widget child;
   final DateTime Function()? clock;
 
-  static DateTime of(BuildContext context) => context.dependOnInheritedWidgetOfExactType<_TodayValue>()!.today;
+  static DateTime of(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<_TodayValue>()!.today;
 
   @override
   State<TodayScope> createState() => _TodayScopeState();
@@ -178,7 +244,10 @@ class _TodayScopeState extends State<TodayScope> {
     final now = (widget.clock ?? DateTime.now)();
     final midnight = DateTime(now.year, now.month, now.day + 1);
     final wait = midnight.difference(now) + const Duration(seconds: 1);
-    _timer = Timer(wait.isNegative ? const Duration(seconds: 1) : wait, _refresh);
+    _timer = Timer(
+      wait.isNegative ? const Duration(seconds: 1) : wait,
+      _refresh,
+    );
   }
 
   void _refresh() {
@@ -188,7 +257,8 @@ class _TodayScopeState extends State<TodayScope> {
   }
 
   @override
-  Widget build(BuildContext context) => _TodayValue(today: _today, child: widget.child);
+  Widget build(BuildContext context) =>
+      _TodayValue(today: _today, child: widget.child);
 }
 
 class _TodayValue extends InheritedWidget {
@@ -208,9 +278,17 @@ class AppShell extends StatefulWidget {
 }
 
 class _AppShellState extends State<AppShell> {
-  late int _tab = AppSettings.firstScreens.indexOf(widget.settings.firstScreen).clamp(0, 3);
+  late int _tab = AppSettings.firstScreens
+      .indexOf(widget.settings.firstScreen)
+      .clamp(0, 3);
 
-  static const _analyticsScreens = ['home', 'weeks', 'calendar', 'tools', 'more'];
+  static const _analyticsScreens = [
+    'home',
+    'weeks',
+    'calendar',
+    'tools',
+    'more',
+  ];
 
   @override
   void initState() {
@@ -233,15 +311,36 @@ class _AppShellState extends State<AppShell> {
     return Scaffold(
       appBar: AppBar(
         title: _tab == 0 ? const BrandLogoTitle() : Text(titles[_tab]),
-        actions: [IconButton(tooltip: s.settings, onPressed: () => Navigator.pushNamed(context, '/asetukset'), icon: const Icon(Icons.tune_rounded))],
+        actions: [
+          IconButton(
+            tooltip: s.settings,
+            onPressed: () => Navigator.pushNamed(context, '/asetukset'),
+            icon: const Icon(Icons.tune_rounded),
+          ),
+        ],
       ),
       body: IndexedStack(
         index: _tab,
         children: [
           HomeScreen(repository: widget.repository, today: today),
-          YearWeeksScreen(repository: widget.repository, today: today, year: isoYear(today), embedded: true),
-          MonthScreen(repository: widget.repository, today: today, year: today.year, month: today.month, embedded: true),
-          ToolsScreen(repository: widget.repository, today: today, embedded: true),
+          YearWeeksScreen(
+            repository: widget.repository,
+            today: today,
+            year: isoYear(today),
+            embedded: true,
+          ),
+          MonthScreen(
+            repository: widget.repository,
+            today: today,
+            year: today.year,
+            month: today.month,
+            embedded: true,
+          ),
+          ToolsScreen(
+            repository: widget.repository,
+            today: today,
+            embedded: true,
+          ),
           MoreScreen(repository: widget.repository, today: today),
         ],
       ),
@@ -249,11 +348,30 @@ class _AppShellState extends State<AppShell> {
         selectedIndex: _tab,
         onDestinationSelected: _selectTab,
         destinations: [
-          NavigationDestination(icon: const Icon(Icons.today_outlined), selectedIcon: const Icon(Icons.today), label: s.home),
-          NavigationDestination(icon: const Icon(Icons.view_week_outlined), selectedIcon: const Icon(Icons.view_week), label: s.weeks),
-          NavigationDestination(icon: const Icon(Icons.calendar_month_outlined), selectedIcon: const Icon(Icons.calendar_month), label: s.calendar),
-          NavigationDestination(icon: const Icon(Icons.calculate_outlined), selectedIcon: const Icon(Icons.calculate), label: s.tools),
-          NavigationDestination(icon: const Icon(Icons.more_horiz), label: s.more),
+          NavigationDestination(
+            icon: const Icon(Icons.today_outlined),
+            selectedIcon: const Icon(Icons.today),
+            label: s.home,
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.view_week_outlined),
+            selectedIcon: const Icon(Icons.view_week),
+            label: s.weeks,
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.calendar_month_outlined),
+            selectedIcon: const Icon(Icons.calendar_month),
+            label: s.calendar,
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.calculate_outlined),
+            selectedIcon: const Icon(Icons.calculate),
+            label: s.tools,
+          ),
+          NavigationDestination(
+            icon: const Icon(Icons.more_horiz),
+            label: s.more,
+          ),
         ],
       ),
     );

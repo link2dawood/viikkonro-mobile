@@ -6,7 +6,10 @@ class AppSettings extends ChangeNotifier {
   AppSettings(this.preferences) {
     final savedLanguage = preferences.getString('language');
     language = languages.contains(savedLanguage) ? savedLanguage! : 'system';
-    theme = ThemeMode.values.firstWhere((m) => m.name == preferences.getString('theme'), orElse: () => ThemeMode.system);
+    theme = ThemeMode.values.firstWhere(
+      (m) => m.name == preferences.getString('theme'),
+      orElse: () => ThemeMode.system,
+    );
     final saved = preferences.getString('firstScreen');
     firstScreen = firstScreens.contains(saved) ? saved! : 'home';
   }
@@ -75,6 +78,8 @@ class AppSettings extends ChangeNotifier {
     notifyListeners();
   }
 
-  String note(int year, int week) => preferences.getString('note_${year}_$week') ?? '';
-  Future<void> saveNote(int year, int week, String value) => preferences.setString('note_${year}_$week', value);
+  String note(int year, int week) =>
+      preferences.getString('note_${year}_$week') ?? '';
+  Future<void> saveNote(int year, int week, String value) =>
+      preferences.setString('note_${year}_$week', value);
 }

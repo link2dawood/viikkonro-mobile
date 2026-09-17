@@ -9,7 +9,11 @@ import '../../shared/formatters.dart';
 
 /// FP-S01, FP-S02, FP-S03, FP-S08, FP-S09, FP-S11, FP-S13 and FP-D09.
 class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({super.key, required this.settings, required this.repository});
+  const SettingsScreen({
+    super.key,
+    required this.settings,
+    required this.repository,
+  });
   final AppSettings settings;
   final CalendarRepository repository;
 
@@ -64,7 +68,11 @@ class SettingsScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _row(context, s.source, '${source['repository']}'),
-                _row(context, 'revision', '${source['revision']}'.substring(0, 12)),
+                _row(
+                  context,
+                  'revision',
+                  '${source['revision']}'.substring(0, 12),
+                ),
                 _row(context, s.year, '${range.first}–${range.last}'),
                 _row(context, 'version', '${repository.data['version']}'),
               ],
@@ -79,7 +87,8 @@ class SettingsScreen extends StatelessWidget {
               children: [
                 ListenableBuilder(
                   listenable: AdService.instance,
-                  builder: (context, _) => AdService.instance.privacyOptionsRequired
+                  builder: (context, _) =>
+                      AdService.instance.privacyOptionsRequired
                       ? ListTile(
                           minTileHeight: 52,
                           leading: const Icon(Icons.ads_click_rounded),
@@ -100,14 +109,27 @@ class SettingsScreen extends StatelessWidget {
                   subtitle: const Mono('viikkonro.fi', size: 12),
                   onTap: () => openUrl(context, SiteUrl.origin),
                 ),
-                ListTile(minTileHeight: 52, leading: const Icon(Icons.privacy_tip_outlined), title: Text(s.privacy), onTap: () => openUrl(context, SiteUrl.path('tietosuoja'))),
-                ListTile(minTileHeight: 52, leading: const Icon(Icons.gavel_rounded), title: Text(s.terms), onTap: () => openUrl(context, SiteUrl.path('kayttoehdot'))),
+                ListTile(
+                  minTileHeight: 52,
+                  leading: const Icon(Icons.privacy_tip_outlined),
+                  title: Text(s.privacy),
+                  onTap: () => openUrl(context, SiteUrl.path('tietosuoja')),
+                ),
+                ListTile(
+                  minTileHeight: 52,
+                  leading: const Icon(Icons.gavel_rounded),
+                  title: Text(s.terms),
+                  onTap: () => openUrl(context, SiteUrl.path('kayttoehdot')),
+                ),
                 _Version(),
                 ListTile(
                   minTileHeight: 52,
                   leading: const Icon(Icons.article_outlined),
                   title: Text(s.licenses),
-                  onTap: () => showLicensePage(context: context, applicationName: s.appName),
+                  onTap: () => showLicensePage(
+                    context: context,
+                    applicationName: s.appName,
+                  ),
                 ),
               ],
             ),
@@ -126,7 +148,12 @@ class SettingsScreen extends StatelessWidget {
       runSpacing: 2,
       children: [
         Mono(label, size: 12),
-        Mono(value, size: 12, weight: FontWeight.w600, color: context.colors.onSurface),
+        Mono(
+          value,
+          size: 12,
+          weight: FontWeight.w600,
+          color: context.colors.onSurface,
+        ),
       ],
     ),
   );
@@ -150,10 +177,16 @@ class _LanguagePicker extends StatelessWidget {
               minTileHeight: 52,
               contentPadding: const EdgeInsets.symmetric(horizontal: 10),
               leading: Icon(
-                settings.language == code ? Icons.radio_button_checked : Icons.radio_button_unchecked,
-                color: settings.language == code ? context.colors.primary : context.colors.onSurfaceVariant,
+                settings.language == code
+                    ? Icons.radio_button_checked
+                    : Icons.radio_button_unchecked,
+                color: settings.language == code
+                    ? context.colors.primary
+                    : context.colors.onSurfaceVariant,
               ),
-              title: Text(code == 'system' ? s.system : AppSettings.languageNames[code]!),
+              title: Text(
+                code == 'system' ? s.system : AppSettings.languageNames[code]!,
+              ),
               subtitle: Mono(code == 'system' ? s.language : code, size: 11),
               onTap: () => settings.setLanguage(code),
             ),
@@ -165,7 +198,12 @@ class _LanguagePicker extends StatelessWidget {
 
 /// A wrapping single-choice row, used where a segmented button would clip.
 class _Choices<T> extends StatelessWidget {
-  const _Choices({required this.values, required this.selected, required this.label, required this.onSelected});
+  const _Choices({
+    required this.values,
+    required this.selected,
+    required this.label,
+    required this.onSelected,
+  });
   final List<T> values;
   final T selected;
   final String Function(T) label;
@@ -175,7 +213,15 @@ class _Choices<T> extends StatelessWidget {
   Widget build(BuildContext context) => Wrap(
     spacing: 8,
     runSpacing: 6,
-    children: [for (final value in values) ChoiceChip(selected: selected == value, showCheckmark: false, label: Text(label(value)), onSelected: (_) => onSelected(value))],
+    children: [
+      for (final value in values)
+        ChoiceChip(
+          selected: selected == value,
+          showCheckmark: false,
+          label: Text(label(value)),
+          onSelected: (_) => onSelected(value),
+        ),
+    ],
   );
 }
 
@@ -190,8 +236,16 @@ class _Version extends StatelessWidget {
         minTileHeight: 52,
         leading: const Icon(Icons.info_outline_rounded),
         title: Text(context.s.appName),
-        subtitle: Mono(info == null ? '—' : '${info.version} (${info.buildNumber})', size: 12),
-        onTap: info == null ? null : () => copyText(context, '${info.packageName} ${info.version}+${info.buildNumber}'),
+        subtitle: Mono(
+          info == null ? '—' : '${info.version} (${info.buildNumber})',
+          size: 12,
+        ),
+        onTap: info == null
+            ? null
+            : () => copyText(
+                context,
+                '${info.packageName} ${info.version}+${info.buildNumber}',
+              ),
       );
     },
   );

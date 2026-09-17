@@ -36,11 +36,22 @@ void main() {
 
   setUpAll(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
-    PackageInfo.setMockInitialValues(appName: 'Viikkonro', packageName: 'fi.viikkonro.app', version: '1.0.0', buildNumber: '1', buildSignature: '');
+    PackageInfo.setMockInitialValues(
+      appName: 'Viikkonro',
+      packageName: 'fi.viikkonro.app',
+      version: '1.0.0',
+      buildNumber: '1',
+      buildSignature: '',
+    );
     repository = await CalendarRepository.load();
   });
 
-  Future<void> sweep(WidgetTester tester, {required Size size, required double textScale, required String language}) async {
+  Future<void> sweep(
+    WidgetTester tester, {
+    required Size size,
+    required double textScale,
+    required String language,
+  }) async {
     // Layout errors reach the test as a bare exception, which does not say
     // which widget overflowed. Recording the details keeps the failure useful.
     final recorded = <FlutterErrorDetails>[];
@@ -52,7 +63,9 @@ void main() {
     addTearDown(() => FlutterError.onError = previous);
     void check(String label) {
       final error = tester.takeException();
-      final report = recorded.map((d) => d.toDiagnosticsNode().toStringDeep()).join('\n');
+      final report = recorded
+          .map((d) => d.toDiagnosticsNode().toStringDeep())
+          .join('\n');
       recorded.clear();
       if (error == null) return;
       // Put the handler back before failing: flutter_test asserts that a test
@@ -67,8 +80,15 @@ void main() {
     final settings = AppSettings(await SharedPreferences.getInstance());
     await tester.pumpWidget(
       MediaQuery(
-        data: MediaQueryData(size: size, textScaler: TextScaler.linear(textScale)),
-        child: ViikkonroApp(settings: settings, repository: repository, clock: () => today),
+        data: MediaQueryData(
+          size: size,
+          textScaler: TextScaler.linear(textScale),
+        ),
+        child: ViikkonroApp(
+          settings: settings,
+          repository: repository,
+          clock: () => today,
+        ),
       ),
     );
     await tester.pumpAndSettle();
@@ -92,27 +112,58 @@ void main() {
     await tester.pumpWidget(const SizedBox.shrink());
   }
 
-  testWidgets('every route renders on a small phone in Finnish', (tester) async {
-    await sweep(tester, size: const Size(360, 740), textScale: 1, language: 'fi');
+  testWidgets('every route renders on a small phone in Finnish', (
+    tester,
+  ) async {
+    await sweep(
+      tester,
+      size: const Size(360, 740),
+      textScale: 1,
+      language: 'fi',
+    );
   });
 
-  testWidgets('every route renders on a small phone in English', (tester) async {
-    await sweep(tester, size: const Size(360, 740), textScale: 1, language: 'en');
+  testWidgets('every route renders on a small phone in English', (
+    tester,
+  ) async {
+    await sweep(
+      tester,
+      size: const Size(360, 740),
+      textScale: 1,
+      language: 'en',
+    );
   });
 
   testWidgets('every route survives a 200 percent font scale', (tester) async {
-    await sweep(tester, size: const Size(360, 740), textScale: 2, language: 'fi');
+    await sweep(
+      tester,
+      size: const Size(360, 740),
+      textScale: 2,
+      language: 'fi',
+    );
   });
 
   testWidgets('every route renders in landscape', (tester) async {
-    await sweep(tester, size: const Size(740, 360), textScale: 1, language: 'fi');
+    await sweep(
+      tester,
+      size: const Size(740, 360),
+      textScale: 1,
+      language: 'fi',
+    );
   });
 
   // A long translation is the usual cause of a broken layout, so every shipped
   // language gets the same phone-width sweep rather than a spot check.
   for (final locale in AppLocalizations.supportedLocales) {
-    testWidgets('every route renders in ${locale.languageCode}', (tester) async {
-      await sweep(tester, size: const Size(360, 740), textScale: 1, language: locale.languageCode);
+    testWidgets('every route renders in ${locale.languageCode}', (
+      tester,
+    ) async {
+      await sweep(
+        tester,
+        size: const Size(360, 740),
+        textScale: 1,
+        language: locale.languageCode,
+      );
     });
   }
 }

@@ -10,7 +10,14 @@ import 'month_grid.dart';
 
 /// FP-M01–FP-M07: the month view and its navigation.
 class MonthScreen extends StatefulWidget {
-  const MonthScreen({super.key, required this.repository, required this.today, required this.year, required this.month, this.embedded = false});
+  const MonthScreen({
+    super.key,
+    required this.repository,
+    required this.today,
+    required this.year,
+    required this.month,
+    this.embedded = false,
+  });
   final CalendarRepository repository;
   final DateTime today;
   final int year, month;
@@ -25,7 +32,9 @@ class _MonthScreenState extends State<MonthScreen> {
   /// FP-M06: stepping through the date constructor rolls the year over for us.
   void _step(int months) {
     final next = DateTime(shown.year, shown.month + months);
-    if (next.year < CalendarRepository.minYear || next.year > CalendarRepository.maxYear) return;
+    if (next.year < CalendarRepository.minYear ||
+        next.year > CalendarRepository.maxYear)
+      return;
     setState(() => shown = next);
   }
 
@@ -42,36 +51,68 @@ class _MonthScreenState extends State<MonthScreen> {
     final s = context.s;
     final first = DateTime(shown.year, shown.month, 1);
     final last = DateTime(shown.year, shown.month + 1, 0);
-    final counts = countWorkingDays(first, last, isHoliday: widget.repository.isHoliday);
-    final events = widget.repository.events.where((e) => e.date.year == shown.year && e.date.month == shown.month).toList();
+    final counts = countWorkingDays(
+      first,
+      last,
+      isHoliday: widget.repository.isHoliday,
+    );
+    final events = widget.repository.events
+        .where((e) => e.date.year == shown.year && e.date.month == shown.month)
+        .toList();
     final title = context.monthName(shown.year, shown.month);
     final body = PageBody(
       children: [
         Row(
           children: [
-            IconButton(tooltip: s.previous, onPressed: () => _step(-1), icon: const Icon(Icons.chevron_left)),
+            IconButton(
+              tooltip: s.previous,
+              onPressed: () => _step(-1),
+              icon: const Icon(Icons.chevron_left),
+            ),
             Expanded(
               child: Center(
                 child: TextButton(
                   onPressed: _pick,
-                  child: Text('$title ${shown.year}', style: Theme.of(context).textTheme.titleLarge),
+                  child: Text(
+                    '$title ${shown.year}',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
                 ),
               ),
             ),
-            IconButton(tooltip: s.next, onPressed: () => _step(1), icon: const Icon(Icons.chevron_right)),
+            IconButton(
+              tooltip: s.next,
+              onPressed: () => _step(1),
+              icon: const Icon(Icons.chevron_right),
+            ),
           ],
         ),
         const SizedBox(height: 8),
         SitePanel(
           padding: const EdgeInsets.fromLTRB(10, 16, 10, 16),
-          child: MonthGrid(year: shown.year, month: shown.month, repository: widget.repository, today: widget.today),
+          child: MonthGrid(
+            year: shown.year,
+            month: shown.month,
+            repository: widget.repository,
+            today: widget.today,
+          ),
         ),
         const SizedBox(height: 12),
         const MarkerLegend(),
-        ResultActions(text: '$title ${shown.year}', url: SiteUrl.month(shown.month, shown.year)),
+        ResultActions(
+          text: '$title ${shown.year}',
+          url: SiteUrl.month(shown.month, shown.year),
+        ),
         const AdSlot(),
         SectionTitle(s.monthWorkingDays),
-        SitePanel(child: StatRow([(s.workingDays, '${counts.working}'), (s.weekends, '${counts.weekend}'), (s.weekdayHolidays, '${counts.holidays}'), (s.totalDays, '${counts.total}')])),
+        SitePanel(
+          child: StatRow([
+            (s.workingDays, '${counts.working}'),
+            (s.weekends, '${counts.weekend}'),
+            (s.weekdayHolidays, '${counts.holidays}'),
+            (s.totalDays, '${counts.total}'),
+          ]),
+        ),
         SectionTitle(events.isEmpty ? s.noEvents : s.holidays),
         if (events.isEmpty)
           SitePanel(child: Mono(s.noEvents))
@@ -92,8 +133,14 @@ class _MonthScreenState extends State<MonthScreen> {
                       color: context.colors.secondary,
                     ),
                     title: Text(event.name),
-                    subtitle: Mono('${context.weekday(event.date)} ${context.shortDate(event.date)} · ${s.weekLabel(isoWeek(event.date))}', size: 12),
-                    onTap: () => Navigator.pushNamed(context, '/viikonpaiva?paiva=${formatDate(event.date)}'),
+                    subtitle: Mono(
+                      '${context.weekday(event.date)} ${context.shortDate(event.date)} · ${s.weekLabel(isoWeek(event.date))}',
+                      size: 12,
+                    ),
+                    onTap: () => Navigator.pushNamed(
+                      context,
+                      '/viikonpaiva?paiva=${formatDate(event.date)}',
+                    ),
                   ),
               ],
             ),
@@ -128,7 +175,10 @@ class MarkerLegend extends StatelessWidget {
                     Container(
                       width: 9,
                       height: 2.5,
-                      decoration: BoxDecoration(color: context.colors.secondary, borderRadius: BorderRadius.circular(2)),
+                      decoration: BoxDecoration(
+                        color: context.colors.secondary,
+                        borderRadius: BorderRadius.circular(2),
+                      ),
                     ),
                     s.holidays,
                   ),
@@ -137,7 +187,10 @@ class MarkerLegend extends StatelessWidget {
                     Container(
                       width: 3.5,
                       height: 3.5,
-                      decoration: BoxDecoration(color: context.colors.primary, shape: BoxShape.circle),
+                      decoration: BoxDecoration(
+                        color: context.colors.primary,
+                        shape: BoxShape.circle,
+                      ),
                     ),
                     s.flagDays,
                   ),
@@ -148,7 +201,10 @@ class MarkerLegend extends StatelessWidget {
                       height: 12,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(4),
-                        border: Border.all(color: context.colors.primary, width: 2),
+                        border: Border.all(
+                          color: context.colors.primary,
+                          width: 2,
+                        ),
                       ),
                     ),
                     s.today,
@@ -192,23 +248,34 @@ class _MonthPickerState extends State<_MonthPicker> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          YearStepper(year: year, onChanged: (value) => setState(() => year = value)),
+          YearStepper(
+            year: year,
+            onChanged: (value) => setState(() => year = value),
+          ),
           Wrap(
             spacing: 6,
             runSpacing: 6,
             children: [
               for (var month = 1; month <= 12; month++)
                 ChoiceChip(
-                  selected: year == widget.initial.year && month == widget.initial.month,
+                  selected:
+                      year == widget.initial.year &&
+                      month == widget.initial.month,
                   showCheckmark: false,
                   label: Text(context.monthName(year, month)),
-                  onSelected: (_) => Navigator.pop(context, DateTime(year, month)),
+                  onSelected: (_) =>
+                      Navigator.pop(context, DateTime(year, month)),
                 ),
             ],
           ),
         ],
       ),
     ),
-    actions: [TextButton(onPressed: () => Navigator.pop(context), child: Text(context.s.cancel))],
+    actions: [
+      TextButton(
+        onPressed: () => Navigator.pop(context),
+        child: Text(context.s.cancel),
+      ),
+    ],
   );
 }

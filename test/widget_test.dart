@@ -26,15 +26,27 @@ void main() {
 
   /// Pumps the app, runs [body], then unmounts so the midnight timer is
   /// cancelled before the test framework checks for pending timers.
-  Future<void> runApp(WidgetTester tester, Future<void> Function() body, {DateTime? now}) async {
+  Future<void> runApp(
+    WidgetTester tester,
+    Future<void> Function() body, {
+    DateTime? now,
+  }) async {
     var clock = now ?? fixedToday;
-    await tester.pumpWidget(ViikkonroApp(settings: await newSettings(), repository: repository, clock: () => clock));
+    await tester.pumpWidget(
+      ViikkonroApp(
+        settings: await newSettings(),
+        repository: repository,
+        clock: () => clock,
+      ),
+    );
     await tester.pumpAndSettle();
     await body();
     await tester.pumpWidget(const SizedBox.shrink());
   }
 
-  testWidgets('the app opens on the home screen showing the current week', (tester) async {
+  testWidgets('the app opens on the home screen showing the current week', (
+    tester,
+  ) async {
     await runApp(tester, () async {
       expect(find.text('${isoWeek(fixedToday)}'), findsWidgets);
       expect(find.text('Etusivu'), findsWidgets);
@@ -55,7 +67,9 @@ void main() {
     });
   });
 
-  testWidgets('an unrecognised path opens the home screen, not a 404', (tester) async {
+  testWidgets('an unrecognised path opens the home screen, not a 404', (
+    tester,
+  ) async {
     await runApp(tester, () async {
       final navigator = tester.state<NavigatorState>(find.byType(Navigator));
       navigator.pushNamed('/ei-tallaista-sivua');
@@ -65,21 +79,34 @@ void main() {
     });
   });
 
-  testWidgets('the year grid renders every week of a 53-week year', (tester) async {
+  testWidgets('the year grid renders every week of a 53-week year', (
+    tester,
+  ) async {
     await runApp(tester, () async {
       final navigator = tester.state<NavigatorState>(find.byType(Navigator));
       navigator.pushNamed('/vuosi-2026');
       await tester.pumpAndSettle();
       expect(weeksInIsoYear(2026), 53);
       final list = tester.widget<ListView>(find.byType(ListView).first);
-      expect((list.childrenDelegate as SliverChildBuilderDelegate).childCount, 53);
+      expect(
+        (list.childrenDelegate as SliverChildBuilderDelegate).childCount,
+        53,
+      );
     });
   });
 
-  testWidgets('midnight rollover moves the app to the new day unprompted', (tester) async {
+  testWidgets('midnight rollover moves the app to the new day unprompted', (
+    tester,
+  ) async {
     var clock = DateTime(2026, 12, 31, 23, 59, 30);
     final settings = await newSettings();
-    await tester.pumpWidget(ViikkonroApp(settings: settings, repository: repository, clock: () => clock));
+    await tester.pumpWidget(
+      ViikkonroApp(
+        settings: settings,
+        repository: repository,
+        clock: () => clock,
+      ),
+    );
     await tester.pumpAndSettle();
     expect(find.text('31. joulukuuta 2026'), findsWidgets);
 
@@ -94,17 +121,26 @@ void main() {
     await tester.pumpWidget(const SizedBox.shrink());
   });
 
-  testWidgets('page content stays inside side and bottom system insets', (tester) async {
+  testWidgets('page content stays inside side and bottom system insets', (
+    tester,
+  ) async {
     await tester.pumpWidget(
       const MaterialApp(
         home: MediaQuery(
           data: MediaQueryData(padding: EdgeInsets.fromLTRB(24, 0, 18, 32)),
-          child: PageBody(children: [SizedBox(key: Key('inset-content'), height: 20)]),
+          child: PageBody(
+            children: [SizedBox(key: Key('inset-content'), height: 20)],
+          ),
         ),
       ),
     );
 
-    final safeArea = tester.widget<SafeArea>(find.descendant(of: find.byType(PageBody), matching: find.byType(SafeArea)));
+    final safeArea = tester.widget<SafeArea>(
+      find.descendant(
+        of: find.byType(PageBody),
+        matching: find.byType(SafeArea),
+      ),
+    );
     expect(safeArea.top, isFalse);
     expect(safeArea.left, isTrue);
     expect(safeArea.right, isTrue);

@@ -9,7 +9,13 @@ import '../../shared/formatters.dart';
 
 /// FP-P01–FP-P05 plus the school holiday listing and its confidence tiers.
 class HolidaysScreen extends StatefulWidget {
-  const HolidaysScreen({super.key, required this.repository, required this.today, required this.year, this.tab = 0});
+  const HolidaysScreen({
+    super.key,
+    required this.repository,
+    required this.today,
+    required this.year,
+    this.tab = 0,
+  });
   final CalendarRepository repository;
   final DateTime today;
   final int year, tab;
@@ -17,8 +23,13 @@ class HolidaysScreen extends StatefulWidget {
   State<HolidaysScreen> createState() => _HolidaysScreenState();
 }
 
-class _HolidaysScreenState extends State<HolidaysScreen> with SingleTickerProviderStateMixin {
-  late final TabController _tabs = TabController(length: 3, vsync: this, initialIndex: widget.tab);
+class _HolidaysScreenState extends State<HolidaysScreen>
+    with SingleTickerProviderStateMixin {
+  late final TabController _tabs = TabController(
+    length: 3,
+    vsync: this,
+    initialIndex: widget.tab,
+  );
   late int year = widget.year;
 
   @override
@@ -39,7 +50,13 @@ class _HolidaysScreenState extends State<HolidaysScreen> with SingleTickerProvid
     return Scaffold(
       appBar: AppBar(
         title: Text(s.holidays),
-        actions: [IconButton(tooltip: s.openWebsite, onPressed: () => openUrl(context, _url()), icon: const Icon(Icons.open_in_new_rounded))],
+        actions: [
+          IconButton(
+            tooltip: s.openWebsite,
+            onPressed: () => openUrl(context, _url()),
+            icon: const Icon(Icons.open_in_new_rounded),
+          ),
+        ],
         bottom: TabBar(
           controller: _tabs,
           onTap: (_) => setState(() {}),
@@ -56,14 +73,27 @@ class _HolidaysScreenState extends State<HolidaysScreen> with SingleTickerProvid
           children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 16, 20, 0),
-              child: YearStepper(year: year, onChanged: (value) => setState(() => year = value)),
+              child: YearStepper(
+                year: year,
+                onChanged: (value) => setState(() => year = value),
+              ),
             ),
             Expanded(
               child: TabBarView(
                 controller: _tabs,
                 children: [
-                  _EventList(repository: widget.repository, today: widget.today, year: year, flags: false),
-                  _EventList(repository: widget.repository, today: widget.today, year: year, flags: true),
+                  _EventList(
+                    repository: widget.repository,
+                    today: widget.today,
+                    year: year,
+                    flags: false,
+                  ),
+                  _EventList(
+                    repository: widget.repository,
+                    today: widget.today,
+                    year: year,
+                    flags: true,
+                  ),
                   _SchoolList(repository: widget.repository, year: year),
                 ],
               ),
@@ -76,7 +106,12 @@ class _HolidaysScreenState extends State<HolidaysScreen> with SingleTickerProvid
 }
 
 class _EventList extends StatelessWidget {
-  const _EventList({required this.repository, required this.today, required this.year, required this.flags});
+  const _EventList({
+    required this.repository,
+    required this.today,
+    required this.year,
+    required this.flags,
+  });
   final CalendarRepository repository;
   final DateTime today;
   final int year;
@@ -93,7 +128,11 @@ class _EventList extends StatelessWidget {
       itemCount: entries.length + 1,
       separatorBuilder: (_, _) => const Divider(height: 1),
       itemBuilder: (context, index) {
-        if (index == entries.length) return const Padding(padding: EdgeInsets.only(top: 18), child: AdSlot());
+        if (index == entries.length)
+          return const Padding(
+            padding: EdgeInsets.only(top: 18),
+            child: AdSlot(),
+          );
         final event = entries[index];
         final date = dateOnly(event.date);
         final past = date.isBefore(now);
@@ -107,7 +146,14 @@ class _EventList extends StatelessWidget {
             leading: SizedBox(
               width: 48,
               child: Center(
-                child: Mono('${date.day}.${date.month}.', size: 14, weight: FontWeight.w700, color: weekend ? context.colors.secondary : context.colors.onSurface),
+                child: Mono(
+                  '${date.day}.${date.month}.',
+                  size: 14,
+                  weight: FontWeight.w700,
+                  color: weekend
+                      ? context.colors.secondary
+                      : context.colors.onSurface,
+                ),
               ),
             ),
             title: Text(event.name),
@@ -127,11 +173,26 @@ class _EventList extends StatelessWidget {
                   size: 12,
                 ),
                 // FP-P05: a holiday landing on a weekend is the thing people check.
-                if (weekend && !flags) Icon(Icons.weekend_outlined, size: 14, color: context.colors.secondary),
+                if (weekend && !flags)
+                  Icon(
+                    Icons.weekend_outlined,
+                    size: 14,
+                    color: context.colors.secondary,
+                  ),
               ],
             ),
-            trailing: past ? null : Mono(countdown == 0 ? s.today : s.dayCount(countdown), size: 12, weight: FontWeight.w600, color: context.colors.primary),
-            onTap: () => Navigator.pushNamed(context, '/viikonpaiva?paiva=${formatDate(date)}'),
+            trailing: past
+                ? null
+                : Mono(
+                    countdown == 0 ? s.today : s.dayCount(countdown),
+                    size: 12,
+                    weight: FontWeight.w600,
+                    color: context.colors.primary,
+                  ),
+            onTap: () => Navigator.pushNamed(
+              context,
+              '/viikonpaiva?paiva=${formatDate(date)}',
+            ),
           ),
         );
       },
@@ -147,14 +208,22 @@ class _SchoolList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final s = context.s;
-    final periods = repository.schoolPeriods.where((p) => p.year == year).toList()..sort((a, b) => (a.start ?? DateTime(year)).compareTo(b.start ?? DateTime(year)));
+    final periods =
+        repository.schoolPeriods.where((p) => p.year == year).toList()..sort(
+          (a, b) =>
+              (a.start ?? DateTime(year)).compareTo(b.start ?? DateTime(year)),
+        );
     if (periods.isEmpty) {
       return Padding(
         padding: const EdgeInsets.all(28),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(s.noSchoolData, textAlign: TextAlign.center, style: Theme.of(context).textTheme.bodyLarge),
+            Text(
+              s.noSchoolData,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
             const SizedBox(height: 10),
             Mono(s.dataCoverage),
           ],
@@ -181,15 +250,27 @@ class _SchoolList extends StatelessWidget {
                     runSpacing: 6,
                     crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
-                      Text(period.kind == 'winter' ? s.winterBreak : s.autumnBreak, style: Theme.of(context).textTheme.titleLarge),
+                      Text(
+                        period.kind == 'winter' ? s.winterBreak : s.autumnBreak,
+                        style: Theme.of(context).textTheme.titleLarge,
+                      ),
                       ConfidenceBadge(period.confidence),
                     ],
                   ),
                   const SizedBox(height: 6),
-                  if (period.start != null && period.end != null) Text(context.range(period.start!, period.end!), style: Theme.of(context).textTheme.bodyLarge) else Mono(s.unknown),
+                  if (period.start != null && period.end != null)
+                    Text(
+                      context.range(period.start!, period.end!),
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    )
+                  else
+                    Mono(s.unknown),
                   const SizedBox(height: 8),
                   Mono('${s.city}: ${period.cities.join(', ')}', size: 12),
-                  if (period.sourceKey != null) ...[const SizedBox(height: 6), _source(context, period.sourceKey!)],
+                  if (period.sourceKey != null) ...[
+                    const SizedBox(height: 6),
+                    _source(context, period.sourceKey!),
+                  ],
                 ],
               ),
             ),
@@ -199,13 +280,21 @@ class _SchoolList extends StatelessWidget {
   }
 
   Widget _source(BuildContext context, String key) {
-    final source = (repository.data['schoolHolidaySources'] as Map<String, dynamic>)[key] as Map<String, dynamic>?;
+    final source =
+        (repository.data['schoolHolidaySources'] as Map<String, dynamic>)[key]
+            as Map<String, dynamic>?;
     if (source == null) return const SizedBox.shrink();
     final verified = source['verifiedAt'] as String?;
     return Wrap(
       spacing: 10,
       runSpacing: 2,
-      children: [Mono('${context.s.source}: ${source['label'] ?? source['source']}', size: 11), if (verified != null) Mono(context.s.verifiedAt(verified), size: 11)],
+      children: [
+        Mono(
+          '${context.s.source}: ${source['label'] ?? source['source']}',
+          size: 11,
+        ),
+        if (verified != null) Mono(context.s.verifiedAt(verified), size: 11),
+      ],
     );
   }
 }
@@ -218,9 +307,21 @@ class ConfidenceBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     final s = context.s;
     final (label, color, icon) = switch (confidence) {
-      'confirmed' => (s.confirmed, context.colors.primary, Icons.check_circle_outline_rounded),
-      'estimated' => (s.estimated, context.colors.secondary, Icons.help_outline_rounded),
-      _ => (s.unknown, context.colors.onSurfaceVariant, Icons.remove_circle_outline_rounded),
+      'confirmed' => (
+        s.confirmed,
+        context.colors.primary,
+        Icons.check_circle_outline_rounded,
+      ),
+      'estimated' => (
+        s.estimated,
+        context.colors.secondary,
+        Icons.help_outline_rounded,
+      ),
+      _ => (
+        s.unknown,
+        context.colors.onSurfaceVariant,
+        Icons.remove_circle_outline_rounded,
+      ),
     };
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),

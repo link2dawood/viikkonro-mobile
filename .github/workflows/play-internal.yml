@@ -29,7 +29,7 @@ jobs:
       BUILD_NUMBER: ${{ inputs.build_number }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Validate release inputs and secrets
         shell: bash
@@ -69,7 +69,7 @@ jobs:
             fi
           done
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: '17'
@@ -80,7 +80,7 @@ jobs:
           channel: stable
           cache: true
 
-      - uses: gradle/actions/setup-gradle@v4
+      - uses: gradle/actions/setup-gradle@v6
 
       - name: Materialize local-only Android configuration
         shell: bash
@@ -128,7 +128,7 @@ jobs:
           rm -f android/app/google-services.json
 
       - name: Preserve release bundle
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: viikkonro-${{ inputs.version_name }}-${{ inputs.build_number }}
           path: build/app/outputs/bundle/release/app-release.aab

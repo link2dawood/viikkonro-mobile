@@ -1,8 +1,13 @@
 import 'iso_week.dart';
 
-int daysBetween(DateTime a, DateTime b) => (dateOnly(b).difference(dateOnly(a)).inMilliseconds / Duration.millisecondsPerDay).round().abs();
+int daysBetween(DateTime a, DateTime b) =>
+    (dateOnly(b).difference(dateOnly(a)).inMilliseconds /
+            Duration.millisecondsPerDay)
+        .round()
+        .abs();
 int dayOfYear(DateTime d) => daysBetween(DateTime(d.year, 1, 1), d) + 1;
-int daysInYear(int year) => daysBetween(DateTime(year, 1, 1), DateTime(year + 1, 1, 1));
+int daysInYear(int year) =>
+    daysBetween(DateTime(year, 1, 1), DateTime(year + 1, 1, 1));
 int usWeekNumber(DateTime input) {
   final date = dateOnly(input);
   final jan1 = DateTime(date.year, 1, 1);
@@ -20,7 +25,11 @@ class WorkingDayCount {
 
 /// Website semantics: both boundaries included; weekends take precedence so
 /// a public holiday on a weekend is never subtracted twice. Eves are working days.
-WorkingDayCount countWorkingDays(DateTime from, DateTime to, {required bool Function(DateTime) isHoliday}) {
+WorkingDayCount countWorkingDays(
+  DateTime from,
+  DateTime to, {
+  required bool Function(DateTime) isHoliday,
+}) {
   final start = dateOnly(from);
   final end = dateOnly(to);
   if (end.isBefore(start)) throw ArgumentError('End date precedes start date');
@@ -42,13 +51,21 @@ bool isWeekend(DateTime date) => dateOnly(date).weekday >= DateTime.saturday;
 
 /// Monday to Friday inside the span, both ends included, holidays ignored.
 int weekdaysBetween(DateTime from, DateTime to, {bool inclusive = true}) {
-  final counts = countWorkingDays(from, inclusive ? to : addCalendarDays(to, -1), isHoliday: (_) => false);
+  final counts = countWorkingDays(
+    from,
+    inclusive ? to : addCalendarDays(to, -1),
+    isHoliday: (_) => false,
+  );
   return counts.total - counts.weekend;
 }
 
 /// The public holidays a working-day count drops, so the app can name them
 /// rather than leave the user to work out where the missing days went (FP-T03).
-List<DateTime> workdayHolidaysBetween(DateTime from, DateTime to, {required bool Function(DateTime) isHoliday}) {
+List<DateTime> workdayHolidaysBetween(
+  DateTime from,
+  DateTime to, {
+  required bool Function(DateTime) isHoliday,
+}) {
   final start = dateOnly(from);
   final end = dateOnly(to);
   final found = <DateTime>[];
@@ -67,7 +84,10 @@ List<DateTime> workdayHolidaysBetween(DateTime from, DateTime to, {required bool
 (DateTime, DateTime) quarterBounds(DateTime date) {
   final d = dateOnly(date);
   final quarter = (d.month + 2) ~/ 3;
-  return (DateTime(d.year, quarter * 3 - 2, 1), DateTime(d.year, quarter * 3 + 1, 0));
+  return (
+    DateTime(d.year, quarter * 3 - 2, 1),
+    DateTime(d.year, quarter * 3 + 1, 0),
+  );
 }
 
 (DateTime, DateTime) yearBounds(DateTime date) {
