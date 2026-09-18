@@ -6,9 +6,9 @@ import 'package:viikkonro/core/date/finnish_format.dart';
 import 'package:viikkonro/core/date/iso_week.dart';
 
 void main() {
-  final fixture =
-      jsonDecode(File('test/fixtures/iso_week_fixture.json').readAsStringSync())
-          as Map<String, dynamic>;
+  final fixture = jsonDecode(
+    File('test/fixtures/iso_week_fixture.json').readAsStringSync(),
+  ) as Map<String, dynamic>;
 
   test('test process uses the requested time zone', () {
     const januaryOffsets = {
