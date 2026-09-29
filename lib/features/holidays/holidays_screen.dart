@@ -129,11 +129,12 @@ class _EventList extends StatelessWidget {
       itemCount: entries.length + 1,
       separatorBuilder: (_, _) => const Divider(height: 1),
       itemBuilder: (context, index) {
-        if (index == entries.length)
+        if (index == entries.length) {
           return const Padding(
             padding: EdgeInsets.only(top: 18),
             child: AdSlot(),
           );
+        }
         final event = entries[index];
         final date = dateOnly(event.date);
         final past = date.isBefore(now);

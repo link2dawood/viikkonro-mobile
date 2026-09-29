@@ -13,7 +13,7 @@ milestones. See [development status](docs/development-status.md), the supplied
 
 ## Toolchain and identifiers
 
-- Flutter 3.47.4 / Dart 3.13.3 (the version pinned in CI).
+- Flutter 3.47.5 / Dart 3.13.4 (the version pinned in CI).
 - Android SDK 36, minimum API 24; JDK 17.
 - Xcode with an installed iOS simulator, CocoaPods; minimum deployment iOS 16.
 - Android release: `fi.viikkonro.app`; debug: `fi.viikkonro.app.debug`.

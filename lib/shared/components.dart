@@ -71,14 +71,16 @@ class SitePanel extends StatelessWidget {
   final Widget child;
   final EdgeInsets padding;
   @override
-  Widget build(BuildContext context) => Container(
-    padding: padding,
-    decoration: BoxDecoration(
-      color: context.colors.surfaceContainerLow,
+  // A Material surface (rather than a decorated box) lets list tiles inside
+  // the panel paint their ink splashes on the panel itself.
+  Widget build(BuildContext context) => Material(
+    color: context.colors.surfaceContainerLow,
+    shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(16),
-      border: Border.all(color: context.colors.outlineVariant),
+      side: BorderSide(color: context.colors.outlineVariant),
     ),
-    child: child,
+    clipBehavior: Clip.antiAlias,
+    child: Padding(padding: padding, child: child),
   );
 }
 

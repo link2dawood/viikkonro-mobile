@@ -20,8 +20,9 @@ class AppRoute {
     if (uri == null ||
         (uri.hasScheme &&
             (!['http', 'https'].contains(uri.scheme) ||
-                uri.host != 'viikkonro.fi')))
+                uri.host != 'viikkonro.fi'))) {
       return const AppRoute('notFound');
+    }
     final path = uri.path.endsWith('/') && uri.path.length > 1
         ? uri.path.substring(0, uri.path.length - 1)
         : uri.path;
@@ -57,8 +58,9 @@ class AppRoute {
         if (chosen == null ||
             formatDate(chosen) != raw ||
             chosen.year < 2020 ||
-            chosen.year > 2035)
+            chosen.year > 2035) {
           return const AppRoute('notFound');
+        }
       }
       return AppRoute(
         staticRoutes[path]!,
@@ -83,29 +85,33 @@ class AppRoute {
     ];
     final slug = path.replaceFirst('/', '');
     if (articles.contains(slug)) return AppRoute('article', slug: slug);
-    if (path.startsWith('/nimipaiva/') || path.startsWith('/nimipaivat/'))
+    if (path.startsWith('/nimipaiva/') || path.startsWith('/nimipaivat/')) {
       return const AppRoute('nameDays');
+    }
     var match = RegExp(r'^/viikko-(\d+)-(\d{4})$').firstMatch(path);
     if (match != null) {
       final w = int.parse(match[1]!), y = int.parse(match[2]!);
-      if (_year(y) && w >= 1 && w <= weeksInIsoYear(y))
+      if (_year(y) && w >= 1 && w <= weeksInIsoYear(y)) {
         return AppRoute('week', year: y, week: w);
+      }
       return const AppRoute('notFound');
     }
     match = RegExp(r'^/kuukausi-(\d+)-(\d{4})$').firstMatch(path);
     if (match != null) {
       final m = int.parse(match[1]!), y = int.parse(match[2]!);
-      if (_year(y) && m >= 1 && m <= 12)
+      if (_year(y) && m >= 1 && m <= 12) {
         return AppRoute('month', year: y, month: m);
+      }
       return const AppRoute('notFound');
     }
     match = RegExp(r'^/q([1-4])-(\d{4})$').firstMatch(path);
-    if (match != null && _year(int.parse(match[2]!)))
+    if (match != null && _year(int.parse(match[2]!))) {
       return AppRoute(
         'quarter',
         quarter: int.parse(match[1]!),
         year: int.parse(match[2]!),
       );
+    }
     match = RegExp(
       r'^/(vuosi|tulosta|kalenteri|tulostettava-kalenteri|pyhapaivat|liputuspaivat|tyopaivat|koululomat)-(\d{4})(?:-(alkuvuosi|loppuvuosi))?$',
     ).firstMatch(path);
@@ -147,19 +153,21 @@ class AppRoute {
     ];
     if (match != null &&
         months.contains(match[1]) &&
-        _year(int.parse(match[2]!)))
+        _year(int.parse(match[2]!))) {
       return AppRoute(
         'workingMonth',
         month: months.indexOf(match[1]!) + 1,
         year: int.parse(match[2]!),
       );
+    }
     match = RegExp(r'^/(\d{4})/([a-z-]+)$').firstMatch(path);
-    if (match != null && _year(int.parse(match[1]!)))
+    if (match != null && _year(int.parse(match[1]!))) {
       return AppRoute(
         'holidayDetail',
         year: int.parse(match[1]!),
         slug: match[2],
       );
+    }
     return const AppRoute('notFound');
   }
 

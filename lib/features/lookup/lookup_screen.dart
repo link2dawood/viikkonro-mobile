@@ -110,8 +110,9 @@ class _DateToWeekState extends State<_DateToWeek> {
             children: [
               Text(
                 s.weekLabel(week),
-                style: Theme.of(context).textTheme.headlineLarge
-                    ?.copyWith(color: context.colors.primary),
+                style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                  color: context.colors.primary,
+                ),
               ),
               const SizedBox(height: 6),
               Text(summary, style: Theme.of(context).textTheme.bodyLarge),

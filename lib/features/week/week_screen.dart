@@ -32,8 +32,9 @@ class _WeekScreenState extends State<WeekScreen> {
   void _step(int weeks) {
     final monday = addCalendarDays(mondayOf(week, year), weeks * 7);
     if (monday.year < CalendarRepository.minYear ||
-        monday.year > CalendarRepository.maxYear)
+        monday.year > CalendarRepository.maxYear) {
       return;
+    }
     setState(() {
       week = isoWeek(monday);
       year = isoYear(monday);

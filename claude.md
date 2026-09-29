@@ -310,7 +310,7 @@ Test responsibilities:
 - Android `IsoWeekParityTest` and `WidgetDataTest`: shared fixture parity,
   packaged data parsing, holiday/flag separation, confidence, and month grids.
 - `RunnerTests.swift`: Swift parity and boundaries in four time zones.
-- `.github/workflows/ci.yml`: pinned Flutter 3.47.4/Dart 3.13.3 matrix plus
+- `.github/workflows/ci.yml`: pinned Flutter 3.47.5/Dart 3.13.4 matrix plus
   Android/JDK 17 and macOS/iOS jobs.
 
 When changing only documentation, inspect the diff; code test reruns are not

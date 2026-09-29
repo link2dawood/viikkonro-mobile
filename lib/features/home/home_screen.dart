@@ -192,8 +192,9 @@ class _HomeScreenState extends State<HomeScreen> {
               const Divider(height: 32),
               Text(
                 s.weekLabel(isoWeek(selected)),
-                style: Theme.of(context).textTheme.headlineMedium
-                    ?.copyWith(color: context.colors.primary),
+                style: Theme.of(context).textTheme.headlineMedium?.copyWith(
+                  color: context.colors.primary,
+                ),
               ),
               const SizedBox(height: 4),
               Mono('${isoWeekLabel(selected)} · ${context.weekday(selected)}'),

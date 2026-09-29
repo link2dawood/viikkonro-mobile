@@ -34,8 +34,9 @@ class _MonthScreenState extends State<MonthScreen> {
   void _step(int months) {
     final next = DateTime(shown.year, shown.month + months);
     if (next.year < CalendarRepository.minYear ||
-        next.year > CalendarRepository.maxYear)
+        next.year > CalendarRepository.maxYear) {
       return;
+    }
     setState(() => shown = next);
   }
 
