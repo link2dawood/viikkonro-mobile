@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../core/data/calendar_repository.dart';
 import '../core/date/iso_week.dart';
 import '../core/theme/brand_theme.dart';
 import 'formatters.dart';
@@ -117,10 +118,12 @@ class DateField extends StatelessWidget {
     super.key,
     required this.label,
     required this.value,
+    required this.today,
     required this.onChanged,
   });
   final String label;
   final DateTime value;
+  final DateTime today;
   final ValueChanged<DateTime> onChanged;
   @override
   Widget build(BuildContext context) => Column(
@@ -141,8 +144,8 @@ class DateField extends StatelessWidget {
           final d = await showDatePicker(
             context: context,
             initialDate: value,
-            firstDate: DateTime(2020),
-            lastDate: DateTime(2035, 12, 31),
+            firstDate: DateTime(CalendarRepository.minYear(today)),
+            lastDate: DateTime(CalendarRepository.maxYear(today), 12, 31),
           );
           if (d != null) onChanged(d);
         },
@@ -158,57 +161,67 @@ class DateField extends StatelessWidget {
 }
 
 class YearStepper extends StatelessWidget {
-  const YearStepper({super.key, required this.year, required this.onChanged});
+  const YearStepper({
+    super.key,
+    required this.year,
+    required this.today,
+    required this.onChanged,
+  });
   final int year;
+  final DateTime today;
   final ValueChanged<int> onChanged;
   @override
-  Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsets.only(bottom: 18),
-    child: Row(
-      children: [
-        IconButton(
-          tooltip: context.s.previous,
-          onPressed: year > 2020
-              ? () {
-                  HapticFeedback.selectionClick();
-                  onChanged(year - 1);
-                }
-              : null,
-          icon: const Icon(Icons.chevron_left),
-        ),
-        Expanded(
-          child: Center(
-            child: DropdownButton<int>(
-              value: year,
-              underline: const SizedBox.shrink(),
-              style: TextStyle(
-                fontFamily: 'PlexMono',
-                fontSize: 20,
-                color: context.colors.onSurface,
+  Widget build(BuildContext context) {
+    final minYear = CalendarRepository.minYear(today);
+    final maxYear = CalendarRepository.maxYear(today);
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 18),
+      child: Row(
+        children: [
+          IconButton(
+            tooltip: context.s.previous,
+            onPressed: year > minYear
+                ? () {
+                    HapticFeedback.selectionClick();
+                    onChanged(year - 1);
+                  }
+                : null,
+            icon: const Icon(Icons.chevron_left),
+          ),
+          Expanded(
+            child: Center(
+              child: DropdownButton<int>(
+                value: year,
+                underline: const SizedBox.shrink(),
+                style: TextStyle(
+                  fontFamily: 'PlexMono',
+                  fontSize: 20,
+                  color: context.colors.onSurface,
+                ),
+                items: [
+                  for (var y = minYear; y <= maxYear; y++)
+                    DropdownMenuItem(value: y, child: Text('$y')),
+                ],
+                onChanged: (y) {
+                  if (y != null) onChanged(y);
+                },
               ),
-              items: [
-                for (var y = 2020; y <= 2035; y++)
-                  DropdownMenuItem(value: y, child: Text('$y')),
-              ],
-              onChanged: (y) {
-                if (y != null) onChanged(y);
-              },
             ),
           ),
-        ),
-        IconButton(
-          tooltip: context.s.next,
-          onPressed: year < 2035
-              ? () {
-                  HapticFeedback.selectionClick();
-                  onChanged(year + 1);
-                }
-              : null,
-          icon: const Icon(Icons.chevron_right),
-        ),
-      ],
-    ),
-  );
+          IconButton(
+            tooltip: context.s.next,
+            onPressed: year < maxYear
+                ? () {
+                    HapticFeedback.selectionClick();
+                    onChanged(year + 1);
+                  }
+                : null,
+            icon: const Icon(Icons.chevron_right),
+          ),
+        ],
+      ),
+    );
+  }
 }
 
 class StatRow extends StatelessWidget {

@@ -321,7 +321,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get dataCoverage =>
-      'Dane kalendarzowe: 2020–2035. Ferie szkolne dostępne tylko dla opublikowanych lat.';
+      'Dane kalendarzowe: 2020–2100. Ferie szkolne dostępne tylko dla opublikowanych lat.';
 
   @override
   String get about => 'O aplikacji';
@@ -430,7 +430,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get notFound => 'Nie znaleziono strony';
 
   @override
-  String get outOfRange => 'Wybierz rok z zakresu 2020–2035.';
+  String get outOfRange => 'Wybierz rok z zakresu 1900–2100.';
 
   @override
   String get backHome => 'Wróć na stronę główną';

@@ -321,7 +321,7 @@ class AppLocalizationsLv extends AppLocalizations {
 
   @override
   String get dataCoverage =>
-      'Kalendāra dati: 2020–2035. Skolēnu brīvdienas pieejamas tikai publicētajiem gadiem.';
+      'Kalendāra dati: 2020–2100. Skolēnu brīvdienas pieejamas tikai publicētajiem gadiem.';
 
   @override
   String get about => 'Par lietotni';
@@ -430,7 +430,7 @@ class AppLocalizationsLv extends AppLocalizations {
   String get notFound => 'Lapa nav atrasta';
 
   @override
-  String get outOfRange => 'Izvēlies gadu no 2020 līdz 2035.';
+  String get outOfRange => 'Izvēlies gadu no 1900 līdz 2100.';
 
   @override
   String get backHome => 'Atpakaļ uz sākumu';

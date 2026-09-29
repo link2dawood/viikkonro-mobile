@@ -321,7 +321,7 @@ class AppLocalizationsEt extends AppLocalizations {
 
   @override
   String get dataCoverage =>
-      'Kalendriandmed: 2020–2035. Koolivaheajad on saadaval ainult avaldatud aastate kohta.';
+      'Kalendriandmed: 2020–2100. Koolivaheajad on saadaval ainult avaldatud aastate kohta.';
 
   @override
   String get about => 'Rakendusest';
@@ -430,7 +430,7 @@ class AppLocalizationsEt extends AppLocalizations {
   String get notFound => 'Lehte ei leitud';
 
   @override
-  String get outOfRange => 'Vali aasta vahemikus 2020–2035.';
+  String get outOfRange => 'Vali aasta vahemikus 1900–2100.';
 
   @override
   String get backHome => 'Tagasi avalehele';

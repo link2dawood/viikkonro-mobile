@@ -33,8 +33,7 @@ class _MonthScreenState extends State<MonthScreen> {
   /// FP-M06: stepping through the date constructor rolls the year over for us.
   void _step(int months) {
     final next = DateTime(shown.year, shown.month + months);
-    if (next.year < CalendarRepository.minYear ||
-        next.year > CalendarRepository.maxYear)
+    if (!CalendarRepository.isSelectableYear(next.year, widget.today))
       return;
     setState(() => shown = next);
   }
@@ -42,7 +41,7 @@ class _MonthScreenState extends State<MonthScreen> {
   Future<void> _pick() async {
     final chosen = await showDialog<DateTime>(
       context: context,
-      builder: (context) => _MonthPicker(initial: shown),
+      builder: (context) => _MonthPicker(initial: shown, today: widget.today),
     );
     if (chosen != null) setState(() => shown = chosen);
   }
@@ -233,8 +232,9 @@ class MarkerLegend extends StatelessWidget {
 }
 
 class _MonthPicker extends StatefulWidget {
-  const _MonthPicker({required this.initial});
+  const _MonthPicker({required this.initial, required this.today});
   final DateTime initial;
+  final DateTime today;
   @override
   State<_MonthPicker> createState() => _MonthPickerState();
 }
@@ -251,6 +251,7 @@ class _MonthPickerState extends State<_MonthPicker> {
         children: [
           YearStepper(
             year: year,
+            today: widget.today,
             onChanged: (value) => setState(() => year = value),
           ),
           Wrap(

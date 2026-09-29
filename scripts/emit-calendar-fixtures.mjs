@@ -15,6 +15,8 @@ const { schoolHolidayYears, schoolHolidayPage, SCHOOL_HOLIDAY_SOURCES,
 const revision = process.env.SOURCE_REVISION ??
   execFileSync('git', ['-C', root, 'rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
 const fmt = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+const MIN_YEAR = 2020;
+const MAX_YEAR = 2100;
 
 // Date.toJSON uses UTC, which changes Finnish midnight to the previous date.
 // Walk Dates before JSON.stringify can invoke their toJSON method.
@@ -28,7 +30,7 @@ function civilDates(value) {
 }
 
 const years = [];
-for (let year = 2020; year <= 2035; year++) {
+for (let year = MIN_YEAR; year <= MAX_YEAR; year++) {
   years.push({
     year,
     holidays: civilDates(holidaysInYear(year)),
@@ -53,7 +55,7 @@ process.stdout.write(JSON.stringify({
   revision,
   sourceSha256: Object.fromEntries(sourceFiles.map((path) => [path,
     createHash('sha256').update(readFileSync(resolve(root, path))).digest('hex')])),
-  range: [2020, 2035],
+  range: [MIN_YEAR, MAX_YEAR],
   years,
   schoolHolidaySources: SCHOOL_HOLIDAY_SOURCES,
   schoolHolidays,

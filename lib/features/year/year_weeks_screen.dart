@@ -72,7 +72,11 @@ class _YearWeeksScreenState extends State<YearWeeksScreen> {
             padding: const EdgeInsets.fromLTRB(20, 18, 20, 0),
             child: Column(
               children: [
-                YearStepper(year: year, onChanged: _setYear),
+                YearStepper(
+                  year: year,
+                  today: widget.today,
+                  onChanged: _setYear,
+                ),
                 // Wraps instead of clipping when the font scale is turned up.
                 Wrap(
                   alignment: WrapAlignment.spaceBetween,

@@ -49,6 +49,7 @@ class _YearCalendarScreenState extends State<YearCalendarScreen> {
         children: [
           YearStepper(
             year: year,
+            today: widget.today,
             onChanged: (value) => setState(() => year = value),
           ),
           SitePanel(

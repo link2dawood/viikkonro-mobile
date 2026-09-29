@@ -320,7 +320,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get dataCoverage =>
-      'Takvim verileri: 2020–2035. Okul tatilleri yalnızca yayımlanmış yıllar için mevcuttur.';
+      'Takvim verileri: 2020–2100. Okul tatilleri yalnızca yayımlanmış yıllar için mevcuttur.';
 
   @override
   String get about => 'Uygulama hakkında';
@@ -429,7 +429,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get notFound => 'Sayfa bulunamadı';
 
   @override
-  String get outOfRange => '2020 ile 2035 arasında bir yıl seçin.';
+  String get outOfRange => '1900 ile 2100 arasında bir yıl seçin.';
 
   @override
   String get backHome => 'Ana sayfaya dön';

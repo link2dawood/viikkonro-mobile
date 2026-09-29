@@ -100,6 +100,7 @@ class _DateToWeekState extends State<_DateToWeek> {
           child: DateField(
             label: s.chooseDate,
             value: selected,
+            today: widget.today,
             onChanged: (value) => setState(() => selected = dateOnly(value)),
           ),
         ),
@@ -185,9 +186,8 @@ class _WeekToDateState extends State<_WeekToDate> {
     final total = weeksInIsoYear(year);
     // FP-L03: week 53 of a 52-week year is reported, never thrown.
     final valid = _error == null && week >= 1 && week <= total;
-    final bundled =
-        year >= CalendarRepository.minYear &&
-        year <= CalendarRepository.maxYear;
+    final range = (widget.repository.data['range'] as List).cast<int>();
+    final bundled = year >= range.first && year <= range.last;
     return PageBody(
       children: [
         SitePanel(

@@ -321,7 +321,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get dataCoverage =>
-      'Дані календаря: 2020–2035. Шкільні канікули доступні лише для оприлюднених років.';
+      'Дані календаря: 2020–2100. Шкільні канікули доступні лише для оприлюднених років.';
 
   @override
   String get about => 'Про застосунок';
@@ -430,7 +430,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String get notFound => 'Сторінку не знайдено';
 
   @override
-  String get outOfRange => 'Оберіть рік від 2020 до 2035.';
+  String get outOfRange => 'Оберіть рік від 1900 до 2100.';
 
   @override
   String get backHome => 'На головну';

@@ -321,7 +321,7 @@ class AppLocalizationsLt extends AppLocalizations {
 
   @override
   String get dataCoverage =>
-      'Kalendoriaus duomenys: 2020–2035. Mokinių atostogos pasiekiamos tik paskelbtiems metams.';
+      'Kalendoriaus duomenys: 2020–2100. Mokinių atostogos pasiekiamos tik paskelbtiems metams.';
 
   @override
   String get about => 'Apie programėlę';
@@ -430,7 +430,7 @@ class AppLocalizationsLt extends AppLocalizations {
   String get notFound => 'Puslapis nerastas';
 
   @override
-  String get outOfRange => 'Pasirinkite metus nuo 2020 iki 2035.';
+  String get outOfRange => 'Pasirinkite metus nuo 1900 iki 2100.';
 
   @override
   String get backHome => 'Grįžti į pradžią';

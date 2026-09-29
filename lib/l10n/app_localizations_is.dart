@@ -321,7 +321,7 @@ class AppLocalizationsIs extends AppLocalizations {
 
   @override
   String get dataCoverage =>
-      'Dagatalsgögn: 2020–2035. Skólafrí eru aðeins til fyrir birt ár.';
+      'Dagatalsgögn: 2020–2100. Skólafrí eru aðeins til fyrir birt ár.';
 
   @override
   String get about => 'Um forritið';
@@ -430,7 +430,7 @@ class AppLocalizationsIs extends AppLocalizations {
   String get notFound => 'Síðan fannst ekki';
 
   @override
-  String get outOfRange => 'Veldu ár á bilinu 2020 til 2035.';
+  String get outOfRange => 'Veldu ár á bilinu 1900 til 2100.';
 
   @override
   String get backHome => 'Aftur á forsíðu';

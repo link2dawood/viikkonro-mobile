@@ -321,7 +321,7 @@ class AppLocalizationsFi extends AppLocalizations {
 
   @override
   String get dataCoverage =>
-      'Kalenteritiedot: 2020–2035. Koululomat saatavilla vain julkaistuille vuosille.';
+      'Kalenteritiedot: 2020–2100. Koululomat saatavilla vain julkaistuille vuosille.';
 
   @override
   String get about => 'Tietoa sovelluksesta';
@@ -431,7 +431,7 @@ class AppLocalizationsFi extends AppLocalizations {
   String get notFound => 'Sivua ei löytynyt';
 
   @override
-  String get outOfRange => 'Valitse vuosi väliltä 2020–2035.';
+  String get outOfRange => 'Valitse vuosi väliltä 1900–2100.';
 
   @override
   String get backHome => 'Palaa etusivulle';

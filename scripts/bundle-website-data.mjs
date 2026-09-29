@@ -7,7 +7,10 @@ import { execFileSync } from 'node:child_process';
 import { mkdirSync, writeFileSync } from 'node:fs';
 const root = resolve(process.argv[2]);
 const load = (path) => import(pathToFileURL(resolve(root, path)));
-const revision = execFileSync('git', ['-C', root, 'rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
+const revision = process.env.SOURCE_REVISION ??
+  execFileSync('git', ['-C', root, 'rev-parse', 'HEAD'], { encoding: 'utf8' }).trim();
+const MIN_YEAR = 2020;
+const MAX_YEAR = 2100;
 const calendar = JSON.parse(execFileSync(process.execPath,
   ['scripts/emit-calendar-fixtures.mjs', root], { encoding: 'utf8', maxBuffer: 10e6 }));
 const { HOLIDAY_DEFINITIONS } = await load('src/data/holidayPages.js');
@@ -42,7 +45,7 @@ const time = (date) => Number.isNaN(date.valueOf()) ? null : new Intl.DateTimeFo
   timeZone:'Europe/Helsinki',hour:'2-digit',minute:'2-digit',hourCycle:'h23',
 }).format(date);
 const days = {};
-for (let y = 2020; y <= 2035; y++) {
+for (let y = MIN_YEAR; y <= MAX_YEAR; y++) {
   for (let d = new Date(y,0,1,12); d.getFullYear() === y; d.setDate(d.getDate()+1)) {
     const t = getTimes(d,60.1699,24.9384);
     const polar = Number.isNaN(t.sunrise.valueOf());
@@ -52,4 +55,4 @@ for (let y = 2020; y <= 2035; y++) {
   }
 }
 write('sun', { source, location: 'Helsinki', timeZone:'Europe/Helsinki', days });
-console.log(`Bundled 16 calendar years, ${Object.keys(days).length} Helsinki solar dates, and website information.`);
+console.log(`Bundled ${MAX_YEAR - MIN_YEAR + 1} calendar years, ${Object.keys(days).length} Helsinki solar dates, and website information.`);

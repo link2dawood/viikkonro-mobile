@@ -22,7 +22,7 @@ class WidgetDataTest {
 
     @Test fun snapshotCoversTheWholePublishedRange() {
         assertEquals(2020, snapshot.observances.first().date.year)
-        assertEquals(2035, snapshot.observances.last().date.year)
+        assertEquals(2100, snapshot.observances.last().date.year)
         assertTrue(snapshot.observances.size > 400)
     }
 
@@ -57,7 +57,7 @@ class WidgetDataTest {
     }
 
     @Test fun exhaustedOfflineDataProducesIntentionalEmptyStates() {
-        val afterPublishedRange = LocalDate.of(2036, 1, 1)
+        val afterPublishedRange = LocalDate.of(2101, 1, 1)
         assertEquals(null, snapshot.nextHoliday(afterPublishedRange))
         assertEquals(null, snapshot.nextFlagDay(afterPublishedRange))
         assertEquals(null, snapshot.nextSchoolBreak(afterPublishedRange, "Helsinki"))

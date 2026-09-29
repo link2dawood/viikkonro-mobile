@@ -321,7 +321,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get dataCoverage =>
-      'Dados do calendário: 2020–2035. As férias escolares só estão disponíveis para os anos publicados.';
+      'Dados do calendário: 2020–2100. As férias escolares só estão disponíveis para os anos publicados.';
 
   @override
   String get about => 'Acerca da aplicação';
@@ -430,7 +430,7 @@ class AppLocalizationsPt extends AppLocalizations {
   String get notFound => 'Página não encontrada';
 
   @override
-  String get outOfRange => 'Escolha um ano entre 2020 e 2035.';
+  String get outOfRange => 'Escolha um ano entre 1900 e 2100.';
 
   @override
   String get backHome => 'Voltar ao início';

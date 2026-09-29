@@ -123,12 +123,14 @@ class _DaysBetweenState extends State<_DaysBetween> {
               DateField(
                 label: s.firstDate,
                 value: from,
+                today: widget.today,
                 onChanged: (value) => setState(() => from = dateOnly(value)),
               ),
               const SizedBox(height: 16),
               DateField(
                 label: s.lastDate,
                 value: to,
+                today: widget.today,
                 onChanged: (value) => setState(() => to = dateOnly(value)),
               ),
               const Divider(height: 30),

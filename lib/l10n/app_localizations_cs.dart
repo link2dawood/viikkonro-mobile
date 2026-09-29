@@ -321,7 +321,7 @@ class AppLocalizationsCs extends AppLocalizations {
 
   @override
   String get dataCoverage =>
-      'Kalendářní data: 2020–2035. Školní prázdniny jsou k dispozici jen pro zveřejněné roky.';
+      'Kalendářní data: 2020–2100. Školní prázdniny jsou k dispozici jen pro zveřejněné roky.';
 
   @override
   String get about => 'O aplikaci';
@@ -430,7 +430,7 @@ class AppLocalizationsCs extends AppLocalizations {
   String get notFound => 'Stránka nenalezena';
 
   @override
-  String get outOfRange => 'Zvolte rok mezi 2020 a 2035.';
+  String get outOfRange => 'Zvolte rok mezi 1900 a 2100.';
 
   @override
   String get backHome => 'Zpět na úvod';

@@ -321,7 +321,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get dataCoverage =>
-      'Kalendergegevens: 2020–2035. Schoolvakanties zijn alleen beschikbaar voor gepubliceerde jaren.';
+      'Kalendergegevens: 2020–2100. Schoolvakanties zijn alleen beschikbaar voor gepubliceerde jaren.';
 
   @override
   String get about => 'Over de app';
@@ -430,7 +430,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String get notFound => 'Pagina niet gevonden';
 
   @override
-  String get outOfRange => 'Kies een jaar tussen 2020 en 2035.';
+  String get outOfRange => 'Kies een jaar tussen 1900 en 2100.';
 
   @override
   String get backHome => 'Terug naar start';

@@ -187,6 +187,7 @@ class _HomeScreenState extends State<HomeScreen> {
               DateField(
                 label: s.chooseDate,
                 value: selected,
+                today: widget.today,
                 onChanged: (d) => setState(() => selected = d),
               ),
               const Divider(height: 32),
@@ -265,7 +266,7 @@ class _HomeScreenState extends State<HomeScreen> {
           spacing: 8,
           children: [
             for (var y = now.year - 1; y <= now.year + 1; y++)
-              if (y >= 2020 && y <= 2035)
+              if (CalendarRepository.isSelectableYear(y, widget.today))
                 OutlinedButton(
                   onPressed: () => Navigator.pushNamed(context, '/vuosi-$y'),
                   child: Text('$y'),

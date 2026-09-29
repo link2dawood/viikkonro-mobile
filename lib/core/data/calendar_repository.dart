@@ -100,8 +100,12 @@ class CalendarRepository {
       }
     }
   }
-  static const minYear = 2020;
-  static const maxYear = 2035;
+  static const yearsBeforeCurrent = 1;
+  static const yearsAfterCurrent = 14;
+  static int minYear(DateTime today) => today.year - yearsBeforeCurrent;
+  static int maxYear(DateTime today) => today.year + yearsAfterCurrent;
+  static bool isSelectableYear(int year, DateTime today) =>
+      year >= minYear(today) && year <= maxYear(today);
   final Map<String, dynamic> data;
   final Map<String, dynamic> information;
   final Map<String, dynamic> sun;

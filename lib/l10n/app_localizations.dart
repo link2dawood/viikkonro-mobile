@@ -711,7 +711,7 @@ abstract class AppLocalizations {
   /// No description provided for @dataCoverage.
   ///
   /// In en, this message translates to:
-  /// **'Calendar data: 2020–2035. School holidays are available for published years only.'**
+  /// **'Calendar data: 2020–2100. School holidays are available for published years only.'**
   String get dataCoverage;
 
   /// No description provided for @about.
@@ -921,7 +921,7 @@ abstract class AppLocalizations {
   /// No description provided for @outOfRange.
   ///
   /// In en, this message translates to:
-  /// **'Choose a year between 2020 and 2035.'**
+  /// **'Choose a year between 1900 and 2100.'**
   String get outOfRange;
 
   /// No description provided for @backHome.

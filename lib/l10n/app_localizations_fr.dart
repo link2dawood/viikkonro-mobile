@@ -322,7 +322,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get dataCoverage =>
-      'Données du calendrier : 2020–2035. Vacances scolaires disponibles uniquement pour les années publiées.';
+      'Données du calendrier : 2020–2100. Vacances scolaires disponibles uniquement pour les années publiées.';
 
   @override
   String get about => 'À propos de l’application';
@@ -431,7 +431,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get notFound => 'Page introuvable';
 
   @override
-  String get outOfRange => 'Choisissez une année entre 2020 et 2035.';
+  String get outOfRange => 'Choisissez une année entre 1900 et 2100.';
 
   @override
   String get backHome => 'Retour à l’accueil';

@@ -320,7 +320,7 @@ class AppLocalizationsDa extends AppLocalizations {
 
   @override
   String get dataCoverage =>
-      'Kalenderdata: 2020–2035. Skoleferier findes kun for offentliggjorte år.';
+      'Kalenderdata: 2020–2100. Skoleferier findes kun for offentliggjorte år.';
 
   @override
   String get about => 'Om appen';
@@ -429,7 +429,7 @@ class AppLocalizationsDa extends AppLocalizations {
   String get notFound => 'Siden blev ikke fundet';
 
   @override
-  String get outOfRange => 'Vælg et år mellem 2020 og 2035.';
+  String get outOfRange => 'Vælg et år mellem 1900 og 2100.';
 
   @override
   String get backHome => 'Tilbage til forsiden';

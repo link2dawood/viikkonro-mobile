@@ -31,8 +31,7 @@ class _WeekScreenState extends State<WeekScreen> {
   /// week 1 of the next ISO year follows week 52 or 53 without a special case.
   void _step(int weeks) {
     final monday = addCalendarDays(mondayOf(week, year), weeks * 7);
-    if (monday.year < CalendarRepository.minYear ||
-        monday.year > CalendarRepository.maxYear)
+    if (!CalendarRepository.isSelectableYear(monday.year, widget.today))
       return;
     setState(() {
       week = isoWeek(monday);

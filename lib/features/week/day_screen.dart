@@ -27,8 +27,7 @@ class _DayScreenState extends State<DayScreen> {
 
   void _step(int days) {
     final next = addCalendarDays(date, days);
-    if (next.year < CalendarRepository.minYear ||
-        next.year > CalendarRepository.maxYear)
+    if (!CalendarRepository.isSelectableYear(next.year, widget.today))
       return;
     setState(() => date = next);
   }

@@ -321,7 +321,7 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get dataCoverage =>
-      'Koledarski podatki: 2020–2035. Šolske počitnice so na voljo le za objavljena leta.';
+      'Koledarski podatki: 2020–2100. Šolske počitnice so na voljo le za objavljena leta.';
 
   @override
   String get about => 'O aplikaciji';
@@ -430,7 +430,7 @@ class AppLocalizationsSl extends AppLocalizations {
   String get notFound => 'Strani ni mogoče najti';
 
   @override
-  String get outOfRange => 'Izberite leto med 2020 in 2035.';
+  String get outOfRange => 'Izberite leto med 1900 in 2100.';
 
   @override
   String get backHome => 'Nazaj na domov';

@@ -76,6 +76,7 @@ class _HolidaysScreenState extends State<HolidaysScreen>
               padding: const EdgeInsets.fromLTRB(20, 16, 20, 0),
               child: YearStepper(
                 year: year,
+                today: widget.today,
                 onChanged: (value) => setState(() => year = value),
               ),
             ),

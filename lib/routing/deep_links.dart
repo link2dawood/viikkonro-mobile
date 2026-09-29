@@ -1,3 +1,4 @@
+import '../core/data/calendar_repository.dart';
 import '../core/date/iso_week.dart';
 
 class AppRoute {
@@ -56,8 +57,7 @@ class AppRoute {
         chosen = DateTime.tryParse(raw);
         if (chosen == null ||
             formatDate(chosen) != raw ||
-            chosen.year < 2020 ||
-            chosen.year > 2035)
+            !CalendarRepository.isSelectableYear(chosen.year, now))
           return const AppRoute('notFound');
       }
       return AppRoute(
@@ -88,19 +88,19 @@ class AppRoute {
     var match = RegExp(r'^/viikko-(\d+)-(\d{4})$').firstMatch(path);
     if (match != null) {
       final w = int.parse(match[1]!), y = int.parse(match[2]!);
-      if (_year(y) && w >= 1 && w <= weeksInIsoYear(y))
+      if (_year(y, now) && w >= 1 && w <= weeksInIsoYear(y))
         return AppRoute('week', year: y, week: w);
       return const AppRoute('notFound');
     }
     match = RegExp(r'^/kuukausi-(\d+)-(\d{4})$').firstMatch(path);
     if (match != null) {
       final m = int.parse(match[1]!), y = int.parse(match[2]!);
-      if (_year(y) && m >= 1 && m <= 12)
+      if (_year(y, now) && m >= 1 && m <= 12)
         return AppRoute('month', year: y, month: m);
       return const AppRoute('notFound');
     }
     match = RegExp(r'^/q([1-4])-(\d{4})$').firstMatch(path);
-    if (match != null && _year(int.parse(match[2]!)))
+    if (match != null && _year(int.parse(match[2]!), now))
       return AppRoute(
         'quarter',
         quarter: int.parse(match[1]!),
@@ -109,7 +109,7 @@ class AppRoute {
     match = RegExp(
       r'^/(vuosi|tulosta|kalenteri|tulostettava-kalenteri|pyhapaivat|liputuspaivat|tyopaivat|koululomat)-(\d{4})(?:-(alkuvuosi|loppuvuosi))?$',
     ).firstMatch(path);
-    if (match != null && _year(int.parse(match[2]!))) {
+    if (match != null && _year(int.parse(match[2]!), now)) {
       const kinds = {
         'vuosi': 'weeks',
         'tulosta': 'weekList',
@@ -147,14 +147,14 @@ class AppRoute {
     ];
     if (match != null &&
         months.contains(match[1]) &&
-        _year(int.parse(match[2]!)))
+        _year(int.parse(match[2]!), now))
       return AppRoute(
         'workingMonth',
         month: months.indexOf(match[1]!) + 1,
         year: int.parse(match[2]!),
       );
     match = RegExp(r'^/(\d{4})/([a-z-]+)$').firstMatch(path);
-    if (match != null && _year(int.parse(match[1]!)))
+    if (match != null && _year(int.parse(match[1]!), now))
       return AppRoute(
         'holidayDetail',
         year: int.parse(match[1]!),
@@ -163,5 +163,6 @@ class AppRoute {
     return const AppRoute('notFound');
   }
 
-  static bool _year(int y) => y >= 2020 && y <= 2035;
+  static bool _year(int year, DateTime today) =>
+      CalendarRepository.isSelectableYear(year, today);
 }

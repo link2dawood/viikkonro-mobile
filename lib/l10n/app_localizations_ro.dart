@@ -321,7 +321,7 @@ class AppLocalizationsRo extends AppLocalizations {
 
   @override
   String get dataCoverage =>
-      'Date de calendar: 2020–2035. Vacanțele școlare sunt disponibile doar pentru anii publicați.';
+      'Date de calendar: 2020–2100. Vacanțele școlare sunt disponibile doar pentru anii publicați.';
 
   @override
   String get about => 'Despre aplicație';
@@ -430,7 +430,7 @@ class AppLocalizationsRo extends AppLocalizations {
   String get notFound => 'Pagina nu a fost găsită';
 
   @override
-  String get outOfRange => 'Alege un an între 2020 și 2035.';
+  String get outOfRange => 'Alege un an între 1900 și 2100.';
 
   @override
   String get backHome => 'Înapoi acasă';
